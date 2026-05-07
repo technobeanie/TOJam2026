@@ -106,28 +106,75 @@ namespace Common.Joystick
             return movement;
         }
 
+        public Vector2 GetMovement(Joystick joystick, InputDevice inputDevice)
+        {
+            if (inputDevice != null)
+            {
+                if (inputDevice is Keyboard keyboard)
+                {
+                    return GetKeyboardMovement(joystick, keyboard);
+                }
+                else if (inputDevice is Gamepad gamepad)
+                {
+                    return GetGamepadMovement(joystick, gamepad);
+                }
+            }
+
+            return Vector2.zero;
+        }
+
         public bool IsButtonDown(Button button)
         {
-            var movement = Vector2.zero;
-
             if (!GetKeyboardButtonDown(button, Keyboard.current))
             {
                 return GetGamepadButtonDown(button, Gamepad.current);
             }
 
-            return true;
+            return false;
+        }
+
+        public bool IsButtonDown(Button button, InputDevice inputDevice)
+        {
+            if (inputDevice != null)
+            {
+                if (inputDevice is Keyboard keyboard)
+                {
+                    return GetKeyboardButtonDown(button, keyboard);
+                }
+                else if (inputDevice is Gamepad gamepad)
+                {
+                    return GetGamepadButtonDown(button, gamepad);
+                }
+            }
+
+            return false;
         }
 
         public bool IsButtonDownThisFrame(Button button)
         {
-            var movement = Vector2.zero;
-
             if (!GetKeyboardButtonDownThisFrame(button, Keyboard.current))
             {
                 return GetGamepadButtonDownThisFrame(button, Gamepad.current);
             }
 
-            return true;
+            return false;
+        }
+
+        public bool IsButtonDownThisFrame(Button button, InputDevice inputDevice)
+        {
+            if (inputDevice != null)
+            {
+                if (inputDevice is Keyboard keyboard)
+                {
+                    return GetKeyboardButtonDownThisFrame(button, keyboard);
+                }
+                else if (inputDevice is Gamepad gamepad)
+                {
+                    return GetGamepadButtonDownThisFrame(button, gamepad);
+                }
+            }
+
+            return false;
         }
 
         public float IsTriggerDown(Trigger trigger)
@@ -141,6 +188,23 @@ namespace Common.Joystick
             }
 
             return triggerValue;
+        }
+
+        public float IsTriggerDown(Trigger trigger, InputDevice inputDevice)
+        {
+            if (inputDevice != null)
+            {
+                if (inputDevice is Keyboard keyboard)
+                {
+                    return GetKeyboardTrigger(trigger, keyboard);
+                }
+                else if (inputDevice is Gamepad gamepad)
+                {
+                    return GetGamepadTrigger(trigger, gamepad);
+                }
+            }
+
+            return 0.0f;
         }
         #endregion
 
