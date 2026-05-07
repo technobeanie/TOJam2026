@@ -1,0 +1,14 @@
+characterSide=North;exitSide=East;theme=Sand;arrows=↑←↓→
+x            e
+x
+x
+x            x
+x
+x       ←mxxxx
+x        x   x       xm
+x        x x x        ↓
+x↑         x    ↑ ↑ ↑ 
+xmxxxxxxxxxxxxxcmxmxmx x  x 
+                     x
+                     x
+                     xxx

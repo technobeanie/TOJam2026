@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 4944c7a920f2ab148ae3e063c404af0f
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 6a2c8a8c81982d242ac249b653a1b116
+  - enabled: 1
+    path: Assets/Scenes/Loading/Loading.unity
+    guid: d7972f0a79e24454789a77a35d73d47a
+  - enabled: 1
+    path: Assets/Scenes/BasicPoppup.unity
+    guid: 9d37bca06db56104c951673b52b703d4
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 294aaeea33de7964096320cb1b79d9ed,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: b4cb9fd7fc22c1745a7ffecd4dc72a1c,
+      type: 3}
