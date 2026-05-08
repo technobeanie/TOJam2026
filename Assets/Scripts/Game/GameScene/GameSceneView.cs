@@ -6,11 +6,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Utils;
 
 public class GameSceneView : SokobanView
 {
     // const
+    public const string FlowParameter_Player1 = "FlowParameter_Player1";
+    public const string FlowParameter_Player2 = "FlowParameter_Player2";
 
     // public
 
@@ -35,7 +38,18 @@ public class GameSceneView : SokobanView
     {
         base.OnViewLoaded();
 
-        // TODO
+        if (_parameters != null)
+        {
+            if (_parameters.ContainsKey(FlowParameter_Player1))
+            {
+                var player1 = _parameters[FlowParameter_Player1] as InputDevice;
+            }
+
+            if (_parameters.ContainsKey(FlowParameter_Player2))
+            {
+                var player2 = _parameters[FlowParameter_Player2] as InputDevice;
+            }
+        }
     }
 
     protected override void OnViewOpened()

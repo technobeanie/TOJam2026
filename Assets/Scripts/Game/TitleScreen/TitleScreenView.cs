@@ -36,7 +36,7 @@ public class TitleScreenView : SokobanView
     #region UI Methods
     public void UI_Play()
     {
-        FlowManager.Instance.OpenView("GameScene", loadingViewName: "Loading");
+        FlowManager.Instance.OpenView("PlayerSelection", loadingViewName: "Loading");
     }
     #endregion
 }
