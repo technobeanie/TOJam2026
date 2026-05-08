@@ -8,6 +8,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameSceneView : SokobanView
 {
@@ -25,6 +26,10 @@ public class GameSceneView : SokobanView
 
     [Header("Stickers")]
     [SerializeField] private StickerPool _stickerPool = null;
+
+    [Header("Players")]
+    [SerializeField] private PlayerController _player1 = null;
+    [SerializeField] private PlayerController _player2 = null;
 
     [Header("Debug")]
     [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
@@ -53,11 +58,35 @@ public class GameSceneView : SokobanView
             if (_parameters.ContainsKey(FlowParameter_Player1))
             {
                 var player1 = _parameters[FlowParameter_Player1] as InputDevice;
+                if (_player1 != null)
+                {
+                    _player1.AssignInputDevice(player1);
+                }
+            }
+            else
+            {
+                // CHEAT
+                if (_player1 != null && Gamepad.all.Count > 0)
+                {
+                    _player1.AssignInputDevice(Gamepad.all[0]);
+                }
             }
 
             if (_parameters.ContainsKey(FlowParameter_Player2))
             {
                 var player2 = _parameters[FlowParameter_Player2] as InputDevice;
+                if (_player2 != null)
+                {
+                    _player2.AssignInputDevice(player2);
+                }
+            }
+            else
+            {
+                // CHEAT
+                if (_player2 != null && Gamepad.all.Count > 1)
+                {
+                    _player2.AssignInputDevice(Gamepad.all[1]);
+                }
             }
 
             // TODO: Pass the sticker pack.

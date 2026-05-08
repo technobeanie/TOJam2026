@@ -84,6 +84,8 @@ public class StickerPool : MonoBehaviour
             if (_bottomAnchorPoint != null)
             {
                 var bounds = sticker.gameObject.GetBounds();
+
+                // If at the bottom of the screen, we put it back up!
                 if (bounds.max.y < _bottomAnchorPoint.position.y)
                 {
                     _visibleStickerPool.Remove(sticker);
@@ -94,6 +96,28 @@ public class StickerPool : MonoBehaviour
 
         // Any out of bounds? Then, put back at top.
         PlaceAtTop();
+    }
+
+    public bool TryTake(Sticker sticker)
+    {
+        if (_visibleStickerPool.Contains(sticker))
+        {
+            _visibleStickerPool.Remove(sticker);
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool PutBack(Sticker sticker)
+    {
+        if (!_visibleStickerPool.Contains(sticker))
+        {
+            _visibleStickerPool.Insert(0, sticker);
+            return true;
+        }
+
+        return false;
     }
     #endregion
 
@@ -116,6 +140,8 @@ public class StickerPool : MonoBehaviour
     private void PlaceAtTop(Sticker sticker)
     {
         Vector3 startStickerPosition = Vector3.zero;
+
+        // TODO: Don't only look at the top one. You need to find the highest one (because of inserting).
 
         // Find starting point.
         if (_visibleStickerPool.Count > 0)
@@ -178,6 +204,9 @@ public class StickerPool : MonoBehaviour
 
             var spriteRenderer = stickerInstance.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = Sprite.Create(texture2D, new Rect(0.0f, 0.0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f), 2);
+
+            // Add collider.
+            spriteRenderer.gameObject.AddComponent<PolygonCollider2D>();
         }
         else
         {

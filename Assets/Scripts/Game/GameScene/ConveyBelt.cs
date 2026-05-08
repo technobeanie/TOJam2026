@@ -54,6 +54,24 @@ public class ConveyBelt : MonoBehaviour
         _currentAccelerationTarget = _acceleration;
         _currentSpeedTarget = _topSpeed;
     }
+
+    public bool TryTake(Sticker sticker)
+    {
+        if (_stickerPool != null)
+        {
+            return _stickerPool.TryTake(sticker);
+        }
+        return false;
+    }
+
+    public bool PutBack(Sticker sticker)
+    {
+        if (_stickerPool != null)
+        {
+            return _stickerPool.PutBack(sticker);
+        }
+        return false;
+    }
     #endregion
 
     #region Protected Methods
