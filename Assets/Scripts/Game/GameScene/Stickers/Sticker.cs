@@ -13,6 +13,10 @@ public class Sticker : MonoBehaviour
     // private
 
     // properties
+    public bool IsGrabbed
+    {
+        get; set;
+    }
 
     #region Unity Methods
     #endregion

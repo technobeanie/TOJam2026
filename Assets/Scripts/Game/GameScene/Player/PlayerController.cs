@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 using Utils;
 
 public class PlayerController : MonoBehaviour
@@ -20,9 +21,10 @@ public class PlayerController : MonoBehaviour
     [Header("Player")]
     [SerializeField] protected Transform _player = null;
     [SerializeField] private float _movementVelocity = 1000.0f;
+    [SerializeField] private Transform _stickerAnchor = null;
 
-    [Header("Convey")]
-    [SerializeField] private ConveyBelt _conveyBelt = null;
+    [Header("Sticker")]
+    [SerializeField] private StickerPool _stickerPool = null;
 
     // properties
     public InputDevice InputDevice
@@ -43,16 +45,6 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 movement3 = movement;
             _player.transform.localPosition += (movement3 * _movementVelocity * Time.fixedDeltaTime);
-
-            // Sticker need to follow while holding
-            if (_sticker != null)
-            {
-                // TODO: Keep the sticker offset.
-
-                var position = _player.transform.position;
-                position.z = _sticker.transform.position.z;
-                _sticker.transform.position = position;
-            }
         }
 
         if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice))
@@ -60,6 +52,10 @@ public class PlayerController : MonoBehaviour
             if (_sticker == null)
             {
                 GrabSticker();
+            }
+            else
+            {
+                //TryRotate();
             }
         }
         else if (_sticker != null)
@@ -86,7 +82,7 @@ public class PlayerController : MonoBehaviour
     #region Private Methods
     private void GrabSticker()
     {
-        if (_conveyBelt == null)
+        if (_stickerPool == null || _player == null || _stickerAnchor == null)
         {
             return;
         }
@@ -100,11 +96,18 @@ public class PlayerController : MonoBehaviour
                 var sticker = hit.transform.GetComponentInParent<Sticker>();
                 if (sticker != null)
                 {
-                    _conveyBelt.TryTake(sticker);
+                    if (!sticker.IsGrabbed)
+                    {
+                        _stickerPool.TryTake(sticker);
+                        sticker.IsGrabbed = true;
 
-                    _sticker = sticker;
+                        _stickerAnchor.transform.localEulerAngles = Vector3.zero;
 
-                    break;
+                        _sticker = sticker;
+                        _sticker.transform.parent = _stickerAnchor;
+
+                        break;
+                    }
                 }
             }
         }
@@ -112,10 +115,13 @@ public class PlayerController : MonoBehaviour
 
     private void ReleaseSticker()
     {
-        if (_sticker == null)
+        if (_sticker == null || _stickerPool == null || _stickerAnchor == null)
         {
             return;
         }
+
+        _sticker.IsGrabbed = false;
+        _sticker.transform.parent = transform;
 
         // Raycast and find nearest sticker.
         var stickerBounds = _sticker.gameObject.GetBounds();
@@ -128,13 +134,36 @@ public class PlayerController : MonoBehaviour
                 var convey = hit.transform.GetComponentInParent<ConveyBelt>();
                 if (convey != null)
                 {
-                    _conveyBelt.PutBack(_sticker);
+                    _stickerPool.PutBack(_sticker);
+                    _sticker.transform.parent = _stickerPool.transform;
                     break;
                 }
             }
         }
 
         _sticker = null;
+    }
+
+    private void TryRotate()
+    {
+        if (_sticker == null || _stickerAnchor == null || InputDevice == null)
+        {
+            return;
+        }
+
+        // Turn left.
+        var trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Left, InputDevice);
+        if (trigger != 0.0f)
+        {
+            Debug.Log("LEFT" + trigger.ToString());
+        }
+
+        // Turn right.
+        trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Right, InputDevice);
+        if (trigger != 0.0f)
+        {
+            Debug.Log("RIGHT" + trigger.ToString());
+        }
     }
     #endregion
 }

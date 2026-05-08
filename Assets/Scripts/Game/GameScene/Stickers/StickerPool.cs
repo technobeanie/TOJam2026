@@ -64,7 +64,8 @@ public class StickerPool : MonoBehaviour
 
         _availableStickerPool.AddRange(_stickers);
 
-        // TODO: Randomize.
+        // Randomize.
+        _availableStickerPool.Shuffle();
 
         // Distribute them at the top.
         PlaceAtTop();
@@ -151,6 +152,8 @@ public class StickerPool : MonoBehaviour
 
             startStickerPosition = previousSticker.transform.position;
             startStickerPosition.y += previousStickerBounds.max.y - previousSticker.transform.position.y;
+
+            startStickerPosition.y = Mathf.Clamp(startStickerPosition.y, _topAnchorPoint.transform.position.y, startStickerPosition.y);
         }
         else if (_topAnchorPoint != null)
         {
