@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sticker")]
     [SerializeField] private StickerPool _stickerPool = null;
+    [SerializeField] private float _stickerRotationSpeed = 180.0f;
 
     // properties
     public InputDevice InputDevice
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                //TryRotate();
+                TryRotate(Time.fixedDeltaTime);
             }
         }
         else if (_sticker != null)
@@ -144,7 +145,7 @@ public class PlayerController : MonoBehaviour
         _sticker = null;
     }
 
-    private void TryRotate()
+    private void TryRotate(float deltaTime)
     {
         if (_sticker == null || _stickerAnchor == null || InputDevice == null)
         {
@@ -155,14 +156,18 @@ public class PlayerController : MonoBehaviour
         var trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Left, InputDevice);
         if (trigger != 0.0f)
         {
-            Debug.Log("LEFT" + trigger.ToString());
+            var angles = _stickerAnchor.localEulerAngles;
+            angles.z += trigger * _stickerRotationSpeed * deltaTime;
+            _stickerAnchor.localEulerAngles = angles;
         }
 
         // Turn right.
         trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Right, InputDevice);
         if (trigger != 0.0f)
         {
-            Debug.Log("RIGHT" + trigger.ToString());
+            var angles = _stickerAnchor.localEulerAngles;
+            angles.z += trigger * -_stickerRotationSpeed * deltaTime;
+            _stickerAnchor.localEulerAngles = angles;
         }
     }
     #endregion

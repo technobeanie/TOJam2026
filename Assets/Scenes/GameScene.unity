@@ -1341,6 +1341,7 @@ MonoBehaviour:
   _movementVelocity: 1000
   _stickerAnchor: {fileID: 649768718}
   _stickerPool: {fileID: 1625759357}
+  _stickerRotationSpeed: 180
 --- !u!1 &1842894770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1515,7 @@ MonoBehaviour:
   _movementVelocity: 1000
   _stickerAnchor: {fileID: 1443930741}
   _stickerPool: {fileID: 1625759357}
+  _stickerRotationSpeed: 180
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
