@@ -11,11 +11,11 @@ public static class DataUtils
     // properties
 
     #region Unity Methods
-    [UnityEditor.MenuItem("Assets/Create/ScriptableObject/WorldLevel")]
-    public static void CreateFriendly()
+    [UnityEditor.MenuItem("Assets/Create/ScriptableObject/StickerPack")]
+    public static void CreateStickerPack()
     {
         // TODO: Find the furthest number, and increment it.
-        // ScriptableObjectUtils.CreateScriptableAsset<WorldData>("WorldLevel_0000.asset");
+        ScriptableObjectUtils.CreateScriptableAsset<StickerPack>("StickerPack_0000.asset");
     }
     #endregion
 

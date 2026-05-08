@@ -16,8 +16,8 @@ public class PlayerSelectionView : SokobanView
     // private
     [Header("Players")]
     [SerializeField] private PlayerManager _playerManager = null;
-    [SerializeField] private PlayerController _player1 = null;
-    [SerializeField] private PlayerController _player2 = null;
+    [SerializeField] private PlayerSelectionController _player1 = null;
+    [SerializeField] private PlayerSelectionController _player2 = null;
 
     [Header("Ready")]
     [SerializeField] private Transform _readyText = null;

@@ -15,11 +15,21 @@ public class TitleScreenView : SokobanView
     // properties
 
     #region Unity Methods
-    public void Update()
+    public void FixedUpdate()
     {
+        if (ViewState != ViewStateIds.Opened)
+        {
+            return;
+        }
+
         if (Keyboard.current != null && Keyboard.current[Key.Escape].isPressed)
         {
             Application.Quit();
+        }
+
+        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu))
+        {
+            UI_Play();
         }
     }
     #endregion

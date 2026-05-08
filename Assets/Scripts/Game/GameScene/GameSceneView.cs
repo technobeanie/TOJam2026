@@ -18,6 +18,16 @@ public class GameSceneView : SokobanView
     // public
 
     // private
+    private List<StickerPack> _packs = new List<StickerPack>();
+
+    [Header("Belt")]
+    [SerializeField] private ConveyBelt _belt = null;
+
+    [Header("Stickers")]
+    [SerializeField] private StickerPool _stickerPool = null;
+
+    [Header("Debug")]
+    [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
 
     // properties
 
@@ -49,6 +59,10 @@ public class GameSceneView : SokobanView
             {
                 var player2 = _parameters[FlowParameter_Player2] as InputDevice;
             }
+
+            // TODO: Pass the sticker pack.
+            _packs.Clear();
+            _packs.AddRange(_defaultPacks);
         }
     }
 
@@ -57,7 +71,15 @@ public class GameSceneView : SokobanView
         base.OnViewOpened();
 
         // Let's begin the game.
-        // TODO:
+        if (_belt != null)
+        {
+            _belt.Begin();
+        }
+
+        if (_stickerPool != null)
+        {
+            _stickerPool.Initiatize(_packs);
+        }
     }
 
     protected override void OnViewClosed(Dictionary<string, object> parameters)

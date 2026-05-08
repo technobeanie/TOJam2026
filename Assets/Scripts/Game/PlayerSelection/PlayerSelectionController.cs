@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class PlayerController : MonoBehaviour
+public class PlayerSelectionController : PlayerController
 {
     // const
 
@@ -18,48 +18,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _joinText = null;
     [SerializeField] private Transform _leaveText = null;
 
-    [Header("Player")]
-    [SerializeField] private Transform _player = null;
-    [SerializeField] private float _movementVelocity = 10.0f;
-
     // properties
     public bool HasJoined
     {
         get { return InputDevice != null; }
     }
 
-    public InputDevice InputDevice
-    {
-        get; private set;
-    }
-
     #region Unity Methods
-    private void FixedUpdate()
-    {
-        if (InputDevice == null)
-        {
-            return;
-        }
-
-        var movement = JoystickManager.Instance.GetMovement(JoystickManager.Joystick.Left, InputDevice);
-        if (movement != Vector2.zero)
-        {
-            Vector3 movement3 = movement;
-            _player.transform.localPosition += (movement3 * _movementVelocity * Time.fixedDeltaTime);
-        }
-    }
     #endregion
 
     #region Public Methods
-    public void Initialize()
+    public override void Initialize()
     {
+        base.Initialize();
+
         SetupTexts(false);
         DisplayPlayer(false);
     }
 
-    public void AssignInputDevice(InputDevice inputDevice)
+    public override void AssignInputDevice(InputDevice inputDevice)
     {
-        InputDevice = inputDevice;
+        base.AssignInputDevice(inputDevice);
 
         SetupTexts(InputDevice != null);
         DisplayPlayer(InputDevice != null);
