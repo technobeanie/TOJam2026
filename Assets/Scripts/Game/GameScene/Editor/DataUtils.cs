@@ -17,6 +17,13 @@ public static class DataUtils
         // TODO: Find the furthest number, and increment it.
         ScriptableObjectUtils.CreateScriptableAsset<StickerPack>("StickerPack_0000.asset");
     }
+
+    [UnityEditor.MenuItem("Assets/Create/ScriptableObject/Theme")]
+    public static void CreateTheme()
+    {
+        // TODO: Find the furthest number, and increment it.
+        ScriptableObjectUtils.CreateScriptableAsset<Theme>("Theme_0000.asset");
+    }
     #endregion
 
     #region Public Methods
