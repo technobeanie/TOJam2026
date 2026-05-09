@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected Transform _player = null;
     [SerializeField] private float _movementVelocity = 1000.0f;
     [SerializeField] private Transform _stickerAnchor = null;
+    [SerializeField] private BoxCollider2D _playerBounds = null;
 
     [Header("Sticker")]
     [SerializeField] private StickerPool _stickerPool = null;
@@ -57,8 +58,12 @@ public class PlayerController : MonoBehaviour
         var movement = JoystickManager.Instance.GetMovement(JoystickManager.Joystick.Left, InputDevice, KeyboardPlayerId);
         if (movement != Vector2.zero)
         {
-            Vector3 movement3 = movement;
-            _player.transform.localPosition += (movement3 * _movementVelocity * Time.fixedDeltaTime);
+            Vector3 movement3 = movement * _movementVelocity * Time.fixedDeltaTime;
+            movement3.x = Mathf.Clamp(_player.transform.position.x + movement3.x, _playerBounds.bounds.min.x, _playerBounds.bounds.max.x);
+            movement3.y = Mathf.Clamp(_player.transform.position.y + movement3.y, _playerBounds.bounds.min.y, _playerBounds.bounds.max.y);
+            movement3.z = _player.transform.position.z;
+
+            _player.transform.position = movement3;
         }
 
         if (!_isDone)

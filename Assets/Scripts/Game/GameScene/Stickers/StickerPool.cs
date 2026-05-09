@@ -21,6 +21,9 @@ public class StickerPool : MonoBehaviour
     [SerializeField] private Transform _rightAnchorPoint = null;
     [SerializeField] private Transform _bottomAnchorPoint = null;
 
+    [Header("Sticker")]
+    [SerializeField] private int _maxVisibleCount = 20;
+
     [Header("Offset Vertical")]
     [SerializeField] private float _minVerticalOffset = 20.0f;
     [SerializeField] private float _maxVerticalOffset = 100.0f;
@@ -135,6 +138,8 @@ public class StickerPool : MonoBehaviour
                 {
                     _visibleStickerPool.Remove(sticker);
                     _availableStickerPool.Add(sticker);
+
+                    sticker.gameObject.SetActive(false);
                 }
             }
         }
@@ -194,15 +199,10 @@ public class StickerPool : MonoBehaviour
     #region Private Methods
     private void PlaceAtTop()
     {
-        if (_availableStickerPool.Count > 0)
+        if (_availableStickerPool.Count > 0 && _visibleStickerPool.Count < _maxVisibleCount)
         {
             // TODO: Just add a few, and not all.
-
-            for (int i = _availableStickerPool.Count - 1; i >= 0; --i)
-            {
-                var sticker = _availableStickerPool[i];
-                PlaceAtTop(sticker);
-            }
+            PlaceAtTop(_availableStickerPool[0]);
         }
     }
 

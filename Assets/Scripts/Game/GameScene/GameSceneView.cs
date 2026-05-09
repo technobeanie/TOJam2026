@@ -39,6 +39,8 @@ public class GameSceneView : SokobanView
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI _timer = null;
     [SerializeField] private int _readyTimerDuration = 30;
+    [SerializeField] private VotingController _votingController = null;
+    [SerializeField] private WinningController _winningController = null;
 
     [Header("Debug")]
     [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
@@ -160,6 +162,16 @@ public class GameSceneView : SokobanView
             _player2.Initialize(OnReady);
         }
 
+        if (_votingController != null)
+        {
+            _votingController.Initialize();
+        }
+
+        if (_winningController != null)
+        {
+            _winningController.Initialize();
+        }
+
         _playerReadyCount = 0;
         _readyTimer = null;
         SetTimerVisuals(false, 0.0f);
@@ -251,9 +263,24 @@ public class GameSceneView : SokobanView
             _player2.GameDone();
         }
 
-        // TODO: Show Ready Phase done.
+        // Start Voting!
+        if (_votingController != null)
+        {
+            _votingController.Begin(OnVotingDone);
+        }
+    }
 
-        // TODO: Go to voting process.
+    private void OnVotingDone()
+    {
+        if (_votingController != null)
+        {
+            _votingController.Hide();
+        }
+
+        if (_winningController != null)
+        {
+            _winningController.Begin(_votingController.VotesPlayer1, _votingController.VotesPlayer2);
+        }
     }
     #endregion
 
