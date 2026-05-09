@@ -74,8 +74,10 @@ namespace Common.Audio
 				_musicAudioSource1.clip = music;
 				_musicAudioSource1.loop = true;
 				_musicAudioSource1.volume = volume;
+                _musicAudioSource1.panStereo = 0.0f;
+                _musicAudioSource1.pitch = 1.0f;
 
-				if (!_jingleIsPlaying)
+                if (!_jingleIsPlaying)
 				{
 					_musicIsPaused = false;
 					_musicAudioSource1.Play();
@@ -85,7 +87,9 @@ namespace Common.Audio
 			{
 				_musicAudioSource1.loop = true;
 				_musicAudioSource1.volume = volume;
-			}
+                _musicAudioSource1.panStereo = 0.0f;
+                _musicAudioSource1.pitch = 1.0f;
+            }
 		}
 
 		public void PlayJingle(AudioClip jingle, float volume = 1.0f)
@@ -104,7 +108,9 @@ namespace Common.Audio
 			_jingleIsPlaying = true;
 			_jingleAudioSource1.clip = jingle;
 			_jingleAudioSource1.volume = volume;
-			_jingleAudioSource1.Play();
+            _jingleAudioSource1.panStereo = 0.0f;
+            _jingleAudioSource1.pitch = 1.0f;
+            _jingleAudioSource1.Play();
 		}
 
 		public void StopJingle()
@@ -134,7 +140,7 @@ namespace Common.Audio
 			_musicAudioSource1.clip = null;
 		}
 
-		public void PlaySFX(AudioClip sfx, float volume = 1.0f, bool canPlayMultiple = true)
+		public void PlaySFX(AudioClip sfx, float volume = 1.0f, bool canPlayMultiple = true, float panStereo = 0.0f, float randomPitchEffect = 0.0f)
 		{
 			if (sfx == null)
 			{
@@ -154,14 +160,17 @@ namespace Common.Audio
 
 			sfxSource.clip = sfx;
 			sfxSource.volume = volume;
-			sfxSource.Play();
+			sfxSource.panStereo = panStereo;
+			sfxSource.pitch = randomPitchEffect <= 0.0f ? 1.0f : 1.0f + Random.Range(-randomPitchEffect, randomPitchEffect);
+
+            sfxSource.Play();
 
 			// Last played is always on top.
 			_sfxAudioSources.Remove(sfxSource);
 			_sfxAudioSources.Insert(0, sfxSource);
 		}
 
-		public void PlaySFX(IList<AudioClip> sfxs, float volume = 1.0f, bool canPlayMultiple = true)
+		public void PlaySFX(IList<AudioClip> sfxs, float volume = 1.0f, bool canPlayMultiple = true, float panStereo = 0.0f, float randomPitchEffect = 0.0f)
 		{
 			if (sfxs.Count > 0)
 			{
@@ -173,7 +182,7 @@ namespace Common.Audio
 					StopAllSFX(sfxs);
 				}
 
-				PlaySFX(sfx, volume, true);
+				PlaySFX(sfx, volume, true, panStereo, randomPitchEffect);
 			}
 		}
 
@@ -236,7 +245,9 @@ namespace Common.Audio
 			sfxSource.clip = sfx;
 			sfxSource.loop = true;
 			sfxSource.volume = volume;
-			sfxSource.Play();
+			sfxSource.panStereo = 0.0f;
+			sfxSource.pitch = 1.0f;
+            sfxSource.Play();
 
 			// Last played is always on top.
 			_loopingSFXAudioSources.Remove(sfxSource);

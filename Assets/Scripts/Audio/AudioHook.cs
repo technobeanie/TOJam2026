@@ -23,7 +23,9 @@ namespace Common.Audio
 
 		[Header("Attribute")]
 		[SerializeField] [Range(0.0f, 1.0f)] private float _volume = 1.0f;
-		[SerializeField] private bool _canPlayMultipleSFX = true;
+		[SerializeField] [Range(-1.0f, 1.0f)] private float _panStereo = 0.0f;
+		[SerializeField] [Range(0f, 1.0f)] private float _randomPitchEffect = 0.0f;
+        [SerializeField] private bool _canPlayMultipleSFX = true;
 
 		// properties
 
@@ -42,11 +44,11 @@ namespace Common.Audio
 		{
 			if (_sfx != null)
 			{
-				AudioManager.Instance.PlaySFX(_sfx, _volume, _canPlayMultipleSFX);
+				AudioManager.Instance.PlaySFX(_sfx, _volume, _canPlayMultipleSFX, _panStereo, _randomPitchEffect);
 			}
 			if (_randomSfx != null && _randomSfx.Count > 0)
 			{
-				AudioManager.Instance.PlaySFX(_randomSfx, _volume, _canPlayMultipleSFX);
+				AudioManager.Instance.PlaySFX(_randomSfx, _volume, _canPlayMultipleSFX, _panStereo, _randomPitchEffect);
 			}
 			if (_jingle != null)
 			{

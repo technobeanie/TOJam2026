@@ -1,3 +1,4 @@
+using Common.Audio;
 using Common.Joystick;
 using System;
 using System.Collections;
@@ -35,6 +36,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private GameObject _pendingReadyText = null;
     [SerializeField] private GameObject _isReadyText = null;
+
+    [Header("Audio")]
+    [SerializeField] private AudioHook _pickUpSFX = null;
+    [SerializeField] private AudioHook _dropSFX = null;
 
     // properties
     public InputDevice InputDevice
@@ -160,6 +165,12 @@ public class PlayerController : MonoBehaviour
                         _sticker = sticker;
                         _sticker.transform.parent = _stickerAnchor;
 
+                        // Play SFX
+                        if (_pickUpSFX != null)
+                        {
+                            _pickUpSFX.Play();
+                        }
+
                         break;
                     }
                 }
@@ -192,6 +203,12 @@ public class PlayerController : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        // Play SFX
+        if (_dropSFX != null)
+        {
+            _dropSFX.Play();
         }
 
         _sticker = null;
