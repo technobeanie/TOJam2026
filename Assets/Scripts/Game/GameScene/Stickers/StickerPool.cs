@@ -196,6 +196,8 @@ public class StickerPool : MonoBehaviour
     {
         if (_availableStickerPool.Count > 0)
         {
+            // TODO: Just add a few, and not all.
+
             for (int i = _availableStickerPool.Count - 1; i >= 0; --i)
             {
                 var sticker = _availableStickerPool[i];
