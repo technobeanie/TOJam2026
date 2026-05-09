@@ -179,6 +179,8 @@ MonoBehaviour:
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
   _isReadyText: {fileID: 0}
+  _pickUpSFX: {fileID: 0}
+  _dropSFX: {fileID: 0}
   _joinText: {fileID: 1993952798}
   _leaveText: {fileID: 713194145}
 --- !u!1 &162317797
@@ -518,6 +520,8 @@ MonoBehaviour:
   _jingle: {fileID: 0}
   _music: {fileID: 0}
   _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
   _canPlayMultipleSFX: 1
 --- !u!1 &586747014
 GameObject:
@@ -554,7 +558,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 339.41, y: 50}
+  m_SizeDelta: {x: 404.65, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586747016
 MonoBehaviour:
@@ -576,7 +580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press START to Begin!
+  m_text: Press START to Continue!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cac6cbff3085eac44a4e23043a57e096, type: 2}
   m_sharedMaterial: {fileID: 3066253027538353580, guid: cac6cbff3085eac44a4e23043a57e096,
@@ -604,8 +608,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32.7
+  m_fontSizeBase: 32.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -854,6 +858,8 @@ MonoBehaviour:
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
   _isReadyText: {fileID: 0}
+  _pickUpSFX: {fileID: 0}
+  _dropSFX: {fileID: 0}
   _joinText: {fileID: 1274278064}
   _leaveText: {fileID: 1614087494}
 --- !u!1001 &865716316
@@ -1768,6 +1774,8 @@ MonoBehaviour:
   _jingle: {fileID: 0}
   _music: {fileID: 0}
   _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
   _canPlayMultipleSFX: 1
 --- !u!1 &1923987437
 GameObject:

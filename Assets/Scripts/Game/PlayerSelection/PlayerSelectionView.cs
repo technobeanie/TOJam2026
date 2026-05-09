@@ -197,7 +197,7 @@ public class PlayerSelectionView : SokobanView
         parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
         parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-        FlowManager.Instance.OpenView("GameScene", parameters);
+        FlowManager.Instance.OpenView("PackSelection", parameters);
     }
     #endregion
 }

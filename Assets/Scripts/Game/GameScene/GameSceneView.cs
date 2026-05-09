@@ -17,8 +17,12 @@ public class GameSceneView : SokobanView
     // const
     public const string FlowParameter_Player1 = "FlowParameter_Player1";
     public const string FlowParameter_Player2 = "FlowParameter_Player2";
+
     public const string FlowParameter_Player1KeyboardId = "FlowParameter_Player1KeyboardId";
     public const string FlowParameter_Player2KeyboardId = "FlowParameter_Player2KeyboardId";
+
+    public const string FlowParameter_Theme = "FlowParameter_Theme";
+    public const string FlowParameter_Packs = "FlowParameter_Packs";
 
     // public
 
@@ -74,7 +78,7 @@ public class GameSceneView : SokobanView
             parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
             parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-            FlowManager.Instance.OpenView("PlayerSelection", parameters);
+            FlowManager.Instance.OpenView("PackSelection", parameters);
         }
 
         if (_readyTimer != null)
@@ -139,22 +143,34 @@ public class GameSceneView : SokobanView
                 }
             }
 
+            // Packs.
             _packs.Clear();
             _packs.AddRange(_defaultPacks);
 
-            // TODO: Pass the sticker packs.
-            _packs.AddRange(_debugPacks);
+            if (_parameters.ContainsKey(GameSceneView.FlowParameter_Packs))
+            {
+                var stickerPacks = _parameters[GameSceneView.FlowParameter_Packs] as List<StickerPack>;
+                _packs.AddRange(stickerPacks);
+            }
+            else
+            {
+                // CHEAT
+                _packs.AddRange(_debugPacks);
+            }
 
-            // TODO: Pass the theme.
+            // Theme.
             if (_themeText != null)
             {
-                var theme = "";
-                if (_debugTheme._themes.Count > 0)
+                if (_parameters.ContainsKey(GameSceneView.FlowParameter_Theme))
                 {
-                    theme = _debugTheme._themes[UnityEngine.Random.Range(0, _debugTheme._themes.Count)];
+                    _themeText.text = _parameters[GameSceneView.FlowParameter_Theme] as string;
                 }
-
-                _themeText.text = theme;
+                // CHEAT
+                else if (_debugTheme != null && _debugTheme._themes.Count > 0)
+                {
+                    var theme = _debugTheme._themes[UnityEngine.Random.Range(0, _debugTheme._themes.Count)];
+                    _themeText.text = theme;
+                }
             }
         }
 
@@ -330,7 +346,7 @@ public class GameSceneView : SokobanView
         parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
         parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-        FlowManager.Instance.OpenView("GameScene", parameters, false, "Loading");
+        FlowManager.Instance.OpenView("PackSelection", parameters, false, "Loading");
     }
     #endregion
 

@@ -40,7 +40,7 @@ SpriteAtlas:
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
@@ -54,6 +54,7 @@ SpriteAtlas:
     - d704be3341b72b54cb981f7431eb9922: 21300000
     - 1ad36f53bf836f14cbe7d7387c98b59b: 21300000
     - 29573149b917804438eaa4e0edd3a8da: 21300000
+    - 60db5e595376d7d4697b630d337bae5a: 21300000
     - f6d49dd9f48fdca44b984d5b5bc1ae1c: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -61,12 +62,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
   - {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
   - {fileID: 21300000, guid: 29573149b917804438eaa4e0edd3a8da, type: 3}
+  - {fileID: 21300000, guid: 60db5e595376d7d4697b630d337bae5a, type: 3}
   - {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   m_PackedSpriteNamesToIndex:
   - Pack_Opened
   - Pack_Opened1
   - Pack_Normal
   - medal
+  - prompt_bar
   - Pack_Opened2
   m_RenderDataMap: {}
   m_Tag: _UI
