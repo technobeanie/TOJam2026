@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c0d3155841833448a99ffc2a0661e0, type: 3}
+  m_Name: StickerPack_Wild
+  m_EditorClassIdentifier: Assembly-CSharp::StickerPack
+  _stickers:
+  - {fileID: 2800000, guid: f951f0c72b6596b408048ae880952707, type: 3}
+  - {fileID: 2800000, guid: b1c1cc8bd3acfb145ae3b8b61d0b0920, type: 3}
+  - {fileID: 2800000, guid: 8be67c0592d8bc3438c0653e8a1f3897, type: 3}
+  - {fileID: 2800000, guid: 7d3ec058534023b44b18c89336cd6114, type: 3}
+  - {fileID: 2800000, guid: 78b4ab498f7685d4583ec5ddf2e7c789, type: 3}
+  - {fileID: 2800000, guid: 01a49199b6864e24481273cda74b48b6, type: 3}
+  - {fileID: 2800000, guid: 857c1491f2d760343b77e3378df81126, type: 3}
+  - {fileID: 2800000, guid: 50ffe7c51b0a682438d202b966d6346d, type: 3}
+  - {fileID: 2800000, guid: f5d37f919db414948b2fc79617f4cf45, type: 3}
+  - {fileID: 2800000, guid: 2fa2ec2977a92f8468703aeb3f7cf683, type: 3}
+  - {fileID: 2800000, guid: 02c98d99d0fea9947a642faa98886268, type: 3}
+  - {fileID: 2800000, guid: a6ddf0e28182f8b438578f13d47766a2, type: 3}
+  - {fileID: 2800000, guid: e970cd94d8c949145a61d1d367c6b20b, type: 3}
+  - {fileID: 2800000, guid: f403781a85ca6a846915ea373d719b54, type: 3}
+  - {fileID: 2800000, guid: 66187f9606b76464fa5dc710446d91cb, type: 3}
+  - {fileID: 2800000, guid: 6aa4864cd59d1dd4c84828e52e23a657, type: 3}
+  - {fileID: 2800000, guid: 2b811accd0ad248488557485dbeb92c9, type: 3}
+  - {fileID: 2800000, guid: 1b4f1dd1f078700478b18502e45c877b, type: 3}
+  - {fileID: 2800000, guid: 73b4852fc7226a24a9ac8bbca8671ca6, type: 3}
+  - {fileID: 2800000, guid: 31f77027657c9224b9f920a6e2aaadc8, type: 3}
+  - {fileID: 2800000, guid: c461ad9e81bf871488ed69e297c8b262, type: 3}
+  - {fileID: 2800000, guid: 42370add0da145647b57002e95b5cfb0, type: 3}
+  - {fileID: 2800000, guid: a939c749a38549441ace9d5eca3bbefb, type: 3}
+  - {fileID: 2800000, guid: 89c85332b4faf864ca1c5c7015be1fe9, type: 3}
+  - {fileID: 2800000, guid: 3ca118d1a0e308648845197e1a100ab0, type: 3}
+  - {fileID: 2800000, guid: a6bf93031e7cb8d47ac85377e3c35767, type: 3}
+  - {fileID: 2800000, guid: 8d665a8e14dcd7d498b862954c2f4a60, type: 3}
+  - {fileID: 2800000, guid: a5049fc21cf54144182c18fbc4bfec35, type: 3}
+  - {fileID: 2800000, guid: 14df43a54eac6d2478337ca589ca09ef, type: 3}
+  - {fileID: 2800000, guid: 1a27d4fea73f3a449aca01abf95f0838, type: 3}
+  - {fileID: 2800000, guid: acd552f27c0564940bc69f72b481d554, type: 3}
+  - {fileID: 2800000, guid: 325c60218a6922243a12d4fdfd9e4aa6, type: 3}
+  - {fileID: 2800000, guid: 0c128ddfecf80af4faa0821f8d4c35dc, type: 3}
+  - {fileID: 2800000, guid: cb66275ff86dbe14f81802773900b737, type: 3}
+  - {fileID: 2800000, guid: da27f2f87f4bd4e45bf624bd17c33f95, type: 3}
+  - {fileID: 2800000, guid: 98f4a7972b02ed6418c73dd69fb7cf60, type: 3}
+  - {fileID: 2800000, guid: b2760c8cf934e414fabf84ed46d42d61, type: 3}
+  - {fileID: 2800000, guid: 3ec2be75fa7bd3944b528ed97cf307f0, type: 3}
+  - {fileID: 2800000, guid: 3d31488f6bb3797429c7a8f43ed7c456, type: 3}
+  - {fileID: 2800000, guid: a26f807b810b2764796e6cd28481ab12, type: 3}
+  - {fileID: 2800000, guid: c7f2b587e1051914c990068e6ba1ac55, type: 3}
+  - {fileID: 2800000, guid: 81a0399ee075aec47ab6bea65447d980, type: 3}
+  - {fileID: 2800000, guid: baaceef1dfc918d419f37a5100efdc54, type: 3}
+  - {fileID: 2800000, guid: 6260d5133b2dae849a903cf18ae0baa1, type: 3}
+  - {fileID: 2800000, guid: a7b982679f06ec5438d542d62735ae58, type: 3}
+  - {fileID: 2800000, guid: 8cc207bc77c3d58489c0eb6385317062, type: 3}
+  - {fileID: 2800000, guid: 3a0df435b39307240ac5a8a5ee2c3c80, type: 3}
+  - {fileID: 2800000, guid: 2b54bf8ff0082874cb0beb05908f5e2e, type: 3}
+  - {fileID: 2800000, guid: 0a4217713f028044481c7706df20b197, type: 3}
+  - {fileID: 2800000, guid: 80e6ed1a17e1da14899cb93f071c5997, type: 3}
+  - {fileID: 2800000, guid: 335f338f270b85f4d8dbbf83465228d8, type: 3}
+  - {fileID: 2800000, guid: 1d248bb5756132644a54bddc72f98fa5, type: 3}
+  _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
+  _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
+  _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}

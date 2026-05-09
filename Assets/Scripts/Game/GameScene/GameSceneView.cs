@@ -32,6 +32,7 @@ public class GameSceneView : SokobanView
 
     [Header("Stickers")]
     [SerializeField] private StickerPool _stickerPool = null;
+    [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
 
     [Header("Players")]
     [SerializeField] private PlayerController _player1 = null;
@@ -42,9 +43,11 @@ public class GameSceneView : SokobanView
     [SerializeField] private int _readyTimerDuration = 30;
     [SerializeField] private VotingController _votingController = null;
     [SerializeField] private WinningController _winningController = null;
+    [SerializeField] private TextMeshProUGUI _themeText = null;
 
     [Header("Debug")]
-    [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
+    [SerializeField] private List<StickerPack> _debugPacks = new List<StickerPack>();
+    [SerializeField] private Theme _debugTheme = null;
 
     [Header("SFX")]
     [SerializeField] private AudioHook _countdownLoopingSFX = null;
@@ -136,9 +139,23 @@ public class GameSceneView : SokobanView
                 }
             }
 
-            // TODO: Pass the sticker pack.
             _packs.Clear();
             _packs.AddRange(_defaultPacks);
+
+            // TODO: Pass the sticker packs.
+            _packs.AddRange(_debugPacks);
+
+            // TODO: Pass the theme.
+            if (_themeText != null)
+            {
+                var theme = "";
+                if (_debugTheme._themes.Count > 0)
+                {
+                    theme = _debugTheme._themes[UnityEngine.Random.Range(0, _debugTheme._themes.Count)];
+                }
+
+                _themeText.text = theme;
+            }
         }
 
         if (_stickerPool != null)
