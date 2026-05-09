@@ -63,9 +63,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.00028252602
+    y: 0.05014965
     width: 1
-    height: 0.99943495
+    height: 0.8997007
   near clip plane: 0
   far clip plane: 1000
   field of view: 60
@@ -229,9 +229,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.00028252602
+    y: 0.05014965
     width: 1
-    height: 0.99943495
+    height: 0.8997007
   near clip plane: 0
   far clip plane: 1000
   field of view: 60
@@ -395,6 +395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpaceBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 588741544277829001, guid: 29b79d6f9de2a31458729d22c2c94ea2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4509990186126293341, guid: 29b79d6f9de2a31458729d22c2c94ea2,
         type: 3}
