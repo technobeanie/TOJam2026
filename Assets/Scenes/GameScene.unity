@@ -528,6 +528,39 @@ Transform:
   - {fileID: 830941144}
   m_Father: {fileID: 1319874807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &307943378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307943379}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &307943379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307943378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 483178135}
+  - {fileID: 1280438948}
+  m_Father: {fileID: 1748958268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350462394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1064,59 @@ RectTransform:
   m_AnchoredPosition: {x: 570, y: 385}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &483178134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483178135}
+  - component: {fileID: 483178136}
+  m_Layer: 0
+  m_Name: LoopingCoundownSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483178135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483178134}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 307943379}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483178136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483178134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Common.Audio.AudioHook
+  _sfx: {fileID: 0}
+  _loopingSfx: {fileID: 8300000, guid: 20df07ea0e7602a4381fc8b1dab1591e, type: 3}
+  _randomSfx: []
+  _jingle: {fileID: 0}
+  _music: {fileID: 0}
+  _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
+  _canPlayMultipleSFX: 1
 --- !u!1 &483544211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,6 +3065,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261384003}
   m_CullTransparentMesh: 1
+--- !u!1 &1280438946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280438948}
+  - component: {fileID: 1280438947}
+  m_Layer: 0
+  m_Name: CountdownCompleteSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1280438947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280438946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Common.Audio.AudioHook
+  _sfx: {fileID: 8300000, guid: abf898eb5f457c1449a6d09f30c30c0e, type: 3}
+  _loopingSfx: {fileID: 0}
+  _randomSfx: []
+  _jingle: {fileID: 0}
+  _music: {fileID: 0}
+  _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
+  _canPlayMultipleSFX: 1
+--- !u!4 &1280438948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280438946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 307943379}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1281024121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,11 +4189,13 @@ MonoBehaviour:
   _player1: {fileID: 1771372437}
   _player2: {fileID: 2058099283}
   _timer: {fileID: 1045688044}
-  _readyTimerDuration: 10
+  _readyTimerDuration: 15
   _votingController: {fileID: 1774182549}
   _winningController: {fileID: 350729149}
   _defaultPacks:
   - {fileID: 11400000, guid: ae0f8ebd57aea45439d4577fb47aadbe, type: 2}
+  _countdownLoopingSFX: {fileID: 483178136}
+  _countdownDoneSFX: {fileID: 1280438947}
 --- !u!4 &1748958268
 Transform:
   m_ObjectHideFlags: 0
@@ -4070,6 +4211,7 @@ Transform:
   m_Children:
   - {fileID: 1443998323}
   - {fileID: 1319874807}
+  - {fileID: 307943379}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1748958269
