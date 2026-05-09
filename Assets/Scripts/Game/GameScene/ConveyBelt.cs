@@ -54,6 +54,11 @@ public class ConveyBelt : MonoBehaviour
         _currentAccelerationTarget = _acceleration;
         _currentSpeedTarget = _topSpeed;
     }
+
+    public void SetSpeed(float speed)
+    {
+        _currentSpeedTarget = speed;
+    }
     #endregion
 
     #region Protected Methods
@@ -62,14 +67,22 @@ public class ConveyBelt : MonoBehaviour
     #region Private Methods
     private void Accelerate(float deltaTime)
     {
-        // Move belt.
-        if (_currentSpeed < _currentSpeedTarget)
+        var speedTarget = _currentSpeedTarget;
+
+        // Auto stop the convey if empty.
+        if (_stickerPool != null && !_stickerPool.AnyVisible)
         {
-            _currentSpeed = Mathf.Clamp(_currentSpeed + (_currentAccelerationTarget * deltaTime), 0.0f, _currentSpeedTarget);
+            speedTarget = 0.0f;
         }
-        else if (_currentSpeed > _currentSpeedTarget)
+
+        // Move belt.
+        if (_currentSpeed < speedTarget)
         {
-            _currentSpeed = Mathf.Clamp(_currentSpeed - (_currentAccelerationTarget * deltaTime), _currentSpeedTarget, _currentSpeed);
+            _currentSpeed = Mathf.Clamp(_currentSpeed + (_currentAccelerationTarget * deltaTime), 0.0f, speedTarget);
+        }
+        else if (_currentSpeed > speedTarget)
+        {
+            _currentSpeed = Mathf.Clamp(_currentSpeed - (_currentAccelerationTarget * deltaTime), speedTarget, _currentSpeed);
         }
 
         float offset = _currentSpeed * deltaTime;

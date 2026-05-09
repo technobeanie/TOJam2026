@@ -37,20 +37,15 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        // Max 2 players!
-        if (_gamepads.Count + _keyboards.Count >= 2)
-        {
-            return;
-        }
-
         var gamepads = Gamepad.all;
         foreach (var gamepad in gamepads)
         {
             if (!_gamepads.Contains(gamepad))
             {
-                if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, gamepad))
+                // Max 2 players!
+                if (_gamepads.Count + _keyboards.Count < 2 && JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, gamepad))
                 {
-                    _gamepads.Add(gamepad);
+                    OnJoin(gamepad, 0);
                     _onJoin?.Invoke(gamepad, 0);
 
                     return;
@@ -60,7 +55,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_B, gamepad))
                 {
-                    _gamepads.Remove(gamepad);
+                    OnLeave(gamepad, 0);
                     _onLeave?.Invoke(gamepad, 0);
 
                     return;
@@ -71,25 +66,29 @@ public class PlayerManager : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard != null)
         {
-            var keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, keyboard);
-            if (keyboardId != null)
+            // Max 2 players!
+            if (_gamepads.Count + _keyboards.Count < 2)
             {
-                if (!_keyboards.ContainsKey(keyboardId.Value))
+                var keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, keyboard);
+                if (keyboardId != null)
                 {
-                    _keyboards.Add(keyboardId.Value, keyboard);
-                    _onJoin?.Invoke(keyboard, keyboardId.Value);
-                }
+                    if (!_keyboards.ContainsKey(keyboardId.Value))
+                    {
+                        OnJoin(keyboard, keyboardId.Value);
+                        _onJoin?.Invoke(keyboard, keyboardId.Value);
+                    }
 
-                return;
+                    return;
+                }
             }
             else
             {
-                keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_B, keyboard);
+                var keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_B, keyboard);
                 if (keyboardId != null)
                 {
                     if (_keyboards.ContainsKey(keyboardId.Value))
                     {
-                        _keyboards.Remove(keyboardId.Value);
+                        OnLeave(keyboard, keyboardId.Value);
                         _onLeave?.Invoke(keyboard, keyboardId.Value);
                     }
 
@@ -115,6 +114,30 @@ public class PlayerManager : MonoBehaviour
 
         _onJoin = null;
         _onLeave = null;
+    }
+
+    public void OnJoin(InputDevice inputDevice, int keyboardPlayerId)
+    {
+        if (inputDevice is Gamepad)
+        {
+            _gamepads.Add(inputDevice);
+        }
+        else if (inputDevice is Keyboard)
+        {
+            _keyboards.Add(keyboardPlayerId, inputDevice);
+        }
+    }
+
+    public void OnLeave(InputDevice inputDevice, int keyboardPlayerId)
+    {
+        if (inputDevice is Gamepad)
+        {
+            _gamepads.Remove(inputDevice);
+        }
+        else if (inputDevice is Keyboard)
+        {
+            _keyboards.Remove(keyboardPlayerId);
+        }
     }
     #endregion
 

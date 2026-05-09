@@ -114,6 +114,8 @@ namespace Common.Joystick
 
         public Vector2 GetAnyMovement(Joystick joystick, int keyboardPlayerId = 0)
         {
+            // TODO: Do not use ".current". Go through all, and find first.
+
             var movement = Vector2.zero;
 
             movement += GetKeyboardMovement(joystick, Keyboard.current, keyboardPlayerId);
@@ -147,6 +149,8 @@ namespace Common.Joystick
 
         public bool IsButtonDown(Button button)
         {
+            // TODO: Do not use ".current". Go through all, and find first.
+
             var keyboardPlayerId = GetKeyboardButtonDown(button, Keyboard.current);
             if (keyboardPlayerId != null)
             {
@@ -181,6 +185,8 @@ namespace Common.Joystick
 
         public bool IsButtonDownThisFrame(Button button)
         {
+            // TODO: Do not use ".current". Go through all, and find first.
+
             if (GetKeyboardButtonDownThisFrame(button, Keyboard.current, 0))
             {
                 return true;
@@ -214,6 +220,8 @@ namespace Common.Joystick
 
         public float IsTriggerDown(Trigger trigger)
         {
+            // TODO: Do not use ".current". Go through all, and find first.
+
             var triggerValue = 0.0f;
 
             triggerValue = GetKeyboardTrigger(trigger, Keyboard.current, 0);

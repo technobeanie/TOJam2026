@@ -38,6 +38,15 @@ public class StickerPool : MonoBehaviour
     private bool _flipSide = false;
 
     // properties
+    public bool IsSpawning
+    {
+        get; set;
+    }
+
+    public bool AnyVisible
+    {
+        get { return _visibleStickerPool.Count > 0; }
+    }
 
     #region Unity Methods
     #endregion
@@ -74,7 +83,36 @@ public class StickerPool : MonoBehaviour
         _availableStickerPool.Shuffle();
 
         // Distribute them at the top.
+        ResumeSpawning();
         PlaceAtTop();
+    }
+
+    public void ResumeSpawning()
+    {
+        IsSpawning = true;
+    }
+
+    public void StopSpawning()
+    {
+        IsSpawning = false;
+        
+        if (_topAnchorPoint == null)
+        {
+            return;
+        }
+
+        // Remove all above the screen stickers.
+        for (int i = _visibleStickerPool.Count - 1; i >= 0; --i)
+        {
+            var sticker = _visibleStickerPool[i];
+
+            var bounds = sticker.gameObject.GetBounds();
+            if (bounds.min.y > _topAnchorPoint.position.y)
+            {
+                _visibleStickerPool.Remove(sticker);
+                _availableStickerPool.Add(sticker);
+            }
+        }
     }
 
     public void MoveStickers(float offset)
@@ -102,7 +140,10 @@ public class StickerPool : MonoBehaviour
         }
 
         // Any out of bounds? Then, put back at top.
-        PlaceAtTop();
+        if (IsSpawning)
+        {
+            PlaceAtTop();
+        }
     }
 
     public bool TryTake(Sticker sticker)

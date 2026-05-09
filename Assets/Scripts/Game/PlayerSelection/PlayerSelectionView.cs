@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerSelectionView : SokobanView
 {
@@ -43,6 +44,12 @@ public class PlayerSelectionView : SokobanView
             return;
         }
 
+        // TEMP. Go back.
+        if (Keyboard.current != null && Keyboard.current[Key.Escape].wasPressedThisFrame)
+        {
+            FlowManager.Instance.OpenView("TitleScreen");
+        }
+
         if (IsReady)
         {
             if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu))
@@ -61,10 +68,39 @@ public class PlayerSelectionView : SokobanView
         if (_player1 != null)
         {
             _player1.Initialize();
+
+            if (_parameters != null && _parameters.ContainsKey(GameSceneView.FlowParameter_Player1) && _parameters.ContainsKey(GameSceneView.FlowParameter_Player1KeyboardId))
+            {
+                var player1 = _parameters[GameSceneView.FlowParameter_Player1] as InputDevice;
+                var player1Id = (int)_parameters[GameSceneView.FlowParameter_Player1KeyboardId];
+
+                _player1.AssignInputDevice(player1, player1Id);
+                if (_playerManager != null)
+                {
+                    _playerManager.OnJoin(player1, player1Id);
+                }
+
+                SetIsReady();
+            }
         }
+
         if (_player2 != null)
         {
             _player2.Initialize();
+
+            if (_parameters != null && _parameters.ContainsKey(GameSceneView.FlowParameter_Player2) && _parameters.ContainsKey(GameSceneView.FlowParameter_Player2KeyboardId))
+            {
+                var player2 = _parameters[GameSceneView.FlowParameter_Player2] as InputDevice;
+                var player2Id = (int)_parameters[GameSceneView.FlowParameter_Player2KeyboardId];
+
+                _player2.AssignInputDevice(player2, player2Id);
+                if (_playerManager != null)
+                {
+                    _playerManager.OnJoin(player2, player2Id);
+                }
+
+                SetIsReady();
+            }
         }
 
         SetIsReady();

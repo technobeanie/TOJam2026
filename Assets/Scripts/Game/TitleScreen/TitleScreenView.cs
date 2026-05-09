@@ -22,7 +22,7 @@ public class TitleScreenView : SokobanView
             return;
         }
 
-        if (Keyboard.current != null && Keyboard.current[Key.Escape].isPressed)
+        if (Keyboard.current != null && Keyboard.current[Key.Escape].wasPressedThisFrame)
         {
             Application.Quit();
         }

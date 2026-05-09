@@ -1,4 +1,5 @@
 using Common.Joystick;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     // private
     private Sticker _sticker = null;
+    private Action<PlayerController> _onReady = null;
+    private bool _isDone = false;
 
     [Header("Player")]
     [SerializeField] protected Transform _player = null;
@@ -26,6 +29,11 @@ public class PlayerController : MonoBehaviour
     [Header("Sticker")]
     [SerializeField] private StickerPool _stickerPool = null;
     [SerializeField] private float _stickerRotationSpeed = 180.0f;
+
+    [Header("UI")]
+    [SerializeField] private ReadyRadial _radial = null;
+    [SerializeField] private GameObject _pendingReadyText = null;
+    [SerializeField] private GameObject _isReadyText = null;
 
     // properties
     public InputDevice InputDevice
@@ -53,33 +61,67 @@ public class PlayerController : MonoBehaviour
             _player.transform.localPosition += (movement3 * _movementVelocity * Time.fixedDeltaTime);
         }
 
-        if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
+        if (!_isDone)
         {
-            if (_sticker == null)
+            if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
             {
-                GrabSticker();
+                if (_sticker == null)
+                {
+                    GrabSticker();
+                }
+                else
+                {
+                    TryRotate(Time.fixedDeltaTime);
+                }
             }
-            else
+            else if (_sticker != null)
             {
-                TryRotate(Time.fixedDeltaTime);
+                ReleaseSticker();
             }
-        }
-        else if (_sticker != null)
-        {
-            ReleaseSticker();
+
+            TryReady();
         }
     }
     #endregion
 
     #region Public Methods
-    public virtual void Initialize()
+    public virtual void Initialize(Action<PlayerController> onReady = null)
     {
+        if (_radial != null)
+        {
+            _radial.Initialize();
+        }
+
+        _onReady = onReady;
+        _isDone = false;
+
+        RefreshIsReady(false);
     }
 
     public virtual void AssignInputDevice(InputDevice inputDevice, int keyboardPlayerId)
     {
         InputDevice = inputDevice;
         KeyboardPlayerId = keyboardPlayerId;
+    }
+
+    public void GameDone()
+    {
+        if (_isDone)
+        {
+            return;
+        }
+
+        _isDone = true;
+
+        if (_pendingReadyText != null)
+        {
+            _pendingReadyText.SetActive(false);
+        }
+
+        if (_isReadyText != null)
+        {
+            _isReadyText.SetActive(false);
+        }
     }
     #endregion
 
@@ -148,6 +190,46 @@ public class PlayerController : MonoBehaviour
         }
 
         _sticker = null;
+    }
+
+    private void TryReady()
+    {
+        if (_radial == null)
+        {
+            return;
+        }
+
+        if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_Y, InputDevice, KeyboardPlayerId))
+        {
+            if (!_radial.IsHolding)
+            {
+                _radial.BeginHold(OnReady);
+            }
+        }
+        else if (_radial.IsHolding)
+        {
+            _radial.StopHold();
+        }
+    }
+
+    private void OnReady()
+    {
+        RefreshIsReady(true);
+
+        _onReady?.Invoke(this);
+    }
+
+    private void RefreshIsReady(bool isReady)
+    {
+        if (_pendingReadyText != null)
+        {
+            _pendingReadyText.SetActive(!isReady);
+        }
+
+        if (_isReadyText != null)
+        {
+            _isReadyText.SetActive(isReady);
+        }
     }
 
     private void TryRotate(float deltaTime)

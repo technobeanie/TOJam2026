@@ -1,4 +1,5 @@
 using Common.Joystick;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,9 @@ public class PlayerSelectionController : PlayerController
     #endregion
 
     #region Public Methods
-    public override void Initialize()
+    public override void Initialize(Action<PlayerController> onReady = null)
     {
-        base.Initialize();
+        base.Initialize(onReady);
 
         SetupTexts(false);
         DisplayPlayer(false);
