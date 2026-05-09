@@ -15,6 +15,7 @@ public class StickerPack : ScriptableObject
     public Sprite _packNormal = null;
     public Sprite _packOpenedLeft = null;
     public Sprite _packOpenedRight = null;
+    public string _name = null;
 
     // properties
 

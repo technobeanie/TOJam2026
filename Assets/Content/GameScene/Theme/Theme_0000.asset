@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: Theme_0000
   m_EditorClassIdentifier: Assembly-CSharp::Theme
   _themes:
-  - Pipi
-  - Caca
-  - Pouet
-  - Poil
-  - Chandail
-  - Anniversaire
+  - Most Fashionable
+  - Most Epic Warrior
+  - Most Realistic Animal
+  - Best Cult Leader
+  - Just a Little Guy
+  - STAR WARS
+  - Ultimate SPACE MONSTER
+  - Most Delicious
+  - Most Villainous
+  - Best Princess
+  - Sexiest Ever
+  - Most Phobia-Inducing
+  - THE ONE TRUE KING
+  - Most powerful Wizard
+  - Makes you wanna BARF
+  - Most Magical Magical Girl
+  - Most Winning Athlete
+  - Creepiest thing under your bed
+  - Worst NEIGHBOR
+  - Cutest PET
+  - Your new favorite POKEMON
