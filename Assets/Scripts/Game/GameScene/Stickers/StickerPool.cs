@@ -7,6 +7,7 @@ using Utils;
 public class StickerPool : MonoBehaviour
 {
     // const
+    private const float AssignedZPositionStickerOffset = -50.0f;
 
     // public
 
@@ -32,6 +33,7 @@ public class StickerPool : MonoBehaviour
 
     private List<Sticker> _visibleStickerPool = new List<Sticker>();
     private List<Sticker> _availableStickerPool = new List<Sticker>();
+    private List<Sticker> _assignedStickerPool = new List<Sticker>();
 
     private bool _flipSide = false;
 
@@ -52,13 +54,17 @@ public class StickerPool : MonoBehaviour
 
         _visibleStickerPool.Clear();
         _availableStickerPool.Clear();
+        _assignedStickerPool.Clear();
 
         // Create strickers.
         foreach (var pack in packs)
         {
             foreach (var sticker in pack._stickers)
             {
-                CreateSticker(sticker);
+                if (sticker != null)
+                {
+                    CreateSticker(sticker);
+                }
             }
         }
 
@@ -104,7 +110,19 @@ public class StickerPool : MonoBehaviour
         if (_visibleStickerPool.Contains(sticker))
         {
             _visibleStickerPool.Remove(sticker);
+            _assignedStickerPool.Insert(0, sticker);
+
+            ReorderAssignedStickers();
+
             return true;
+        }
+        else
+        {
+            // Reorder. More in front, higher prio.
+            _assignedStickerPool.Remove(sticker);
+            _assignedStickerPool.Insert(0, sticker);
+
+            ReorderAssignedStickers();
         }
 
         return false;
@@ -115,6 +133,13 @@ public class StickerPool : MonoBehaviour
         if (!_visibleStickerPool.Contains(sticker))
         {
             _visibleStickerPool.Insert(0, sticker);
+            _assignedStickerPool.Remove(sticker);
+
+            // Z position (depth)
+            var position = sticker.transform.position;
+            position.z = transform.position.z - _visibleStickerPool.Count;
+            sticker.transform.position = position;
+
             return true;
         }
 
@@ -142,7 +167,7 @@ public class StickerPool : MonoBehaviour
     {
         Vector3 startStickerPosition = Vector3.zero;
 
-        // TODO: Don't only look at the top one. You need to find the highest one (because of inserting).
+        // TODO?: Don't only look at the top one. You need to find the highest one (because of inserting).
 
         // Find starting point.
         if (_visibleStickerPool.Count > 0)
@@ -183,6 +208,11 @@ public class StickerPool : MonoBehaviour
 
         sticker.transform.position = startStickerPosition;
 
+        // Z position (depth)
+        var position = sticker.transform.position;
+        position.z = transform.position.z - _visibleStickerPool.Count;
+        sticker.transform.position = position;
+
         // Move it to the other pool.
         _availableStickerPool.Remove(sticker);
         _visibleStickerPool.Add(sticker);
@@ -219,6 +249,17 @@ public class StickerPool : MonoBehaviour
 
         sticker.gameObject.SetActive(false);
         _stickers.Add(sticker);
+    }
+    
+    private void ReorderAssignedStickers()
+    {
+        for (int i = 0; i < _assignedStickerPool.Count; ++i)
+        {
+            // Z position (depth)
+            var position = _assignedStickerPool[i].transform.position;
+            position.z = transform.position.z + AssignedZPositionStickerOffset - (_assignedStickerPool.Count - i);
+            _assignedStickerPool[i].transform.position = position;
+        }
     }
     #endregion
 }

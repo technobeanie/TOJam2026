@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _sticker.IsGrabbed = false;
-        _sticker.transform.parent = transform;
+        _sticker.transform.parent = _stickerPool.transform;
 
         // Raycast and find nearest sticker.
         var stickerBounds = _sticker.gameObject.GetBounds();
@@ -136,7 +136,6 @@ public class PlayerController : MonoBehaviour
                 if (convey != null)
                 {
                     _stickerPool.PutBack(_sticker);
-                    _sticker.transform.parent = _stickerPool.transform;
                     break;
                 }
             }
