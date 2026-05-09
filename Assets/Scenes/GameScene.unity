@@ -580,8 +580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61b0cb33a234848bc8b9e127d152d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinningController
-  _leftMedalAnchor: {fileID: 64012865}
-  _rightMedalAnchor: {fileID: 438726572}
   _medal1: {fileID: 536461131}
   _medal2: {fileID: 830941142}
   _titlePanel: {fileID: 1591582726}
@@ -1312,7 +1310,7 @@ Transform:
   m_GameObject: {fileID: 536461131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -570, y: 366, z: -1}
+  m_LocalPosition: {x: -570, y: 366, z: -90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1825,7 +1823,7 @@ Transform:
   m_GameObject: {fileID: 830941142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 570, y: 366, z: -1}
+  m_LocalPosition: {x: 570, y: 366, z: -90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

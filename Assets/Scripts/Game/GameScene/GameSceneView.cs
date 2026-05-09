@@ -135,17 +135,6 @@ public class GameSceneView : SokobanView
             _packs.Clear();
             _packs.AddRange(_defaultPacks);
         }
-    }
-
-    protected override void OnViewOpened()
-    {
-        base.OnViewOpened();
-
-        // Let's begin the game.
-        if (_belt != null)
-        {
-            _belt.Begin();
-        }
 
         if (_stickerPool != null)
         {
@@ -170,6 +159,17 @@ public class GameSceneView : SokobanView
         if (_winningController != null)
         {
             _winningController.Initialize();
+        }
+    }
+
+    protected override void OnViewOpened()
+    {
+        base.OnViewOpened();
+
+        // Let's begin the game.
+        if (_belt != null)
+        {
+            _belt.Begin();
         }
 
         _playerReadyCount = 0;
@@ -279,8 +279,21 @@ public class GameSceneView : SokobanView
 
         if (_winningController != null)
         {
-            _winningController.Begin(_votingController.VotesPlayer1, _votingController.VotesPlayer2);
+            _winningController.Begin(_votingController.VotesPlayer1, _votingController.VotesPlayer2, OnNewGame);
         }
+    }
+
+    private void OnNewGame()
+    {
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+        parameters.Add(GameSceneView.FlowParameter_Player1, _player1.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player1KeyboardId, _player1.KeyboardPlayerId);
+
+        parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
+
+        FlowManager.Instance.OpenView("GameScene", parameters, false, "Loading");
     }
     #endregion
 

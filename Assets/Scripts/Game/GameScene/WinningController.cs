@@ -1,3 +1,6 @@
+using Common.Flow;
+using Common.Joystick;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +17,8 @@ public class WinningController : MonoBehaviour
     // protected
 
     // private
+    private Action _onNewGame = null;
+
     [Header("Setup")]
     [SerializeField] private GameObject _medal1 = null;
     [SerializeField] private GameObject _medal2 = null;
@@ -27,29 +32,47 @@ public class WinningController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _rightVotesCountText = null;
 
     // properties
+    public bool HasBegun
+    {
+        get; private set;
+    }
 
     #region Unity Methods
+    private void FixedUpdate()
+    {
+        if (!HasBegun)
+        {
+            return;
+        }
+
+        if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_Y))
+        {
+            if (!_radial.IsHolding)
+            {
+                _radial.BeginHold(OnReady);
+            }
+        }
+        else if (_radial.IsHolding)
+        {
+            _radial.StopHold();
+        }
+    }
     #endregion
 
     #region Public Methods
     public void Initialize()
     {
-        _medal1.SetActive(false);
-        _medal2.SetActive(false);
+        HasBegun = false;
 
-        _titlePanel.SetActive(false);
-        _holdPanel.SetActive(false);
-
-        _leftVotesCountText.gameObject.SetActive(false);
-        _rightVotesCountText.gameObject.SetActive(false);
-
-        _winningText.gameObject.SetActive(false);
-
-        _radial.gameObject.SetActive(false);
+        Hide();
     }
 
-    public void Begin(int player1Votes, int player2Votes)
+    public void Begin(int player1Votes, int player2Votes, Action onNewGame)
     {
+        HasBegun = true;
+
+        _onNewGame = onNewGame;
+
         _titlePanel.SetActive(true);
         _holdPanel.SetActive(true);
 
@@ -89,5 +112,30 @@ public class WinningController : MonoBehaviour
     #endregion
 
     #region Private Methods
+    private void OnReady()
+    {
+        HasBegun = false;
+
+        _holdPanel.SetActive(false);
+
+        _onNewGame?.Invoke();
+        _onNewGame = null;
+    }
+
+    private void Hide()
+    {
+        _medal1.SetActive(false);
+        _medal2.SetActive(false);
+
+        _titlePanel.SetActive(false);
+        _holdPanel.SetActive(false);
+
+        _leftVotesCountText.gameObject.SetActive(false);
+        _rightVotesCountText.gameObject.SetActive(false);
+
+        _winningText.gameObject.SetActive(false);
+
+        _radial.gameObject.SetActive(false);
+    }
     #endregion
 }
