@@ -32,7 +32,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 2e56154166a6052468769ce286e811ed, type: 3}
   - {fileID: 2800000, guid: 24d1bb992730a2d47ab44c92b5b765ec, type: 3}
   - {fileID: 2800000, guid: 654f731b386c10b4195ff12a70e003db, type: 3}
-  _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
+  _packNormal: {fileID: 21300000, guid: bfe49cc45be624145b9f0853cf16810d, type: 3}
   _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
   _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Tech

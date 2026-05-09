@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b9c5fe1022755c74b9d50a56a2d951a7, type: 3}
   - {fileID: 2800000, guid: b9e773bd023a46445ba0cbbb0a23300e, type: 3}
   - {fileID: 2800000, guid: edf94db7bb5dd914b82237372f91c493, type: 3}
-  _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
+  _packNormal: {fileID: 21300000, guid: fdefc6ec10e26e444bb9e989f10157b2, type: 3}
   _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
   _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Epic
