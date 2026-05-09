@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
         get; private set;
     }
 
+    public int KeyboardPlayerId
+    {
+        get; private set;
+    }
+
     #region Unity Methods
     protected virtual void FixedUpdate()
     {
@@ -41,14 +46,14 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        var movement = JoystickManager.Instance.GetMovement(JoystickManager.Joystick.Left, InputDevice);
+        var movement = JoystickManager.Instance.GetMovement(JoystickManager.Joystick.Left, InputDevice, KeyboardPlayerId);
         if (movement != Vector2.zero)
         {
             Vector3 movement3 = movement;
             _player.transform.localPosition += (movement3 * _movementVelocity * Time.fixedDeltaTime);
         }
 
-        if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice))
+        if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
         {
             if (_sticker == null)
             {
@@ -71,9 +76,10 @@ public class PlayerController : MonoBehaviour
     {
     }
 
-    public virtual void AssignInputDevice(InputDevice inputDevice)
+    public virtual void AssignInputDevice(InputDevice inputDevice, int keyboardPlayerId)
     {
         InputDevice = inputDevice;
+        KeyboardPlayerId = keyboardPlayerId;
     }
     #endregion
 
@@ -152,22 +158,33 @@ public class PlayerController : MonoBehaviour
         }
 
         // Turn left.
-        var trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Left, InputDevice);
+        var trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Left, InputDevice, KeyboardPlayerId);
         if (trigger != 0.0f)
         {
-            var angles = _stickerAnchor.localEulerAngles;
-            angles.z += trigger * _stickerRotationSpeed * deltaTime;
-            _stickerAnchor.localEulerAngles = angles;
+            Rotate(_stickerAnchor, trigger, deltaTime);
+        }
+        else if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_LB, InputDevice, KeyboardPlayerId))
+        {
+            Rotate(_stickerAnchor, 1.0f, deltaTime);
         }
 
         // Turn right.
-        trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Right, InputDevice);
+        trigger = JoystickManager.Instance.IsTriggerDown(JoystickManager.Trigger.Right, InputDevice, KeyboardPlayerId);
         if (trigger != 0.0f)
         {
-            var angles = _stickerAnchor.localEulerAngles;
-            angles.z += trigger * -_stickerRotationSpeed * deltaTime;
-            _stickerAnchor.localEulerAngles = angles;
+            Rotate(_stickerAnchor, -trigger, deltaTime);
         }
+        else if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_RB, InputDevice, KeyboardPlayerId))
+        {
+            Rotate(_stickerAnchor, -1.0f, deltaTime);
+        }
+    }
+
+    private void Rotate(Transform anchor, float trigger, float deltaTime)
+    {
+        var angles = _stickerAnchor.localEulerAngles;
+        angles.z += trigger * _stickerRotationSpeed * deltaTime;
+        anchor.localEulerAngles = angles;
     }
     #endregion
 }

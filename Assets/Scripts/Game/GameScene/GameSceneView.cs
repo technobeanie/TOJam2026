@@ -15,6 +15,8 @@ public class GameSceneView : SokobanView
     // const
     public const string FlowParameter_Player1 = "FlowParameter_Player1";
     public const string FlowParameter_Player2 = "FlowParameter_Player2";
+    public const string FlowParameter_Player1KeyboardId = "FlowParameter_Player1KeyboardId";
+    public const string FlowParameter_Player2KeyboardId = "FlowParameter_Player2KeyboardId";
 
     // public
 
@@ -55,37 +57,49 @@ public class GameSceneView : SokobanView
 
         if (_parameters != null)
         {
-            if (_parameters.ContainsKey(FlowParameter_Player1))
+            if (_player1 != null)
             {
-                var player1 = _parameters[FlowParameter_Player1] as InputDevice;
-                if (_player1 != null)
+                if (_parameters.ContainsKey(FlowParameter_Player1) && _parameters.ContainsKey(FlowParameter_Player1KeyboardId))
                 {
-                    _player1.AssignInputDevice(player1);
+                    var player1 = _parameters[FlowParameter_Player1] as InputDevice;
+                    var player1Id = (int)_parameters[FlowParameter_Player1KeyboardId];
+
+                    _player1.AssignInputDevice(player1, player1Id);
                 }
-            }
-            else
-            {
-                // CHEAT
-                if (_player1 != null && Gamepad.all.Count > 0)
+                else
                 {
-                    _player1.AssignInputDevice(Gamepad.all[0]);
+                    // CHEAT
+                    if (Gamepad.all.Count > 0)
+                    {
+                        _player1.AssignInputDevice(Gamepad.all[0], 0);
+                    }
+                    else
+                    {
+                        _player1.AssignInputDevice(Keyboard.current, 0);
+                    }
                 }
             }
 
-            if (_parameters.ContainsKey(FlowParameter_Player2))
+            if (_player2 != null)
             {
-                var player2 = _parameters[FlowParameter_Player2] as InputDevice;
-                if (_player2 != null)
+                if (_parameters.ContainsKey(FlowParameter_Player2) && _parameters.ContainsKey(FlowParameter_Player2KeyboardId))
                 {
-                    _player2.AssignInputDevice(player2);
+                    var player2 = _parameters[FlowParameter_Player2] as InputDevice;
+                    var player1Id = (int)_parameters[FlowParameter_Player2KeyboardId];
+
+                    _player2.AssignInputDevice(player2, player1Id);
                 }
-            }
-            else
-            {
-                // CHEAT
-                if (_player2 != null && Gamepad.all.Count > 1)
+                else
                 {
-                    _player2.AssignInputDevice(Gamepad.all[1]);
+                    // CHEAT
+                    if (Gamepad.all.Count > 1)
+                    {
+                        _player2.AssignInputDevice(Gamepad.all[1], 0);
+                    }
+                    else
+                    {
+                        _player2.AssignInputDevice(Keyboard.current, 1);
+                    }
                 }
             }
 

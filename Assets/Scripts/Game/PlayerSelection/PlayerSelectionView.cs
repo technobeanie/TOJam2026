@@ -100,24 +100,24 @@ public class PlayerSelectionView : SokobanView
     #endregion
 
     #region Private Methods
-    private void OnJoin(InputDevice inputDevice)
+    private void OnJoin(InputDevice inputDevice, int keyboardPlayerId)
     {
         if (_player1 != null && _player2 != null)
         {
             if (!_player1.HasJoined)
             {
-                _player1.AssignInputDevice(inputDevice);
+                _player1.AssignInputDevice(inputDevice, keyboardPlayerId);
             }
             else if (!_player2.HasJoined)
             {
-                _player2.AssignInputDevice(inputDevice);
+                _player2.AssignInputDevice(inputDevice, keyboardPlayerId);
             }
         }
 
         SetIsReady();
     }
 
-    private void OnLeave(InputDevice inputDevice)
+    private void OnLeave(InputDevice inputDevice, int keyboardPlayerId)
     {
         if (_player1 == null || _player2 == null)
         {
@@ -126,11 +126,11 @@ public class PlayerSelectionView : SokobanView
 
         if (_player1.InputDevice == inputDevice)
         {
-            _player1.AssignInputDevice(null);
+            _player1.AssignInputDevice(null, keyboardPlayerId);
         }
         else if (_player2.InputDevice == inputDevice)
         {
-            _player2.AssignInputDevice(null);
+            _player2.AssignInputDevice(null, keyboardPlayerId);
         }
 
         SetIsReady();
@@ -154,8 +154,12 @@ public class PlayerSelectionView : SokobanView
         }
 
         Dictionary<string, object> parameters = new Dictionary<string, object>();
+
         parameters.Add(GameSceneView.FlowParameter_Player1, _player1.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player1KeyboardId, _player1.KeyboardPlayerId);
+
         parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
         FlowManager.Instance.OpenView("GameScene", parameters);
     }

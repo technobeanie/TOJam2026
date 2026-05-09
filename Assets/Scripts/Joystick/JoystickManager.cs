@@ -48,13 +48,15 @@ namespace Common.Joystick
         // struct
         public struct KeyboardDefinition
         {
+            public int KeyboardId;
             public IDictionary<Button, IList<Key>> Buttons;
             public IDictionary<Joystick, IList<KeyboardJoystickDefinition>> Joysticks;
 
-            public KeyboardDefinition(IDictionary<Button, IList<Key>> buttons, IDictionary<Joystick, IList<KeyboardJoystickDefinition>> joysticks)
+            public KeyboardDefinition(IDictionary<Button, IList<Key>> buttons, IDictionary<Joystick, IList<KeyboardJoystickDefinition>> joysticks, int keyboardId = 0)
             {
                 Buttons = buttons;
                 Joysticks = joysticks;
+                KeyboardId = keyboardId;
             }
         }
 
@@ -79,7 +81,7 @@ namespace Common.Joystick
         // protected
 
         // private
-        private KeyboardDefinition _keyboardDefinition = default;
+        private Dictionary<int, KeyboardDefinition> _keyboardDefinition = new Dictionary<int, KeyboardDefinition>();
 
         // properties
 
@@ -91,28 +93,42 @@ namespace Common.Joystick
         #endregion
 
         #region Public Methods
-        public void SetKeyboard(KeyboardDefinition keyboardDefinition)
+        public void AddKeyboard(KeyboardDefinition keyboardDefinition)
         {
-            _keyboardDefinition = keyboardDefinition;
+            if (!_keyboardDefinition.ContainsKey(keyboardDefinition.KeyboardId))
+            {
+                _keyboardDefinition.Add(keyboardDefinition.KeyboardId, keyboardDefinition);
+            }
+            else
+            {
+                _keyboardDefinition[keyboardDefinition.KeyboardId] = keyboardDefinition;
+
+                Debug.Log($"Duplicated keyboard id? {keyboardDefinition.KeyboardId}");
+            }
         }
 
-        public Vector2 GetAnyMovement(Joystick joystick)
+        public void ClearKeyboard()
+        {
+            _keyboardDefinition.Clear();
+        }
+
+        public Vector2 GetAnyMovement(Joystick joystick, int keyboardPlayerId = 0)
         {
             var movement = Vector2.zero;
 
-            movement += GetKeyboardMovement(joystick, Keyboard.current);
+            movement += GetKeyboardMovement(joystick, Keyboard.current, keyboardPlayerId);
             movement += GetGamepadMovement(joystick, Gamepad.current);
 
             return movement;
         }
 
-        public Vector2 GetMovement(Joystick joystick, InputDevice inputDevice)
+        public Vector2 GetMovement(Joystick joystick, InputDevice inputDevice, int keyboardPlayerId = 0)
         {
             if (inputDevice != null)
             {
                 if (inputDevice is Keyboard keyboard)
                 {
-                    return GetKeyboardMovement(joystick, keyboard);
+                    return GetKeyboardMovement(joystick, keyboard, keyboardPlayerId);
                 }
                 else if (inputDevice is Gamepad gamepad)
                 {
@@ -123,23 +139,30 @@ namespace Common.Joystick
             return Vector2.zero;
         }
 
-        public bool IsButtonDown(Button button)
+        public int? GetMovement(Joystick joystick, Keyboard keyboard)
         {
-            if (!GetKeyboardButtonDown(button, Keyboard.current))
-            {
-                return GetGamepadButtonDown(button, Gamepad.current);
-            }
-
-            return false;
+            // Returns Keyboard Player Id.
+            return GetKeyboardMovement(joystick, keyboard);
         }
 
-        public bool IsButtonDown(Button button, InputDevice inputDevice)
+        public bool IsButtonDown(Button button)
+        {
+            var keyboardPlayerId = GetKeyboardButtonDown(button, Keyboard.current);
+            if (keyboardPlayerId != null)
+            {
+                return true;
+            }
+
+            return GetGamepadButtonDown(button, Gamepad.current);
+        }
+
+        public bool IsButtonDown(Button button, InputDevice inputDevice, int keyboardPlayerId = 0)
         {
             if (inputDevice != null)
             {
                 if (inputDevice is Keyboard keyboard)
                 {
-                    return GetKeyboardButtonDown(button, keyboard);
+                    return GetKeyboardButtonDown(button, keyboard, keyboardPlayerId);
                 }
                 else if (inputDevice is Gamepad gamepad)
                 {
@@ -150,23 +173,29 @@ namespace Common.Joystick
             return false;
         }
 
-        public bool IsButtonDownThisFrame(Button button)
+        public int? IsButtonDown(Button button, Keyboard keyboard)
         {
-            if (!GetKeyboardButtonDownThisFrame(button, Keyboard.current))
-            {
-                return GetGamepadButtonDownThisFrame(button, Gamepad.current);
-            }
-
-            return false;
+            // Returns Keyboard Player Id.
+            return GetKeyboardButtonDown(button, keyboard);
         }
 
-        public bool IsButtonDownThisFrame(Button button, InputDevice inputDevice)
+        public bool IsButtonDownThisFrame(Button button)
+        {
+            if (GetKeyboardButtonDownThisFrame(button, Keyboard.current, 0))
+            {
+                return true;
+            }
+
+            return GetGamepadButtonDownThisFrame(button, Gamepad.current);
+        }
+
+        public bool IsButtonDownThisFrame(Button button, InputDevice inputDevice, int keyboardPlayerId = 0)
         {
             if (inputDevice != null)
             {
                 if (inputDevice is Keyboard keyboard)
                 {
-                    return GetKeyboardButtonDownThisFrame(button, keyboard);
+                    return GetKeyboardButtonDownThisFrame(button, keyboard, keyboardPlayerId);
                 }
                 else if (inputDevice is Gamepad gamepad)
                 {
@@ -177,11 +206,17 @@ namespace Common.Joystick
             return false;
         }
 
+        public int? IsButtonDownThisFrame(Button button, Keyboard keyboard)
+        {
+            // Returns Keyboard Player Id.
+            return GetKeyboardButtonDownThisFrame(button, keyboard);
+        }
+
         public float IsTriggerDown(Trigger trigger)
         {
             var triggerValue = 0.0f;
 
-            triggerValue = GetKeyboardTrigger(trigger, Keyboard.current);
+            triggerValue = GetKeyboardTrigger(trigger, Keyboard.current, 0);
             if (triggerValue <= 0.0f)
             {
                 triggerValue = GetGamepadTrigger(trigger, Gamepad.current);
@@ -190,13 +225,13 @@ namespace Common.Joystick
             return triggerValue;
         }
 
-        public float IsTriggerDown(Trigger trigger, InputDevice inputDevice)
+        public float IsTriggerDown(Trigger trigger, InputDevice inputDevice, int keyboardPlayerId = 0)
         {
             if (inputDevice != null)
             {
                 if (inputDevice is Keyboard keyboard)
                 {
-                    return GetKeyboardTrigger(trigger, keyboard);
+                    return GetKeyboardTrigger(trigger, keyboard, keyboardPlayerId);
                 }
                 else if (inputDevice is Gamepad gamepad)
                 {
@@ -206,13 +241,32 @@ namespace Common.Joystick
 
             return 0.0f;
         }
+
+        public int? IsTriggerDown(Trigger trigger, Keyboard keyboard)
+        {
+            // Returns Keyboard Player Id.
+            return GetKeyboardTrigger(trigger, keyboard);
+        }
         #endregion
 
         #region Protected Methods
         #endregion
 
         #region Private Methods
-        private Vector2 GetKeyboardMovement(Joystick joystick, Keyboard keyboard)
+        private int? GetKeyboardMovement(Joystick joystick, Keyboard keyboard)
+        {
+            foreach (int id in _keyboardDefinition.Keys)
+            {
+                if (GetKeyboardMovement(joystick, keyboard, id) != Vector2.zero)
+                {
+                    return id;
+                }
+            }
+
+            return null;
+        }
+
+        private Vector2 GetKeyboardMovement(Joystick joystick, Keyboard keyboard, int keyboardPlayerId)
         {
             if (keyboard == null)
             {
@@ -221,28 +275,36 @@ namespace Common.Joystick
 
             Vector2 movement = Vector2.zero;
 
-            if (_keyboardDefinition.Joysticks != null && _keyboardDefinition.Joysticks.ContainsKey(joystick))
+            if (_keyboardDefinition.ContainsKey(keyboardPlayerId))
             {
-                IList<KeyboardJoystickDefinition> keyboardJoystickDefinitions = _keyboardDefinition.Joysticks[joystick];
-                for (int i = 0; i < keyboardJoystickDefinitions.Count; ++i)
+                var keyboardDefinition = _keyboardDefinition[keyboardPlayerId];
+                if (keyboardDefinition.Joysticks != null && keyboardDefinition.Joysticks.ContainsKey(joystick))
                 {
-                    if (keyboardJoystickDefinitions[i].Left != Key.None && keyboard[keyboardJoystickDefinitions[i].Left].isPressed)
+                    IList<KeyboardJoystickDefinition> keyboardJoystickDefinitions = keyboardDefinition.Joysticks[joystick];
+                    for (int i = 0; i < keyboardJoystickDefinitions.Count; ++i)
                     {
-                        movement.x += -1.0f;
-                    }
-                    if (keyboardJoystickDefinitions[i].Right != Key.None && keyboard[keyboardJoystickDefinitions[i].Right].isPressed)
-                    {
-                        movement.x += 1.0f;
-                    }
-                    if (keyboardJoystickDefinitions[i].Up != Key.None && keyboard[keyboardJoystickDefinitions[i].Up].isPressed)
-                    {
-                        movement.y += 1.0f;
-                    }
-                    if (keyboardJoystickDefinitions[i].Down != Key.None && keyboard[keyboardJoystickDefinitions[i].Down].isPressed)
-                    {
-                        movement.y += -1.0f;
+                        if (keyboardJoystickDefinitions[i].Left != Key.None && keyboard[keyboardJoystickDefinitions[i].Left].isPressed)
+                        {
+                            movement.x += -1.0f;
+                        }
+                        if (keyboardJoystickDefinitions[i].Right != Key.None && keyboard[keyboardJoystickDefinitions[i].Right].isPressed)
+                        {
+                            movement.x += 1.0f;
+                        }
+                        if (keyboardJoystickDefinitions[i].Up != Key.None && keyboard[keyboardJoystickDefinitions[i].Up].isPressed)
+                        {
+                            movement.y += 1.0f;
+                        }
+                        if (keyboardJoystickDefinitions[i].Down != Key.None && keyboard[keyboardJoystickDefinitions[i].Down].isPressed)
+                        {
+                            movement.y += -1.0f;
+                        }
                     }
                 }
+            }
+            else
+            {
+                Debug.LogError($"KeyboardId missing: {keyboardPlayerId.ToString()}");
             }
 
             return movement.normalized;
@@ -268,9 +330,22 @@ namespace Common.Joystick
             }
         }
 
-        private bool GetKeyboardButtonDown(Button button, Keyboard keyboard)
+        private int? GetKeyboardButtonDown(Button button, Keyboard keyboard)
         {
-            var keys = GetKeyboardButtonControl(button, keyboard);
+            foreach (int id in _keyboardDefinition.Keys)
+            {
+                if (GetKeyboardButtonDown(button, keyboard, id))
+                {
+                    return id;
+                }
+            }
+
+            return null;
+        }
+
+        private bool GetKeyboardButtonDown(Button button, Keyboard keyboard, int keyboardPlayerId)
+        {
+            var keys = GetKeyboardButtonControl(button, keyboard, keyboardPlayerId);
             if (keys != null)
             {
                 for (int i = 0; i < keys.Count; ++i)
@@ -285,9 +360,9 @@ namespace Common.Joystick
             return false;
         }
 
-        private bool GetKeyboardButtonDownThisFrame(Button button, Keyboard keyboard)
+        private bool GetKeyboardButtonDownThisFrame(Button button, Keyboard keyboard, int keyboardPlayerId)
         {
-            var keys = GetKeyboardButtonControl(button, keyboard);
+            var keys = GetKeyboardButtonControl(button, keyboard, keyboardPlayerId);
             if (keys != null)
             {
                 for (int i = 0; i < keys.Count; ++i)
@@ -302,16 +377,37 @@ namespace Common.Joystick
             return false;
         }
 
-        private IList<Key> GetKeyboardButtonControl(Button button, Keyboard keyboard)
+        private int? GetKeyboardButtonDownThisFrame(Button button, Keyboard keyboard)
+        {
+            foreach (int id in _keyboardDefinition.Keys)
+            {
+                if (GetKeyboardButtonDownThisFrame(button, keyboard, id))
+                {
+                    return id;
+                }
+            }
+
+            return null;
+        }
+
+        private IList<Key> GetKeyboardButtonControl(Button button, Keyboard keyboard, int keyboardPlayerId)
         {
             if (keyboard == null)
             {
                 return null;
             }
 
-            if (_keyboardDefinition.Buttons != null && _keyboardDefinition.Buttons.ContainsKey(button))
+            if (_keyboardDefinition.ContainsKey(keyboardPlayerId))
             {
-                return _keyboardDefinition.Buttons[button];
+                var keyboardDefinition = _keyboardDefinition[keyboardPlayerId];
+                if (keyboardDefinition.Buttons != null && keyboardDefinition.Buttons.ContainsKey(button))
+                {
+                    return keyboardDefinition.Buttons[button];
+                }
+            }
+            else
+            {
+                Debug.LogError($"KeyboardId missing: {keyboardPlayerId.ToString()}");
             }
 
             return null;
@@ -391,7 +487,7 @@ namespace Common.Joystick
             }
         }
 
-        private float GetKeyboardTrigger(Trigger trigger, Keyboard keyboard)
+        private float GetKeyboardTrigger(Trigger trigger, Keyboard keyboard, int keyboardPlayerId)
         {
             if (keyboard == null)
             {
@@ -401,12 +497,25 @@ namespace Common.Joystick
             switch (trigger)
             {
                 case Trigger.Left:
-                    return GetKeyboardButtonDown(Button.Xbox_Left_Trigger, keyboard) ? 1.0f : 0.0f;
+                    return GetKeyboardButtonDown(Button.Xbox_Left_Trigger, keyboard, keyboardPlayerId) ? 1.0f : 0.0f;
                 case Trigger.Right:
-                    return GetKeyboardButtonDown(Button.Xbox_Right_Trigger, keyboard) ? 1.0f : 0.0f;
+                    return GetKeyboardButtonDown(Button.Xbox_Right_Trigger, keyboard, keyboardPlayerId) ? 1.0f : 0.0f;
                 default:
                     return 0.0f;
             }
+        }
+
+        private int? GetKeyboardTrigger(Trigger trigger, Keyboard keyboard)
+        {
+            foreach (int id in _keyboardDefinition.Keys)
+            {
+                if (GetKeyboardTrigger(trigger, keyboard, id) != 0.0f)
+                {
+                    return id;
+                }
+            }
+
+            return null;
         }
 
         private float GetGamepadTrigger(Trigger trigger, Gamepad gamepad)

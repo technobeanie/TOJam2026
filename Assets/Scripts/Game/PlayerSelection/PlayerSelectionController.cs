@@ -36,9 +36,9 @@ public class PlayerSelectionController : PlayerController
         DisplayPlayer(false);
     }
 
-    public override void AssignInputDevice(InputDevice inputDevice)
+    public override void AssignInputDevice(InputDevice inputDevice, int keyboardPlayerId)
     {
-        base.AssignInputDevice(inputDevice);
+        base.AssignInputDevice(inputDevice, keyboardPlayerId);
 
         SetupTexts(InputDevice != null);
         DisplayPlayer(InputDevice != null);

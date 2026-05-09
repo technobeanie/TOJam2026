@@ -92,7 +92,7 @@ public class SokobanView : View
     #region Private Methods
     private void SetupKeyboardInputs()
     {
-        JoystickManager.Instance.SetKeyboard(new JoystickManager.KeyboardDefinition()
+        JoystickManager.Instance.AddKeyboard(new JoystickManager.KeyboardDefinition()
         {
             Buttons = new Dictionary<Button, IList<Key>>()
                 {
@@ -103,43 +103,84 @@ public class SokobanView : View
                         }
                     },
                     {
+                        Button.Xbox_B, new List<Key>()
+                        {
+                            Key.Q
+                        }
+                    },
+                    {
                         Button.Xbox_LB, new List<Key>()
                         {
-                            Key.Q, Key.DownArrow
+                            Key.N
                         }
                     },
                     {
                         Button.Xbox_RB, new List<Key>()
                         {
-                            Key.E, Key.UpArrow
+                            Key.M
                         }
                     },
                     {
-                        Button.Xbox_Left_Trigger, new List<Key>()
+                        Button.Xbox_Menu, new List<Key>()
                         {
-                            Key.Digit1
-                        }
-                    },
-                    {
-                        Button.Xbox_Right_Trigger, new List<Key>()
-                        {
-                            Key.Digit2
+                            Key.Enter
                         }
                     },
                     {
                         Button.Xbox_Y, new List<Key>()
                         {
-                            Key.LeftCtrl, Key.RightCtrl
+                            Key.C
+                        }
+                    }
+                },
+            Joysticks = new Dictionary<JoystickManager.Joystick, IList<KeyboardJoystickDefinition>>()
+                {
+                    {
+                        JoystickManager.Joystick.Left, new List<KeyboardJoystickDefinition>()
+                        {
+                            new KeyboardJoystickDefinition(Key.W, Key.A, Key.S, Key.D),
+                        }
+                    },
+                },
+            KeyboardId = 0,
+        });
+
+        JoystickManager.Instance.AddKeyboard(new JoystickManager.KeyboardDefinition()
+        {
+            Buttons = new Dictionary<Button, IList<Key>>()
+                {
+                    {
+                        Button.Xbox_A, new List<Key>()
+                        {
+                            Key.I
                         }
                     },
                     {
-                        Button.Xbox_View, new List<Key>()
+                        Button.Xbox_B, new List<Key>()
                         {
-                            Key.R
+                            Key.U
+                        }
+                    },
+                    {
+                        Button.Xbox_LB, new List<Key>()
+                        {
+                            Key.O
+                        }
+                    },
+                    {
+                        Button.Xbox_RB, new List<Key>()
+                        {
+                            Key.P
                         }
                     },
                     {
                         Button.Xbox_Menu, new List<Key>()
+                        {
+                            Key.Backspace
+                        }
+                    },
+                    {
+                        Button.Xbox_Y, new List<Key>()
                         {
                             Key.L
                         }
@@ -150,11 +191,11 @@ public class SokobanView : View
                     {
                         JoystickManager.Joystick.Left, new List<KeyboardJoystickDefinition>()
                         {
-                            new KeyboardJoystickDefinition(Key.W, Key.A, Key.S, Key.D),
-                            new KeyboardJoystickDefinition(Key.None, Key.LeftArrow, Key.None, Key.RightArrow)
+                            new KeyboardJoystickDefinition(Key.UpArrow, Key.LeftArrow, Key.DownArrow, Key.RightArrow)
                         }
                     },
-                }
+                },
+            KeyboardId = 1,
         });
     }
     #endregion
