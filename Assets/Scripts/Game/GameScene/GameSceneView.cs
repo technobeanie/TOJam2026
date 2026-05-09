@@ -1,3 +1,4 @@
+using Common.Audio;
 using Common.Flow;
 using Common.Joystick;
 using Common.Rendering;
@@ -44,6 +45,10 @@ public class GameSceneView : SokobanView
 
     [Header("Debug")]
     [SerializeField] private List<StickerPack> _defaultPacks = new List<StickerPack>();
+
+    [Header("SFX")]
+    [SerializeField] private AudioHook _countdownLoopingSFX = null;
+    [SerializeField] private AudioHook _countdownDoneSFX = null;
 
     // properties
 
@@ -160,6 +165,10 @@ public class GameSceneView : SokobanView
         {
             _winningController.Initialize();
         }
+
+        _playerReadyCount = 0;
+        _readyTimer = null;
+        SetTimerVisuals(false, 0.0f);
     }
 
     protected override void OnViewOpened()
@@ -171,10 +180,6 @@ public class GameSceneView : SokobanView
         {
             _belt.Begin();
         }
-
-        _playerReadyCount = 0;
-        _readyTimer = null;
-        SetTimerVisuals(false, 0.0f);
     }
 
     protected override void OnViewClosed(Dictionary<string, object> parameters)
@@ -213,6 +218,11 @@ public class GameSceneView : SokobanView
 
     private void BeginReadyTimer()
     {
+        if (_countdownLoopingSFX != null)
+        {
+            _countdownLoopingSFX.Play();
+        }
+
         _readyTimer = new Timer(_readyTimerDuration, OnReadyPhaseCompleted, false, OnReadyTimeUpdated);
         _readyTimer.Begin();
 
@@ -241,6 +251,16 @@ public class GameSceneView : SokobanView
 
     private void OnReadyPhaseCompleted(Timer timer)
     {
+        if (_countdownLoopingSFX != null)
+        {
+            _countdownLoopingSFX.StopLoopingSfx();
+        }
+
+        if (_countdownDoneSFX != null)
+        {
+            _countdownDoneSFX.Play();
+        }
+
         if (_readyTimer != null)
         {
             _readyTimer.Stop();

@@ -1,8 +1,15 @@
+using Common.Audio;
+using Common.Joystick;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
+using Utils;
 
-public class StickerPack : ScriptableObject
+public class PlayerGameController : PlayerController
 {
     // const
 
@@ -11,10 +18,6 @@ public class StickerPack : ScriptableObject
     // protected
 
     // private
-    public List<Object> _stickers = new List<Object>();
-    public Sprite _packNormal = null;
-    public Sprite _packOpenedLeft = null;
-    public Sprite _packOpenedRight = null;
 
     // properties
 

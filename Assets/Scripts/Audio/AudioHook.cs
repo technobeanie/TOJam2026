@@ -63,6 +63,14 @@ namespace Common.Audio
 				AudioManager.Instance.PlayLoopingSFX(_loopingSfx.name, _loopingSfx, _volume);
 			}
 		}
+
+		public void StopLoopingSfx()
+		{
+            if (_loopingSfx != null)
+            {
+                AudioManager.Instance.StopLoopingSFX(_loopingSfx.name);
+            }
+        }
 		#endregion
 
 		#region Protected Methods
