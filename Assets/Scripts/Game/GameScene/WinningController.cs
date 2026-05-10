@@ -1,3 +1,4 @@
+using Common.Audio;
 using Common.Flow;
 using Common.Joystick;
 using DG.Tweening;
@@ -6,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Utils;
 
 public class WinningController : MonoBehaviour
 {
@@ -19,6 +21,9 @@ public class WinningController : MonoBehaviour
 
     // private
     private Action _onNewGame = null;
+    private Timer _timer = null;
+    private int _player1Votes = 0;
+    private int _player2Votes = 0;
 
     [Header("Setup")]
     [SerializeField] private GameObject _medal1 = null;
@@ -36,6 +41,8 @@ public class WinningController : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private Vector3 _packPunch = Vector3.zero;
     [SerializeField] private float _packPunchDuration = 0.5f;
+    [SerializeField] private float _winningDelay = 2.0f;
+    [SerializeField] private AudioHook _winningVO = null;
 
     // properties
     public bool HasBegun
@@ -62,6 +69,8 @@ public class WinningController : MonoBehaviour
         {
             _radial.StopHold();
         }
+
+        _timer?.Step(Time.fixedDeltaTime);
     }
     #endregion
 
@@ -81,19 +90,35 @@ public class WinningController : MonoBehaviour
 
         _onNewGame = onNewGame;
 
+        _player1Votes = player1Votes;
+        _player2Votes = player2Votes;
+
+        _guy.Show();
+
+        _timer = new Timer(_winningDelay, OnWinningDelay);
+        _timer.Begin();
+    }
+    #endregion
+
+    #region Protected Methods
+    #endregion
+
+    #region Private Methods
+    private void OnWinningDelay(Timer timer)
+    {
         _titlePanel.SetActive(true);
         _holdPanel.SetActive(true);
 
         _winningText.gameObject.SetActive(true);
 
-        if (player1Votes > player2Votes)
+        if (_player1Votes > _player2Votes)
         {
             _medal1.SetActive(true);
             _medal1.transform.DOPunchScale(_packPunch, _packPunchDuration);
 
             _winningText.text = string.Format(WinningTextFormat, 1);
         }
-        else if (player1Votes < player2Votes)
+        else if (_player1Votes < _player2Votes)
         {
             _medal2.SetActive(true);
             _medal2.transform.DOPunchScale(_packPunch, _packPunchDuration);
@@ -114,19 +139,17 @@ public class WinningController : MonoBehaviour
         _leftVotesCountText.gameObject.SetActive(true);
         _rightVotesCountText.gameObject.SetActive(true);
 
-        _leftVotesCountText.text = string.Format(VotesTextFormat, player1Votes);
-        _rightVotesCountText.text = string.Format(VotesTextFormat, player2Votes);
+        _leftVotesCountText.text = string.Format(VotesTextFormat, _player1Votes);
+        _rightVotesCountText.text = string.Format(VotesTextFormat, _player2Votes);
 
         _radial.gameObject.SetActive(true);
 
-        _guy.Show();
+        if (_winningVO != null)
+        {
+            _winningVO.Play();
+        }
     }
-    #endregion
 
-    #region Protected Methods
-    #endregion
-
-    #region Private Methods
     private void OnReady()
     {
         HasBegun = false;

@@ -1,3 +1,4 @@
+using Common.Audio;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -21,6 +22,7 @@ public class LittleGuy : MonoBehaviour
     [SerializeField] private GameObject _littleGuy = null;
     [SerializeField] private Transform _startPosition = null;
     [SerializeField] private Transform _endPosition = null;
+    [SerializeField] private AudioHook _vo = null;
 
     [Header("Timing")]
     [SerializeField] private float _animateDuration = 1.0f;
@@ -59,6 +61,11 @@ public class LittleGuy : MonoBehaviour
         {
             _timer = new Timer(_autoHideDuration, OnAutoHide);
             _timer.Begin();
+        }
+
+        if (_vo != null)
+        {
+            _vo.Play();
         }
     }
 

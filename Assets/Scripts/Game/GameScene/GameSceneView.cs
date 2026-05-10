@@ -56,6 +56,7 @@ public class GameSceneView : SokobanView
     [Header("SFX")]
     [SerializeField] private AudioHook _countdownLoopingSFX = null;
     [SerializeField] private AudioHook _countdownDoneSFX = null;
+    [SerializeField] private AudioHook _playAgain = null;
 
     [Header("Sequence")]
     [SerializeField] private GameIntroSequence _introSequence = null;
@@ -364,6 +365,11 @@ public class GameSceneView : SokobanView
 
     private void OnNewGame()
     {
+        if (_playAgain != null)
+        {
+            _playAgain.Play();
+        }
+
         Dictionary<string, object> parameters = new Dictionary<string, object>();
 
         parameters.Add(GameSceneView.FlowParameter_Player1, _player1.InputDevice);

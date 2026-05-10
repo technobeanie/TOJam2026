@@ -1,3 +1,4 @@
+using Common.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ public class PackController : MonoBehaviour
     [SerializeField] private GameObject _packNormal = null;
     [SerializeField] private GameObject _packOpened = null;
     [SerializeField] private TextMeshPro _packName = null;
+    [SerializeField] private AudioHook _voChoosePack = null;
 
     [Header("Images")]
     [SerializeField] private SpriteRenderer _packNormalRenderer = null;
@@ -74,6 +76,11 @@ public class PackController : MonoBehaviour
         if (IsOpened)
         {
             return;
+        }
+
+        if (_voChoosePack != null)
+        {
+            _voChoosePack.Play();
         }
 
         IsOpened = true;
