@@ -21,7 +21,7 @@ public class SokobanView : View
     [SerializeField] private string _mainCameraName = "MainCamera";
 
     [Header("Audio")]
-    [SerializeField] private AudioHook _audioTriggerOnStart = null;
+    [SerializeField] protected AudioHook _audioTriggerOnStart = null;
 
     private Camera _mainCamera = null;
 

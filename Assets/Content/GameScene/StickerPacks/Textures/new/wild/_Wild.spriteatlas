@@ -85,6 +85,7 @@ SpriteAtlas:
     - f951f0c72b6596b408048ae880952707: 21300000
     - 2fb79c38130b057458ba593ad83e60a2: 21300000
     - 7d3ec058534023b44b18c89336cd6114: 21300000
+    - 7d3cf578dcb6d8f4491dba0a48fdc758: 21300000
     - da27f2f87f4bd4e45bf624bd17c33f95: 21300000
     - 2fa2ec2977a92f8468703aeb3f7cf683: 21300000
     - a939c749a38549441ace9d5eca3bbefb: 21300000
@@ -97,6 +98,7 @@ SpriteAtlas:
     - b1c1cc8bd3acfb145ae3b8b61d0b0920: 21300000
     - 6aa4864cd59d1dd4c84828e52e23a657: 21300000
     - b2760c8cf934e414fabf84ed46d42d61: 21300000
+    - 16fb67ac90debf54793d5e2368c8f3d1: 21300000
     - 8cc207bc77c3d58489c0eb6385317062: 21300000
     - 2b811accd0ad248488557485dbeb92c9: 21300000
     - 42370add0da145647b57002e95b5cfb0: 21300000
@@ -147,6 +149,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f951f0c72b6596b408048ae880952707, type: 3}
   - {fileID: 21300000, guid: 2fb79c38130b057458ba593ad83e60a2, type: 3}
   - {fileID: 21300000, guid: 7d3ec058534023b44b18c89336cd6114, type: 3}
+  - {fileID: 21300000, guid: 7d3cf578dcb6d8f4491dba0a48fdc758, type: 3}
   - {fileID: 21300000, guid: da27f2f87f4bd4e45bf624bd17c33f95, type: 3}
   - {fileID: 21300000, guid: 2fa2ec2977a92f8468703aeb3f7cf683, type: 3}
   - {fileID: 21300000, guid: a939c749a38549441ace9d5eca3bbefb, type: 3}
@@ -159,6 +162,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b1c1cc8bd3acfb145ae3b8b61d0b0920, type: 3}
   - {fileID: 21300000, guid: 6aa4864cd59d1dd4c84828e52e23a657, type: 3}
   - {fileID: 21300000, guid: b2760c8cf934e414fabf84ed46d42d61, type: 3}
+  - {fileID: 21300000, guid: 16fb67ac90debf54793d5e2368c8f3d1, type: 3}
   - {fileID: 21300000, guid: 8cc207bc77c3d58489c0eb6385317062, type: 3}
   - {fileID: 21300000, guid: 2b811accd0ad248488557485dbeb92c9, type: 3}
   - {fileID: 21300000, guid: 42370add0da145647b57002e95b5cfb0, type: 3}
@@ -208,6 +212,7 @@ SpriteAtlas:
   - sticker_wild_001
   - sticker_wild_055
   - sticker_wild_004
+  - sticker_wild_062
   - sticker_wild_035
   - sticker_wild_010
   - sticker_wild_023
@@ -220,6 +225,7 @@ SpriteAtlas:
   - sticker_wild_002
   - sticker_wild_016
   - sticker_wild_037
+  - sticker_wild_061
   - sticker_wild_046
   - sticker_wild_017
   - sticker_wild_022

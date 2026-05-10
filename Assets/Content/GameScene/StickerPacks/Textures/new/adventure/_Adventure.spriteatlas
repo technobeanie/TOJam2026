@@ -50,13 +50,17 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - 2f99bb102cd38b3409ba4dcac3c1ea7f: 21300000
     - b9c5fe1022755c74b9d50a56a2d951a7: 21300000
+    - 4ef496206a95ee14fa73e40f0645d280: 21300000
     - 9df61c20321f7b0498f0d57d1231f18a: 21300000
     - cac24690cc7d4c147b1a3a07324032aa: 21300000
     - 300fd1b1fb55de145bf93261c769dc04: 21300000
     - d98930f1688e82940a599b94ba96f4f7: 21300000
+    - 4557d6f15ada28747939dd240907cf43: 21300000
     - d06e2532690c9c9489475b3bfabd1eaa: 21300000
     - baa456c230c3e4542a80317ee86bf8af: 21300000
+    - 8074b7c2a59648340be4e824b938412c: 21300000
     - ee35116360d57204e8e4b3709ad664e3: 21300000
     - c78c14e383d0eb748aad00c6897064df: 21300000
     - 10b464848fc84b54d8c8c76fc829f1d8: 21300000
@@ -70,9 +74,11 @@ SpriteAtlas:
     - 5aee00488576b4c44a9c8d48b509d650: 21300000
     - a43588786ea88ba48a6a77bb99d4d53d: 21300000
     - 38b9eab835b285e4b9959ca97e7a7deb: 21300000
+    - 82507579849d28a44ac826363398b99d: 21300000
     - 4414ea89033f3514e911e52de9fba988: 21300000
     - aa90c76a0bca1724082e4838c1222465: 21300000
     - 408f41fa1c5b7eb43860636037e090bb: 21300000
+    - 4d7c37fad610f184d93efd6278581b5d: 21300000
     - 1ff54c0b776ccd04dad94a89267ae763: 21300000
     - 0987e25b66af8bb43b194aff25b8b655: 21300000
     - 03c760db1d7ed094baf975d5f681060e: 21300000
@@ -90,13 +96,17 @@ SpriteAtlas:
     - 63b484ffed11ea44ea1fee84f6a7bc7c: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 2f99bb102cd38b3409ba4dcac3c1ea7f, type: 3}
   - {fileID: 21300000, guid: b9c5fe1022755c74b9d50a56a2d951a7, type: 3}
+  - {fileID: 21300000, guid: 4ef496206a95ee14fa73e40f0645d280, type: 3}
   - {fileID: 21300000, guid: 9df61c20321f7b0498f0d57d1231f18a, type: 3}
   - {fileID: 21300000, guid: cac24690cc7d4c147b1a3a07324032aa, type: 3}
   - {fileID: 21300000, guid: 300fd1b1fb55de145bf93261c769dc04, type: 3}
   - {fileID: 21300000, guid: d98930f1688e82940a599b94ba96f4f7, type: 3}
+  - {fileID: 21300000, guid: 4557d6f15ada28747939dd240907cf43, type: 3}
   - {fileID: 21300000, guid: d06e2532690c9c9489475b3bfabd1eaa, type: 3}
   - {fileID: 21300000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
+  - {fileID: 21300000, guid: 8074b7c2a59648340be4e824b938412c, type: 3}
   - {fileID: 21300000, guid: ee35116360d57204e8e4b3709ad664e3, type: 3}
   - {fileID: 21300000, guid: c78c14e383d0eb748aad00c6897064df, type: 3}
   - {fileID: 21300000, guid: 10b464848fc84b54d8c8c76fc829f1d8, type: 3}
@@ -110,9 +120,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5aee00488576b4c44a9c8d48b509d650, type: 3}
   - {fileID: 21300000, guid: a43588786ea88ba48a6a77bb99d4d53d, type: 3}
   - {fileID: 21300000, guid: 38b9eab835b285e4b9959ca97e7a7deb, type: 3}
+  - {fileID: 21300000, guid: 82507579849d28a44ac826363398b99d, type: 3}
   - {fileID: 21300000, guid: 4414ea89033f3514e911e52de9fba988, type: 3}
   - {fileID: 21300000, guid: aa90c76a0bca1724082e4838c1222465, type: 3}
   - {fileID: 21300000, guid: 408f41fa1c5b7eb43860636037e090bb, type: 3}
+  - {fileID: 21300000, guid: 4d7c37fad610f184d93efd6278581b5d, type: 3}
   - {fileID: 21300000, guid: 1ff54c0b776ccd04dad94a89267ae763, type: 3}
   - {fileID: 21300000, guid: 0987e25b66af8bb43b194aff25b8b655, type: 3}
   - {fileID: 21300000, guid: 03c760db1d7ed094baf975d5f681060e, type: 3}
@@ -129,13 +141,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6dde8f9f69938f846b91ef2096afadb0, type: 3}
   - {fileID: 21300000, guid: 63b484ffed11ea44ea1fee84f6a7bc7c, type: 3}
   m_PackedSpriteNamesToIndex:
+  - sticker_adventure_040
   - sticker_adventure_026
+  - sticker_adventure_039
   - sticker_adventure_016
   - sticker_adventure_032
   - sticker_adventure_004
   - sticker_adventure_011
+  - sticker_adventure_044
   - sticker_adventure_012
   - sticker_adventure_035
+  - sticker_adventure_042
   - sticker_adventure_029
   - sticker_adventure_038
   - sticker_adventure_001
@@ -149,9 +165,11 @@ SpriteAtlas:
   - sticker_adventure_014
   - sticker_adventure_019
   - sticker_adventure_018
+  - sticker_adventure_043
   - sticker_adventure_003
   - sticker_adventure_002
   - sticker_adventure_037
+  - sticker_adventure_041
   - sticker_adventure_031
   - sticker_adventure_025
   - sticker_adventure_020

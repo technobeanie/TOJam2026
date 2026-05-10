@@ -66,5 +66,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 00d3fb101cf6f7548be2ce01b3d06f79, type: 3}
   - {fileID: 2800000, guid: ff26eb00e3b772c4a8fa1c173f155cb2, type: 3}
   - {fileID: 2800000, guid: 98c8e1d2ca7f7034b8f2eba7d66a9c0c, type: 3}
+  - {fileID: 2800000, guid: feb1b5ae539b9544eafdcf6322927a3b, type: 3}
   _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
   _name: Basic

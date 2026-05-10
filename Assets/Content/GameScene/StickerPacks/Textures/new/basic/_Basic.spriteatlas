@@ -98,6 +98,7 @@ SpriteAtlas:
     - 5d258e3e112b2ed4ab3e0be2e4a72d6c: 21300000
     - ee36704ede0d32f4e8b5757597453d59: 21300000
     - 87eae67e25bb1404c9eb2f77e1389334: 21300000
+    - feb1b5ae539b9544eafdcf6322927a3b: 21300000
     - 3d51663f0f5f4634d9bf34a1d5ed658b: 21300000
     - d188984f40e94754d93a1aff1b07f47c: 21300000
     - b71f1b5f1195b4c46b9b6ac8c7e36dd3: 21300000
@@ -153,6 +154,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5d258e3e112b2ed4ab3e0be2e4a72d6c, type: 3}
   - {fileID: 21300000, guid: ee36704ede0d32f4e8b5757597453d59, type: 3}
   - {fileID: 21300000, guid: 87eae67e25bb1404c9eb2f77e1389334, type: 3}
+  - {fileID: 21300000, guid: feb1b5ae539b9544eafdcf6322927a3b, type: 3}
   - {fileID: 21300000, guid: 3d51663f0f5f4634d9bf34a1d5ed658b, type: 3}
   - {fileID: 21300000, guid: d188984f40e94754d93a1aff1b07f47c, type: 3}
   - {fileID: 21300000, guid: b71f1b5f1195b4c46b9b6ac8c7e36dd3, type: 3}
@@ -207,6 +209,7 @@ SpriteAtlas:
   - sticker_basic_027
   - sticker_basic_011
   - sticker_basic_021
+  - sticker_basic_054
   - sticker_basic_017
   - sticker_basic_030
   - sticker_basic_048
