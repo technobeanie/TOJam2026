@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 55355026}
   - component: {fileID: 55355028}
   - component: {fileID: 55355027}
+  - component: {fileID: 55355029}
   m_Layer: 5
   m_Name: BeginText
   m_TagString: Untagged
@@ -258,6 +259,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55355025}
   m_CullTransparentMesh: 0
+--- !u!114 &55355029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55355025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24942b028425e05499258b0d3cc37a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blinker
+  _playOnStart: 1
+  _displayDuration: 1
+  _hideDuration: 0.5
+  _blinkingObject: {fileID: 55355025}
+  _blinkingSource: 0
 --- !u!1 &197661679
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231480750}
   - component: {fileID: 231480751}
+  - component: {fileID: 231480752}
   m_Layer: 0
   m_Name: Pack_Left
   m_TagString: Untagged
@@ -448,6 +467,21 @@ MonoBehaviour:
   _packNormalRenderer: {fileID: 1622457187}
   _packOpenedLeftRenderer: {fileID: 541835129}
   _packOpenedRightRenderer: {fileID: 430872423}
+--- !u!114 &231480752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231480749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a885f5abb15f943852a7328dcff4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hover
+  _movement: {x: 0, y: 10, z: 0}
+  _durationMin: 1
+  _durationMax: 3
 --- !u!1 &323753267
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524117683}
   - component: {fileID: 524117684}
+  - component: {fileID: 524117685}
   m_Layer: 0
   m_Name: Pack_Right
   m_TagString: Untagged
@@ -976,6 +1011,21 @@ MonoBehaviour:
   _packNormalRenderer: {fileID: 1814762379}
   _packOpenedLeftRenderer: {fileID: 2020597593}
   _packOpenedRightRenderer: {fileID: 323753269}
+--- !u!114 &524117685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524117682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a885f5abb15f943852a7328dcff4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hover
+  _movement: {x: 0, y: 10, z: 0}
+  _durationMin: 1
+  _durationMax: 3
 --- !u!1 &541835127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109753506}
   - component: {fileID: 1109753507}
+  - component: {fileID: 1109753508}
   m_Layer: 0
   m_Name: Pack_Center
   m_TagString: Untagged
@@ -1614,6 +1665,21 @@ MonoBehaviour:
   _packNormalRenderer: {fileID: 1538394360}
   _packOpenedLeftRenderer: {fileID: 2062573433}
   _packOpenedRightRenderer: {fileID: 445670356}
+--- !u!114 &1109753508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109753505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a885f5abb15f943852a7328dcff4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hover
+  _movement: {x: 0, y: 10, z: 0}
+  _durationMin: 1
+  _durationMax: 3
 --- !u!1 &1319874806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2387,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 0}
   _animator: {fileID: 649768719}
   _grabBool: Grab
+  _waitBool: Wait
 --- !u!61 &1771372438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2750,6 +2817,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1443930742}
   _grabBool: Grab
+  _waitBool: Wait
 --- !u!61 &2058099284
 BoxCollider2D:
   m_ObjectHideFlags: 0

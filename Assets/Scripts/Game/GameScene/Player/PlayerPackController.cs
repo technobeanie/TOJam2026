@@ -35,6 +35,11 @@ public class PlayerPackController : PlayerController
     {
         base.FixedUpdate();
        
+        if (_isDone)
+        {
+            return;
+        }
+        
         if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
         {
             OpenPack();
@@ -74,6 +79,11 @@ public class PlayerPackController : PlayerController
                     }
                 }
             }
+        }
+
+        if (CurrentOpen >= MaxToOpen)
+        {
+            GameDone();
         }
     }
     #endregion

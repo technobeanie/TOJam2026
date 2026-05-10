@@ -53,24 +53,36 @@ SpriteAtlas:
     - 873258f04093e4e44baa415918fea332: 21300000
     - 9aa050c3ebb34694f927bdd03cc101b4: 21300000
     - ab283fa40511da841b6658b21c0b8912: 21300000
+    - 2d2bffb4e235ae743951d28f7603b5cc: 21300000
     - bfe49cc45be624145b9f0853cf16810d: 21300000
+    - a0dc52e8287fdb444a39189f74333ed7: 21300000
+    - 6121ddc9dedc7b446abaa3a759f2f6ff: 21300000
     - fdefc6ec10e26e444bb9e989f10157b2: 21300000
     - 069b5e9ebf537ff4b8b017d0e984d641: 21300000
+    - eca45f9ea5e8d69429bec7194af587d9: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 873258f04093e4e44baa415918fea332, type: 3}
   - {fileID: 21300000, guid: 9aa050c3ebb34694f927bdd03cc101b4, type: 3}
   - {fileID: 21300000, guid: ab283fa40511da841b6658b21c0b8912, type: 3}
+  - {fileID: 21300000, guid: 2d2bffb4e235ae743951d28f7603b5cc, type: 3}
   - {fileID: 21300000, guid: bfe49cc45be624145b9f0853cf16810d, type: 3}
+  - {fileID: 21300000, guid: a0dc52e8287fdb444a39189f74333ed7, type: 3}
+  - {fileID: 21300000, guid: 6121ddc9dedc7b446abaa3a759f2f6ff, type: 3}
   - {fileID: 21300000, guid: fdefc6ec10e26e444bb9e989f10157b2, type: 3}
   - {fileID: 21300000, guid: 069b5e9ebf537ff4b8b017d0e984d641, type: 3}
+  - {fileID: 21300000, guid: eca45f9ea5e8d69429bec7194af587d9, type: 3}
   m_PackedSpriteNamesToIndex:
   - pack_wild
   - pack_weird
   - pack_spooky
+  - pack_ripped-4
   - pack_tech
+  - pack_ripped-2
+  - pack_ripped-3
   - pack_epic
   - pack_fancy
+  - pack_ripped-5
   m_RenderDataMap: {}
   m_Tag: _Packs
   m_IsVariant: 0

@@ -4387,6 +4387,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 350462396}
   _animator: {fileID: 649768719}
   _grabBool: Grab
+  _waitBool: Wait
 --- !u!61 &1771372438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5455,6 +5456,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 1229002666}
   _animator: {fileID: 1443930742}
   _grabBool: Grab
+  _waitBool: Wait
 --- !u!61 &2058099284
 BoxCollider2D:
   m_ObjectHideFlags: 0

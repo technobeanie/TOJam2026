@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     // public
 
     // protected
+    protected bool _isDone = false;
 
     // private
     private Sticker _sticker = null;
     private Action<PlayerController> _onReady = null;
-    private bool _isDone = false;
 
     [Header("Player")]
     [SerializeField] protected Transform _player = null;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     [Header("Anim")]
     [SerializeField] private Animator _animator = null;
     [SerializeField] private string _grabBool = "Grab";
+    [SerializeField] private string _waitBool = "Wait";
 
     // properties
     public InputDevice InputDevice
@@ -143,6 +144,7 @@ public class PlayerController : MonoBehaviour
         if (_animator != null)
         {
             _animator.SetBool(_grabBool, false);
+            _animator.SetBool(_waitBool, true);
         }
 
         if (_pendingReadyText != null)

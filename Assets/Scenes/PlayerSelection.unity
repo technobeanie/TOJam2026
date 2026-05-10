@@ -183,6 +183,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1086612155}
   _grabBool: Grab
+  _waitBool: Wait
   _joinText: {fileID: 1993952798}
   _leaveText: {fileID: 713194145}
 --- !u!1 &162317797
@@ -536,6 +537,7 @@ GameObject:
   - component: {fileID: 586747015}
   - component: {fileID: 586747017}
   - component: {fileID: 586747016}
+  - component: {fileID: 586747018}
   m_Layer: 5
   m_Name: Begin
   m_TagString: Untagged
@@ -663,6 +665,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586747014}
   m_CullTransparentMesh: 1
+--- !u!114 &586747018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586747014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24942b028425e05499258b0d3cc37a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blinker
+  _playOnStart: 1
+  _displayDuration: 1
+  _hideDuration: 0.5
+  _blinkingObject: {fileID: 586747014}
+  _blinkingSource: 0
 --- !u!1 &713194144
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +883,7 @@ MonoBehaviour:
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1293236501}
   _grabBool: Grab
+  _waitBool: Wait
   _joinText: {fileID: 1274278064}
   _leaveText: {fileID: 1614087494}
 --- !u!1001 &865716316

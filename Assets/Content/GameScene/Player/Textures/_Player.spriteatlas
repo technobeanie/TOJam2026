@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: _Player
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -52,9 +52,8 @@ SpriteAtlas:
     packedSpriteRenderDataKeys:
     - 4fa884b213201dc4fb7ca2950925dc41: 21300000
     - 2792b83349d80ca4991bd8de5e90a005: 21300000
-    - 8a801243a475be643a7b7c5d75286b0a: 21300000
     - 70d87aa5b3fc7fb4b8253c3798e247a7: 21300000
-    - f51df869d55ac5b4bbad81abd1f953af: 21300000
+    - 5103c61643e9d76469e214116bc461db: 21300000
     - b95652ea3b9a1a94985e32560a62f493: 21300000
     - 0ee306bb58a74064fadc18d1e192b75d: 21300000
     - 5e38230ea9812e34692278be9b7084d8: 21300000
@@ -62,21 +61,19 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 4fa884b213201dc4fb7ca2950925dc41, type: 3}
   - {fileID: 21300000, guid: 2792b83349d80ca4991bd8de5e90a005, type: 3}
-  - {fileID: 21300000, guid: 8a801243a475be643a7b7c5d75286b0a, type: 3}
   - {fileID: 21300000, guid: 70d87aa5b3fc7fb4b8253c3798e247a7, type: 3}
-  - {fileID: 21300000, guid: f51df869d55ac5b4bbad81abd1f953af, type: 3}
+  - {fileID: 21300000, guid: 5103c61643e9d76469e214116bc461db, type: 3}
   - {fileID: 21300000, guid: b95652ea3b9a1a94985e32560a62f493, type: 3}
   - {fileID: 21300000, guid: 0ee306bb58a74064fadc18d1e192b75d, type: 3}
   - {fileID: 21300000, guid: 5e38230ea9812e34692278be9b7084d8, type: 3}
   m_PackedSpriteNamesToIndex:
   - cursor
   - conveyor_back
-  - Hand2
   - cursor_down
-  - Hand1
+  - cursor_done_nooutline
   - cursor_p2
   - cursor_up
   - cursor_p1
   m_RenderDataMap: {}
-  m_Tag: Player
+  m_Tag: _Player
   m_IsVariant: 0
