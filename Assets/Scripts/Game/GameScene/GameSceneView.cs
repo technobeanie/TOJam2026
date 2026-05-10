@@ -47,7 +47,6 @@ public class GameSceneView : SokobanView
     [SerializeField] private VotingController _votingController = null;
     [SerializeField] private WinningController _winningController = null;
     [SerializeField] private TextMeshProUGUI _themeText = null;
-    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Debug")]
     [SerializeField] private List<StickerPack> _debugPacks = new List<StickerPack>();
@@ -57,6 +56,7 @@ public class GameSceneView : SokobanView
     [SerializeField] private AudioHook _countdownLoopingSFX = null;
     [SerializeField] private AudioHook _countdownDoneSFX = null;
     [SerializeField] private AudioHook _playAgain = null;
+    [SerializeField] private AudioHook _confirmSFX = null;
 
     [Header("Sequence")]
     [SerializeField] private GameIntroSequence _introSequence = null;
@@ -210,11 +210,6 @@ public class GameSceneView : SokobanView
             _introSequence.Initialize();
         }
 
-        if (_guy != null)
-        {
-            _guy.Initialize();
-        }
-
         _playerReadyCount = 0;
         _readyTimer = null;
         SetTimerVisuals(false, 0.0f);
@@ -273,17 +268,22 @@ public class GameSceneView : SokobanView
         ++_playerReadyCount;
         if (_playerReadyCount == 1)
         {
-            BeginReadyTimer();
+            BeginReadyTimer(player);
         }
         else if (_playerReadyCount > 1)
         {
             OnReadyPhaseCompleted(null);
         }
 
+        if (_confirmSFX != null)
+        {
+            _confirmSFX.Play();
+        }
+
         player.GameDone();
     }
 
-    private void BeginReadyTimer()
+    private void BeginReadyTimer(PlayerController player)
     {
         AudioManager.Instance.StopMusic();
 
@@ -297,10 +297,7 @@ public class GameSceneView : SokobanView
 
         SetTimerVisuals(true, _readyTimerDuration);
 
-        if (_guy != null)
-        {
-            _guy.Show();
-        }
+        player.ShowStressGuy();
     }
 
     private void SetTimerVisuals(bool isActive, float time)

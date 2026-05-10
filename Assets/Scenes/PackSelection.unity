@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 848237530}
   - component: {fileID: 848237531}
   m_Layer: 0
-  m_Name: VOPack
+  m_Name: OpenPackSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Common.Audio.AudioHook
-  _sfx: {fileID: 0}
+  _sfx: {fileID: 8300000, guid: 4456eb05cd8bf5d49935b847d07a7285, type: 3}
   _loopingSfx: {fileID: 0}
   _randomSfx:
   - {fileID: 8300000, guid: ea3405cd4052ccf4190e846b22865338, type: 3}
@@ -1406,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049957216
+      value: 0.050174147
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1416,7 +1416,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90008557
+      value: 0.8996517
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1431,7 +1431,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049957216
+      value: 0.050174147
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1441,7 +1441,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90008557
+      value: 0.8996517
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2716,6 +2716,7 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
+  _guyStress: {fileID: 0}
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
   _animator: {fileID: 649768719}
@@ -3010,6 +3011,7 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
+  _guyStress: {fileID: 0}
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1443930742}

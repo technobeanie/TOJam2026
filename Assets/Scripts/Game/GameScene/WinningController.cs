@@ -42,7 +42,10 @@ public class WinningController : MonoBehaviour
     [SerializeField] private Vector3 _packPunch = Vector3.zero;
     [SerializeField] private float _packPunchDuration = 0.5f;
     [SerializeField] private float _winningDelay = 2.0f;
+
+    [Header("Audio")]
     [SerializeField] private AudioHook _winningVO = null;
+    [SerializeField] private AudioHook _winningSFX = null;
 
     // properties
     public bool HasBegun
@@ -147,6 +150,10 @@ public class WinningController : MonoBehaviour
         if (_winningVO != null)
         {
             _winningVO.Play();
+        }
+        if (_winningSFX != null)
+        {
+            _winningSFX.Play();
         }
     }
 
