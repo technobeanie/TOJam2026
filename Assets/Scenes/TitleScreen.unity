@@ -1302,7 +1302,7 @@ MonoBehaviour:
   _loopingSfx: {fileID: 0}
   _randomSfx: []
   _jingle: {fileID: 0}
-  _music: {fileID: 0}
+  _music: {fileID: 8300000, guid: 365d3d072d5da584182c0eb0ed456c22, type: 3}
   _volume: 1
   _panStereo: 0
   _randomPitchEffect: 0

@@ -53,7 +53,11 @@ public class PackController : MonoBehaviour
         _packNormalRenderer.sprite = stickerPack._packNormal;
         _packOpenedLeftRenderer.sprite = stickerPack._packOpenedLeft;
         _packOpenedRightRenderer.sprite = stickerPack._packOpenedRight;
-        _packName.text = stickerPack._name;
+
+        if (_packName != null)
+        {
+            _packName.text = stickerPack._name;
+        }
     }
 
     public void Open()

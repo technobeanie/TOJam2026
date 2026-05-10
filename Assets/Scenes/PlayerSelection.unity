@@ -878,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05014965
+      value: 0.049740285
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -888,7 +888,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8997007
+      value: 0.90051943
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -903,7 +903,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05014965
+      value: 0.049740285
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -913,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8997007
+      value: 0.90051943
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   _loopingSfx: {fileID: 0}
   _randomSfx: []
   _jingle: {fileID: 0}
-  _music: {fileID: 0}
+  _music: {fileID: 8300000, guid: 365d3d072d5da584182c0eb0ed456c22, type: 3}
   _volume: 1
   _panStereo: 0
   _randomPitchEffect: 0
