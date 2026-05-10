@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadyRadial
   _radial: {fileID: 90048635}
-  _speed: 1
+  _speed: 2
 --- !u!1001 &649768716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2840,7 +2840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadyRadial
   _radial: {fileID: 901911234}
-  _speed: 1
+  _speed: 2
 --- !u!1 &1090899488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,7 +3713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadyRadial
   _radial: {fileID: 398171745}
-  _speed: 1
+  _speed: 2
 --- !u!1 &1380031645
 GameObject:
   m_ObjectHideFlags: 0
@@ -5224,7 +5224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadyRadial
   _radial: {fileID: 1110663050}
-  _speed: 1
+  _speed: 2
 --- !u!1 &1788242209
 GameObject:
   m_ObjectHideFlags: 0

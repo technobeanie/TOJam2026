@@ -22,6 +22,7 @@ public class ThemeSequence : MonoBehaviour
     [SerializeField] private RectTransform _startAnchor = null;
     [SerializeField] private RectTransform _normalAnchor = null;
     [SerializeField] private GameObject _themePanel = null;
+    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Timing")]
     [SerializeField] private float _beforeDelay = 5.0f;
@@ -47,6 +48,7 @@ public class ThemeSequence : MonoBehaviour
     {
         _title.SetActive(false);
         _themePanel.SetActive(false);
+        _guy.Initialize();
     }
 
     public void Begin(Action onDone)
@@ -72,6 +74,8 @@ public class ThemeSequence : MonoBehaviour
         // First delay.
         _timer = new Timer(_beforeDelay, OnEndFirstDelay);
         _timer.Begin();
+
+        _guy.Show();
     }
     #endregion
 
@@ -85,6 +89,8 @@ public class ThemeSequence : MonoBehaviour
 
         _timer = new Timer(_afterDelay, OnSecondDelay);
         _timer.Begin();
+
+        _guy.Hide();
     }
 
     private void OnSecondDelay(Timer timer)

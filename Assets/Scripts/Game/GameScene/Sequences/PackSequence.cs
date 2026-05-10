@@ -20,6 +20,7 @@ public class PackSequence : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private List<PackController> _packs = new List<PackController>();
     [SerializeField] private GameObject _title = null;
+    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Timing")]
     [SerializeField] private float _beforeDelay = 5.0f;
@@ -54,6 +55,8 @@ public class PackSequence : MonoBehaviour
                 pack.gameObject.SetActive(false);
             }
         }
+
+        _guy.Initialize();
     }
 
     public void Begin(Action onDone)
@@ -69,6 +72,8 @@ public class PackSequence : MonoBehaviour
         // First delay.
         _timer = new Timer(_beforeDelay, OnEndFirstDelay);
         _timer.Begin();
+
+        _guy.Show();
     }
     #endregion
 
@@ -82,6 +87,8 @@ public class PackSequence : MonoBehaviour
 
         _timer = new Timer(_afterDelay, OnSecondDelay);
         _timer.Begin();
+
+        _guy.Hide();
     }
 
     private void OnSecondDelay(Timer timer)
