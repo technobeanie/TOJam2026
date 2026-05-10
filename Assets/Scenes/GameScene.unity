@@ -930,7 +930,7 @@ MonoBehaviour:
   _rightVotesCountText: {fileID: 376766928}
   _packPunch: {x: 0.3, y: 0.3, z: 0}
   _packPunchDuration: 0.5
-  _winningDelay: 2
+  _winningDelay: 3
   _winningVO: {fileID: 979849086}
 --- !u!1 &376766926
 GameObject:
