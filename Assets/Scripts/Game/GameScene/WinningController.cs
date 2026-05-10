@@ -1,5 +1,6 @@
 using Common.Flow;
 using Common.Joystick;
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,11 +26,16 @@ public class WinningController : MonoBehaviour
     [SerializeField] private GameObject _titlePanel = null;
     [SerializeField] private GameObject _holdPanel = null;
     [SerializeField] private ReadyRadial _radial = null;
+    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _winningText = null;
     [SerializeField] private TextMeshProUGUI _leftVotesCountText = null;
     [SerializeField] private TextMeshProUGUI _rightVotesCountText = null;
+
+    [Header("Timing")]
+    [SerializeField] private Vector3 _packPunch = Vector3.zero;
+    [SerializeField] private float _packPunchDuration = 0.5f;
 
     // properties
     public bool HasBegun
@@ -64,6 +70,8 @@ public class WinningController : MonoBehaviour
     {
         HasBegun = false;
 
+        _guy.Initialize();
+
         Hide();
     }
 
@@ -81,11 +89,15 @@ public class WinningController : MonoBehaviour
         if (player1Votes > player2Votes)
         {
             _medal1.SetActive(true);
+            _medal1.transform.DOPunchScale(_packPunch, _packPunchDuration);
+
             _winningText.text = string.Format(WinningTextFormat, 1);
         }
         else if (player1Votes < player2Votes)
         {
             _medal2.SetActive(true);
+            _medal2.transform.DOPunchScale(_packPunch, _packPunchDuration);
+
             _winningText.text = string.Format(WinningTextFormat, 2);
         }
         // DRAW
@@ -93,6 +105,9 @@ public class WinningController : MonoBehaviour
         {
             _medal1.SetActive(true);
             _medal2.SetActive(true);
+            _medal1.transform.DOPunchScale(_packPunch, _packPunchDuration);
+            _medal2.transform.DOPunchScale(_packPunch, _packPunchDuration);
+
             _winningText.text = "Draw!";
         }
 
@@ -104,7 +119,7 @@ public class WinningController : MonoBehaviour
 
         _radial.gameObject.SetActive(true);
 
-        // TODO: Radial to start a new match.
+        _guy.Show();
     }
     #endregion
 
@@ -136,6 +151,8 @@ public class WinningController : MonoBehaviour
         _winningText.gameObject.SetActive(false);
 
         _radial.gameObject.SetActive(false);
+
+        _guy.Hide();
     }
     #endregion
 }

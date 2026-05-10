@@ -34,6 +34,7 @@ public class VotingController : MonoBehaviour
     [SerializeField] private GameObject _rightVotingText = null;
     [SerializeField] private GameObject _confirmText = null;
     [SerializeField] private ReadyRadial _radial = null;
+    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _votingAmountText = null;
@@ -82,6 +83,8 @@ public class VotingController : MonoBehaviour
     public void Initialize()
     {
         Hide();
+
+        _guy.Initialize();
     }
 
     public void Begin(Action onReady)
@@ -101,11 +104,15 @@ public class VotingController : MonoBehaviour
 
         UpdateVotes();
 
+        _guy.Show();
+
         HasBegun = true;
     }
 
     public void Hide()
     {
+        _guy.Hide();
+
         _titlePanel.SetActive(false);
         _votingAmountPanel.SetActive(false);
         _leftVotingText.SetActive(false);

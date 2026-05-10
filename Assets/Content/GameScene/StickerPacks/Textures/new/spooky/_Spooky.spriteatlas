@@ -97,6 +97,7 @@ SpriteAtlas:
     - 0492d7ee1f3f3714f9ba903d631c66f3: 21300000
     - 792261fe2772cda4c9e3c1634ece925b: 21300000
     - 39bdd6fe4728c5441924fd2f65817c00: 21300000
+    - 453c851f3827761429b4e9db7ce1a3b9: 21300000
     - 887b5fdfdcd2de34d8e986f0974e7849: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -147,6 +148,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0492d7ee1f3f3714f9ba903d631c66f3, type: 3}
   - {fileID: 21300000, guid: 792261fe2772cda4c9e3c1634ece925b, type: 3}
   - {fileID: 21300000, guid: 39bdd6fe4728c5441924fd2f65817c00, type: 3}
+  - {fileID: 21300000, guid: 453c851f3827761429b4e9db7ce1a3b9, type: 3}
   - {fileID: 21300000, guid: 887b5fdfdcd2de34d8e986f0974e7849, type: 3}
   m_PackedSpriteNamesToIndex:
   - sticker_spooky_026
@@ -196,6 +198,7 @@ SpriteAtlas:
   - sticker_spooky_039
   - sticker_spooky_037
   - sticker_spooky_006
+  - sticker_spooky_049
   - sticker_spooky_032
   m_RenderDataMap: {}
   m_Tag: _Spooky

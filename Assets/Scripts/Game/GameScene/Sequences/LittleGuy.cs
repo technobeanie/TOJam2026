@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class LittleGuy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class LittleGuy : MonoBehaviour
 
     // private
     private Action _onDone = null;
+    private Timer _timer = null;
 
     [Header("Setup")]
     [SerializeField] private GameObject _littleGuy = null;
@@ -23,10 +25,15 @@ public class LittleGuy : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float _animateDuration = 1.0f;
     [SerializeField] private Ease _animateEase = Ease.InOutQuad;
+    [SerializeField] private float _autoHideDuration = 0.0f;
 
     // properties
 
     #region Unity Methods
+    private void FixedUpdate()
+    {
+        _timer?.Step(Time.fixedDeltaTime);
+    }
     #endregion
 
     #region Public Methods
@@ -47,6 +54,12 @@ public class LittleGuy : MonoBehaviour
         seq.Append(_littleGuy.transform.DOMove(_endPosition.position, _animateDuration, true).SetEase(_animateEase));
         seq.AppendCallback(OnShowDone);
         seq.Play();
+
+        if (_autoHideDuration > 0.0f)
+        {
+            _timer = new Timer(_autoHideDuration, OnAutoHide);
+            _timer.Begin();
+        }
     }
 
     public void Hide(Action onDone = null)
@@ -78,6 +91,11 @@ public class LittleGuy : MonoBehaviour
 
         _onDone?.Invoke();
         _onDone = null;
+    }
+
+    private void OnAutoHide(Timer timer)
+    {
+        Hide();
     }
     #endregion
 }
