@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sfx: {fileID: 0}
+  _sfx: {fileID: 8300000, guid: b6681e1b0efcf114b82679fe55a334b8, type: 3}
   _loopingSfx: {fileID: 0}
   _randomSfx: []
   _jingle: {fileID: 0}
