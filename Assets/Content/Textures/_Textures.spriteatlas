@@ -54,17 +54,20 @@ SpriteAtlas:
     - ebd240f8be4d5be478575cce5832a9af: 21300000
     - 7f9675ea99baa8345b03a4ae9672e63d: 21300000
     - 0083fade71b8d4441b3239abcf577cb1: 21300000
+    - d0416d3f68b4b81498f65f15445d4355: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: fc0b57188455da5479aea58d86ad664d, type: 3}
   - {fileID: 21300000, guid: ebd240f8be4d5be478575cce5832a9af, type: 3}
   - {fileID: 21300000, guid: 7f9675ea99baa8345b03a4ae9672e63d, type: 3}
   - {fileID: 21300000, guid: 0083fade71b8d4441b3239abcf577cb1, type: 3}
+  - {fileID: 21300000, guid: d0416d3f68b4b81498f65f15445d4355, type: 3}
   m_PackedSpriteNamesToIndex:
   - Border
   - RoundedBox
   - WhiteSprite
   - Circle
+  - Neverpants
   m_RenderDataMap: {}
   m_Tag: _Textures
   m_IsVariant: 0
