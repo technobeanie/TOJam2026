@@ -85,6 +85,7 @@ SpriteAtlas:
     - 5f1ae00b64f2ded41b2e3d269002f68f: 21300000
     - f277472be8a4f0c44ad98a95ba777c67: 21300000
     - f0e7487bc1e0ad347882c31387fd2e92: 21300000
+    - f8edc92c62e5ae143b67de53b4ce6e29: 21300000
     - 9e3f1d3c54c1b1d489c93d3dd55bf2ed: 21300000
     - 553080bc27171d141ac0add0ed44d158: 21300000
     - f35b413d37b881b4cb8cd307938291f2: 21300000
@@ -132,6 +133,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5f1ae00b64f2ded41b2e3d269002f68f, type: 3}
   - {fileID: 21300000, guid: f277472be8a4f0c44ad98a95ba777c67, type: 3}
   - {fileID: 21300000, guid: f0e7487bc1e0ad347882c31387fd2e92, type: 3}
+  - {fileID: 21300000, guid: f8edc92c62e5ae143b67de53b4ce6e29, type: 3}
   - {fileID: 21300000, guid: 9e3f1d3c54c1b1d489c93d3dd55bf2ed, type: 3}
   - {fileID: 21300000, guid: 553080bc27171d141ac0add0ed44d158, type: 3}
   - {fileID: 21300000, guid: f35b413d37b881b4cb8cd307938291f2, type: 3}
@@ -178,6 +180,7 @@ SpriteAtlas:
   - sticker_funky_043
   - sticker_funky_033
   - sticker_funky_036
+  - sticker_funky_046
   - sticker_funky_008
   - sticker_funky_002
   - sticker_funky_022

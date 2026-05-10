@@ -15,11 +15,14 @@ MonoBehaviour:
   _stickers:
   - {fileID: 2800000, guid: 07a953c6388069f4292f606a90041104, type: 3}
   - {fileID: 2800000, guid: 553080bc27171d141ac0add0ed44d158, type: 3}
+  - {fileID: 2800000, guid: 553080bc27171d141ac0add0ed44d158, type: 3}
   - {fileID: 2800000, guid: 04001e3944994a84e906e758af2c3832, type: 3}
   - {fileID: 2800000, guid: 9b248fbd5d3e37749897b94563a15a37, type: 3}
   - {fileID: 2800000, guid: ef6f85894d17fad4ba39e1b56aaf8b21, type: 3}
   - {fileID: 2800000, guid: 3c71ce18972b6b24bb181457c1616b06, type: 3}
   - {fileID: 2800000, guid: a8717dd63149aad43b8ab06576b82bff, type: 3}
+  - {fileID: 2800000, guid: 9e3f1d3c54c1b1d489c93d3dd55bf2ed, type: 3}
+  - {fileID: 2800000, guid: 9e3f1d3c54c1b1d489c93d3dd55bf2ed, type: 3}
   - {fileID: 2800000, guid: 9e3f1d3c54c1b1d489c93d3dd55bf2ed, type: 3}
   - {fileID: 2800000, guid: 54d716957bb3ca7449f47179e40873d3, type: 3}
   - {fileID: 2800000, guid: 13cab3d6ca6e14d458bcd35336b9442f, type: 3}
@@ -30,6 +33,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 6bf40a688bba33f4ead2292e73de7948, type: 3}
   - {fileID: 2800000, guid: 519573d632df0c342bf975dc7ee49f38, type: 3}
   - {fileID: 2800000, guid: b0ff211575d34244691dd16ea0f81720, type: 3}
+  - {fileID: 2800000, guid: b0ff211575d34244691dd16ea0f81720, type: 3}
+  - {fileID: 2800000, guid: 205088f99a7397f43abec29566784369, type: 3}
   - {fileID: 2800000, guid: 205088f99a7397f43abec29566784369, type: 3}
   - {fileID: 2800000, guid: bed8f6a50b413e54c8c58b909c6871c8, type: 3}
   - {fileID: 2800000, guid: 8555b0f1452afaf4a92ff6a4c18b8695, type: 3}
@@ -52,11 +57,13 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a580922874605f84f9a149a316358bab, type: 3}
   - {fileID: 2800000, guid: f6b1df15893abf64d89202eb67368bfd, type: 3}
   - {fileID: 2800000, guid: f566c8995937fb8488cab0bc60344aa4, type: 3}
+  - {fileID: 2800000, guid: f566c8995937fb8488cab0bc60344aa4, type: 3}
   - {fileID: 2800000, guid: f72fa0e04c96fb34c9b5cda7dd9017a8, type: 3}
   - {fileID: 2800000, guid: f3d9d1e093210ef4fa7f5363b1efc20d, type: 3}
   - {fileID: 2800000, guid: 48ff1905ee07b4b4abd842f6c422a79d, type: 3}
   - {fileID: 2800000, guid: 5f1ae00b64f2ded41b2e3d269002f68f, type: 3}
   - {fileID: 2800000, guid: ad48848d2f2cda04dbc2a1977700d0f2, type: 3}
   - {fileID: 2800000, guid: d9e9619771214ab448021699546a0b95, type: 3}
+  - {fileID: 2800000, guid: f8edc92c62e5ae143b67de53b4ce6e29, type: 3}
   _packNormal: {fileID: 21300000, guid: 9aa050c3ebb34694f927bdd03cc101b4, type: 3}
   _name: Weird

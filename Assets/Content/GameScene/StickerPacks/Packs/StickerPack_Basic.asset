@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StickerPack
   _stickers:
   - {fileID: 2800000, guid: c4fefb645a2b3294d88ca657f0a0f148, type: 3}
+  - {fileID: 2800000, guid: c4fefb645a2b3294d88ca657f0a0f148, type: 3}
   - {fileID: 2800000, guid: 5f8ff4b139f0a05438e0d43886b95970, type: 3}
   - {fileID: 2800000, guid: 04b3ddfaec9a38a4f98b277eef4f8c9b, type: 3}
+  - {fileID: 2800000, guid: da2202ab5e060d74b931f3cdce8f5f90, type: 3}
+  - {fileID: 2800000, guid: da2202ab5e060d74b931f3cdce8f5f90, type: 3}
   - {fileID: 2800000, guid: da2202ab5e060d74b931f3cdce8f5f90, type: 3}
   - {fileID: 2800000, guid: 03dc7bcc4345a5a4e936dd3a39d0c73e, type: 3}
   - {fileID: 2800000, guid: 367d7752b0a2c6b418f95d83c7377743, type: 3}
@@ -23,14 +26,20 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 53699b17bd3aef84e889ee38dea2dd46, type: 3}
   - {fileID: 2800000, guid: 0da57c18223181d42926bd926efffc16, type: 3}
   - {fileID: 2800000, guid: 4e35cc938cf1d7d4fa75c991d10f937f, type: 3}
+  - {fileID: 2800000, guid: 4e35cc938cf1d7d4fa75c991d10f937f, type: 3}
   - {fileID: 2800000, guid: ee36704ede0d32f4e8b5757597453d59, type: 3}
   - {fileID: 2800000, guid: a1b834e8d78c3224ab89015696a79c43, type: 3}
   - {fileID: 2800000, guid: b8be4f823178af04ea87c0033807899e, type: 3}
   - {fileID: 2800000, guid: c04d86c48323be94eb6c29eaf6778ada, type: 3}
   - {fileID: 2800000, guid: 29767d3ab50ca2d4b900c7bde5b73358, type: 3}
   - {fileID: 2800000, guid: 4977e3e095bfb1f42b635218a6eac274, type: 3}
+  - {fileID: 2800000, guid: 4977e3e095bfb1f42b635218a6eac274, type: 3}
   - {fileID: 2800000, guid: 3d51663f0f5f4634d9bf34a1d5ed658b, type: 3}
   - {fileID: 2800000, guid: a467757cd0b75d542879bf6853c43169, type: 3}
+  - {fileID: 2800000, guid: a467757cd0b75d542879bf6853c43169, type: 3}
+  - {fileID: 2800000, guid: a467757cd0b75d542879bf6853c43169, type: 3}
+  - {fileID: 2800000, guid: 6a1d1ca80b9ddd646b2d6f7d289e989e, type: 3}
+  - {fileID: 2800000, guid: 6a1d1ca80b9ddd646b2d6f7d289e989e, type: 3}
   - {fileID: 2800000, guid: 6a1d1ca80b9ddd646b2d6f7d289e989e, type: 3}
   - {fileID: 2800000, guid: 9e2ef8472530644429702d7fe2e7c715, type: 3}
   - {fileID: 2800000, guid: 87eae67e25bb1404c9eb2f77e1389334, type: 3}
@@ -40,12 +49,14 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 36627ac1d62d9fc428d82431842183e9, type: 3}
   - {fileID: 2800000, guid: c22a950b38715d5498126d048c621c7e, type: 3}
   - {fileID: 2800000, guid: 5d258e3e112b2ed4ab3e0be2e4a72d6c, type: 3}
+  - {fileID: 2800000, guid: 5d258e3e112b2ed4ab3e0be2e4a72d6c, type: 3}
   - {fileID: 2800000, guid: db0912fb1ea380b408af36a742f7de2c, type: 3}
   - {fileID: 2800000, guid: 88fc560e2ec15754cb02f16187c954f6, type: 3}
   - {fileID: 2800000, guid: d188984f40e94754d93a1aff1b07f47c, type: 3}
   - {fileID: 2800000, guid: 12f2475be43ad5041a706995d3cc2464, type: 3}
   - {fileID: 2800000, guid: 49a75a694cdb6694ebfb36fbbf48c9e6, type: 3}
   - {fileID: 2800000, guid: 0a5c9310ee7686a4e99b0cbc33cf4f20, type: 3}
+  - {fileID: 2800000, guid: 9b2b10a520f224744a966cec07a02212, type: 3}
   - {fileID: 2800000, guid: 9b2b10a520f224744a966cec07a02212, type: 3}
   - {fileID: 2800000, guid: 5fc31c493cfd13749802f7a353a64119, type: 3}
   - {fileID: 2800000, guid: 3b65c64570205984999ed3d05c17a322, type: 3}
@@ -62,10 +73,18 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1f1743b046185ed439e690d9188b3700, type: 3}
   - {fileID: 2800000, guid: b71f1b5f1195b4c46b9b6ac8c7e36dd3, type: 3}
   - {fileID: 2800000, guid: 1a4071dd4d1367941a285baa3a2b0836, type: 3}
+  - {fileID: 2800000, guid: 1a4071dd4d1367941a285baa3a2b0836, type: 3}
   - {fileID: 2800000, guid: 34e2506890900454faf20868c9b4bed8, type: 3}
   - {fileID: 2800000, guid: 00d3fb101cf6f7548be2ce01b3d06f79, type: 3}
   - {fileID: 2800000, guid: ff26eb00e3b772c4a8fa1c173f155cb2, type: 3}
   - {fileID: 2800000, guid: 98c8e1d2ca7f7034b8f2eba7d66a9c0c, type: 3}
   - {fileID: 2800000, guid: feb1b5ae539b9544eafdcf6322927a3b, type: 3}
+  - {fileID: 2800000, guid: f9d6f6764961f09408982683a12549e1, type: 3}
+  - {fileID: 2800000, guid: 9e20b4ba292c17a42882e166fc55098c, type: 3}
+  - {fileID: 2800000, guid: 6c9cf533b28540245a127fee55d543ed, type: 3}
+  - {fileID: 2800000, guid: 947a125c64934bb409b27d138cefee99, type: 3}
+  - {fileID: 2800000, guid: a9bf9738190ffc94da495ac769924045, type: 3}
+  - {fileID: 2800000, guid: a9bf9738190ffc94da495ac769924045, type: 3}
+  - {fileID: 2800000, guid: 5eea70d03b5c48048981379f9562aae0, type: 3}
   _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
   _name: Basic
