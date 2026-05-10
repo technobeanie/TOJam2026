@@ -57,6 +57,9 @@ public class GameSceneView : SokobanView
     [SerializeField] private AudioHook _countdownLoopingSFX = null;
     [SerializeField] private AudioHook _countdownDoneSFX = null;
 
+    [Header("Sequence")]
+    [SerializeField] private GameIntroSequence _introSequence = null;
+
     // properties
 
     #region Unity Methods
@@ -199,6 +202,11 @@ public class GameSceneView : SokobanView
             _winningController.Initialize();
         }
 
+        if (_introSequence != null)
+        {
+            _introSequence.Initialize();
+        }
+
         _playerReadyCount = 0;
         _readyTimer = null;
         SetTimerVisuals(false, 0.0f);
@@ -209,6 +217,14 @@ public class GameSceneView : SokobanView
         base.OnViewOpened();
 
         // Let's begin the game.
+        if (_introSequence != null)
+        {
+            _introSequence.Begin(OnIntroDone);
+        }
+    }
+
+    private void OnIntroDone()
+    {
         if (_belt != null)
         {
             _belt.Begin();

@@ -27,6 +27,8 @@ public class PackSequence : MonoBehaviour
     [SerializeField] private float _packDelay = 0.5f;
     [SerializeField] private Vector3 _packPunch = Vector3.zero;
     [SerializeField] private float _packPunchDuration = 1.0f;
+    [SerializeField] private float _punchTitleScale = 1.2f;
+    [SerializeField] private float _punchTitleDuration = 0.2f;
 
     // properties
 
@@ -59,6 +61,10 @@ public class PackSequence : MonoBehaviour
         _onDone = onDone;
 
         _title.SetActive(true);
+
+        var previousScale = _title.transform.localScale;
+        _title.transform.localScale = previousScale * _punchTitleScale;
+        _title.transform.DOScale(previousScale, _punchTitleDuration).SetEase(Ease.InQuad);
 
         // First delay.
         _timer = new Timer(_beforeDelay, OnEndFirstDelay);

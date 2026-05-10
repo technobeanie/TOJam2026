@@ -599,6 +599,8 @@ MonoBehaviour:
   _packDelay: 0.5
   _packPunch: {x: 0.2, y: 0.2, z: 0}
   _packPunchDuration: 0.5
+  _punchTitle: {x: 0.2, y: 0.2, z: 0}
+  _punchTitleDuration: 0.2
 --- !u!1001 &342523738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,6 +751,8 @@ MonoBehaviour:
   _beforeDelay: 5
   _afterDelay: 0.25
   _themeMoveDuration: 1.5
+  _punchScale: 1.1
+  _punchTitleDuration: 0.2
 --- !u!1 &483544211
 GameObject:
   m_ObjectHideFlags: 0
