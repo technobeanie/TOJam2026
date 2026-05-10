@@ -35,7 +35,7 @@ public class PlayerPackController : PlayerController
     {
         base.FixedUpdate();
        
-        if (_isDone)
+        if (IsDone)
         {
             return;
         }

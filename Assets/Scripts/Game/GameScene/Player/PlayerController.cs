@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     // public
 
     // protected
-    protected bool _isDone = false;
 
     // private
     private Sticker _sticker = null;
@@ -57,6 +56,11 @@ public class PlayerController : MonoBehaviour
         get; private set;
     }
 
+    public bool IsDone
+    {
+        get; private set;
+    }
+
     #region Unity Methods
     protected virtual void FixedUpdate()
     {
@@ -76,7 +80,7 @@ public class PlayerController : MonoBehaviour
             _player.transform.position = movement3;
         }
 
-        if (!_isDone)
+        if (!IsDone)
         {
             if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
             {
@@ -121,7 +125,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _onReady = onReady;
-        _isDone = false;
+        IsDone = false;
 
         RefreshIsReady(false);
     }
@@ -132,14 +136,25 @@ public class PlayerController : MonoBehaviour
         KeyboardPlayerId = keyboardPlayerId;
     }
 
+    public void Begin()
+    {
+        IsDone = false;
+
+        if (_animator != null)
+        {
+            _animator.SetBool(_grabBool, false);
+            _animator.SetBool(_waitBool, false);
+        }
+    }
+
     public void GameDone()
     {
-        if (_isDone)
+        if (IsDone)
         {
             return;
         }
 
-        _isDone = true;
+        IsDone = true;
 
         if (_animator != null)
         {

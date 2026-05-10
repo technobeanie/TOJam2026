@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
-public class ThemeSequence : MonoBehaviour
+public class PackSequence : MonoBehaviour
 {
     // const
 
@@ -18,15 +18,15 @@ public class ThemeSequence : MonoBehaviour
     private Timer _timer = null;
 
     [Header("Setup")]
+    [SerializeField] private List<PackController> _packs = new List<PackController>();
     [SerializeField] private GameObject _title = null;
-    [SerializeField] private RectTransform _startAnchor = null;
-    [SerializeField] private RectTransform _normalAnchor = null;
-    [SerializeField] private GameObject _themePanel = null;
 
     [Header("Timing")]
     [SerializeField] private float _beforeDelay = 5.0f;
-    [SerializeField] private float _afterDelay = 1.0f;
-    [SerializeField] private float _themeMoveDuration = 2.0f;
+    [SerializeField] private float _afterDelay = 0.25f;
+    [SerializeField] private float _packDelay = 0.5f;
+    [SerializeField] private Vector3 _packPunch = Vector3.zero;
+    [SerializeField] private float _packPunchDuration = 1.0f;
 
     // properties
 
@@ -44,7 +44,14 @@ public class ThemeSequence : MonoBehaviour
     public void Initialize()
     {
         _title.SetActive(false);
-        _themePanel.SetActive(false);
+
+        foreach (var pack in _packs)
+        {
+            if (pack != null)
+            {
+                pack.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void Begin(Action onDone)
@@ -52,10 +59,6 @@ public class ThemeSequence : MonoBehaviour
         _onDone = onDone;
 
         _title.SetActive(true);
-        _themePanel.SetActive(true);
-
-        _themePanel.transform.localPosition = _startAnchor.localPosition;
-        _themePanel.transform.localScale = _startAnchor.localScale;
 
         // First delay.
         _timer = new Timer(_beforeDelay, OnEndFirstDelay);
@@ -77,18 +80,30 @@ public class ThemeSequence : MonoBehaviour
 
     private void OnSecondDelay(Timer timer)
     {
-        _themePanel.transform.DOScale(_normalAnchor.localScale, _themeMoveDuration).SetEase(Ease.OutBounce);
+        bool found = false;
 
-        var sequence = DOTween.Sequence();
-        sequence.Append(_themePanel.transform.DOLocalMove(_normalAnchor.localPosition, _themeMoveDuration, true).SetEase(Ease.InOutQuad));
-        sequence.AppendCallback(OnThemeMoveDone);
-        sequence.Play();
-    }
+        foreach (var pack in _packs)
+        {
+            if (pack != null && !pack.gameObject.activeSelf)
+            {
+                found = true;
 
-    private void OnThemeMoveDone()
-    {
-        _onDone?.Invoke();
-        _onDone = null;
+                pack.gameObject.SetActive(true);
+                pack.transform.DOPunchScale(_packPunch, _packPunchDuration);
+                break;
+            }
+        }
+
+        if (found)
+        {
+            _timer = new Timer(_packDelay, OnSecondDelay);
+            _timer.Begin();
+        }
+        else
+        {
+            _onDone?.Invoke();
+            _onDone = null;
+        }
     }
     #endregion
 }

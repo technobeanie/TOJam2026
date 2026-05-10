@@ -36,6 +36,10 @@ public class PackSelectionView : SokobanView
     [Header("UI")]
     [SerializeField] private GameObject _beginText = null;
 
+    [Header("Sequences")]
+    [SerializeField] private ThemeSequence _themeSequence = null;
+    [SerializeField] private PackSequence _packSequence = null;
+
     // properties
     private bool IsReady
     {
@@ -61,7 +65,7 @@ public class PackSelectionView : SokobanView
             parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
             parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-            FlowManager.Instance.OpenView("PlayerSelection", parameters);
+            FlowManager.Instance.OpenView("PlayerSelection", parameters, false, "Loading");
         }
 
         if (IsReady)
@@ -153,12 +157,14 @@ public class PackSelectionView : SokobanView
         {
             _player1.Initialize(null);
             _player1.MaxToOpen = _openedByPlayer;
+            _player1.GameDone();
         }
 
         if (_player2 != null)
         {
             _player2.Initialize(null);
             _player2.MaxToOpen = _openedByPlayer;
+            _player2.GameDone();
         }
 
         IsReady = false;
@@ -169,6 +175,16 @@ public class PackSelectionView : SokobanView
         }
 
         SelectPacks();
+
+        if (_themeSequence != null)
+        {
+            _themeSequence.Initialize();
+        }
+
+        if (_packSequence != null)
+        {
+            _packSequence.Initialize();
+        }
     }
 
     protected override void OnViewOpened()
@@ -176,6 +192,10 @@ public class PackSelectionView : SokobanView
         base.OnViewOpened();
 
         // Begin!
+        if (_themeSequence != null)
+        {
+            _themeSequence.Begin(OnThemeSequenceDone);
+        }
     }
     #endregion
 
@@ -230,6 +250,26 @@ public class PackSelectionView : SokobanView
             {
                 _beginText.SetActive(true);
             }
+        }
+    }
+
+    private void OnThemeSequenceDone()
+    {
+        if (_packSequence != null)
+        {
+            _packSequence.Begin(OnPackSequenceDone);
+        }
+    }
+
+    private void OnPackSequenceDone()
+    {
+        if (_player1 != null)
+        {
+            _player1.Begin();
+        }
+        if (_player2 != null)
+        {
+            _player2.Begin();
         }
     }
     #endregion
