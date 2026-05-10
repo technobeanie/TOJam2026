@@ -51,6 +51,8 @@ SpriteAtlas:
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 23ba0a82110201d40b33f561ab7dfe1d: 21300000
+    - 8887f7060a002ff4db60d4d63e866201: 21300000
+    - 0c7b2a77b9828944789573745ea6e655: 21300000
     - 29573149b917804438eaa4e0edd3a8da: 21300000
     - 60db5e595376d7d4697b630d337bae5a: 21300000
     - 2908d9f9070bb584787dd3d88e3c3d16: 21300000
@@ -61,6 +63,8 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 23ba0a82110201d40b33f561ab7dfe1d, type: 3}
+  - {fileID: 21300000, guid: 8887f7060a002ff4db60d4d63e866201, type: 3}
+  - {fileID: 21300000, guid: 0c7b2a77b9828944789573745ea6e655, type: 3}
   - {fileID: 21300000, guid: 29573149b917804438eaa4e0edd3a8da, type: 3}
   - {fileID: 21300000, guid: 60db5e595376d7d4697b630d337bae5a, type: 3}
   - {fileID: 21300000, guid: 2908d9f9070bb584787dd3d88e3c3d16, type: 3}
@@ -70,6 +74,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5e223bde325045541b486a88a12ead34, type: 3}
   m_PackedSpriteNamesToIndex:
   - guy_point
+  - controls
+  - controls_holdy
   - medal
   - prompt_bar
   - trophy

@@ -235,6 +235,16 @@ public class GameSceneView : SokobanView
         {
             _belt.Begin();
         }
+
+        if (_player1 != null)
+        {
+            _player1.Begin();
+        }
+
+        if (_player2 != null)
+        {
+            _player2.Begin();
+        }
     }
 
     protected override void OnViewClosed(Dictionary<string, object> parameters)

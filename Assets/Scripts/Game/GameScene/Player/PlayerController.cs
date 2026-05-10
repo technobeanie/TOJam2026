@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private GameObject _pendingReadyText = null;
-    [SerializeField] private GameObject _isReadyText = null;
 
     [Header("Audio")]
     [SerializeField] private AudioHook _pickUpSFX = null;
@@ -127,7 +126,7 @@ public class PlayerController : MonoBehaviour
         _onReady = onReady;
         IsDone = false;
 
-        RefreshIsReady(false);
+        DisplayHoldWhenReady(false);
     }
 
     public virtual void AssignInputDevice(InputDevice inputDevice, int keyboardPlayerId)
@@ -145,6 +144,8 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool(_grabBool, false);
             _animator.SetBool(_waitBool, false);
         }
+
+        DisplayHoldWhenReady(true);
     }
 
     public void GameDone()
@@ -165,11 +166,6 @@ public class PlayerController : MonoBehaviour
         if (_pendingReadyText != null)
         {
             _pendingReadyText.SetActive(false);
-        }
-
-        if (_isReadyText != null)
-        {
-            _isReadyText.SetActive(false);
         }
     }
     #endregion
@@ -275,21 +271,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnReady()
     {
-        RefreshIsReady(true);
+        DisplayHoldWhenReady(false);
 
         _onReady?.Invoke(this);
     }
 
-    private void RefreshIsReady(bool isReady)
+    private void DisplayHoldWhenReady(bool display)
     {
         if (_pendingReadyText != null)
         {
-            _pendingReadyText.SetActive(!isReady);
-        }
-
-        if (_isReadyText != null)
-        {
-            _isReadyText.SetActive(isReady);
+            _pendingReadyText.SetActive(display);
         }
     }
 
