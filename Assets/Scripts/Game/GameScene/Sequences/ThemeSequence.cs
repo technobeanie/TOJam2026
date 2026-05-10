@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StickerPack : ScriptableObject
+public class ThemeSequence : MonoBehaviour
 {
     // const
 
@@ -11,9 +11,6 @@ public class StickerPack : ScriptableObject
     // protected
 
     // private
-    public List<Object> _stickers = new List<Object>();
-    public Sprite _packNormal = null;
-    public string _name = null;
 
     // properties
 

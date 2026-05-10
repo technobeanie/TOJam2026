@@ -78,7 +78,7 @@ public class GameSceneView : SokobanView
             parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
             parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-            FlowManager.Instance.OpenView("PackSelection", parameters);
+            FlowManager.Instance.OpenView("PackSelection", parameters, false, "Loading");
         }
 
         if (_readyTimer != null)

@@ -79,7 +79,7 @@ public class PackSelectionView : SokobanView
                 parameters.Add(GameSceneView.FlowParameter_Theme, _themeText.text);
                 parameters.Add(GameSceneView.FlowParameter_Packs, _selectedStickerPacks);
 
-                FlowManager.Instance.OpenView("GameScene", parameters);
+                FlowManager.Instance.OpenView("GameScene", parameters, false, "Loading");
             }
         }
     }

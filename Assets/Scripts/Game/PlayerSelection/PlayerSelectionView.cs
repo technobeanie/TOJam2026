@@ -47,7 +47,7 @@ public class PlayerSelectionView : SokobanView
         // TEMP. Go back.
         if (Keyboard.current != null && Keyboard.current[Key.Escape].wasPressedThisFrame)
         {
-            FlowManager.Instance.OpenView("TitleScreen");
+            FlowManager.Instance.OpenView("TitleScreen", null, false, "Loading");
         }
 
         if (IsReady)
@@ -197,7 +197,7 @@ public class PlayerSelectionView : SokobanView
         parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
         parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
 
-        FlowManager.Instance.OpenView("PackSelection", parameters);
+        FlowManager.Instance.OpenView("PackSelection", parameters, false, "Loading");
     }
     #endregion
 }
