@@ -59,6 +59,7 @@ SpriteAtlas:
     - 51d5eddb6ae2a6c4f9f9c9a89d5726b0: 21300000
     - 9650938c17241834c82b6e6ad5b50e31: 21300000
     - 651ea9cdbe7b30145b06758011416e66: 21300000
+    - e3f073ce1b960ce47b67a2de82708a19: 21300000
     - 5e223bde325045541b486a88a12ead34: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -71,6 +72,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 51d5eddb6ae2a6c4f9f9c9a89d5726b0, type: 3}
   - {fileID: 21300000, guid: 9650938c17241834c82b6e6ad5b50e31, type: 3}
   - {fileID: 21300000, guid: 651ea9cdbe7b30145b06758011416e66, type: 3}
+  - {fileID: 21300000, guid: e3f073ce1b960ce47b67a2de82708a19, type: 3}
   - {fileID: 21300000, guid: 5e223bde325045541b486a88a12ead34, type: 3}
   m_PackedSpriteNamesToIndex:
   - guy_point
@@ -82,6 +84,7 @@ SpriteAtlas:
   - guy_action
   - guy_win
   - title_artmethat
+  - votecontroller
   - guy_attention
   m_RenderDataMap: {}
   m_Tag: _UI

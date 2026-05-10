@@ -30,8 +30,6 @@ public class VotingController : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private GameObject _titlePanel = null;
     [SerializeField] private GameObject _votingAmountPanel = null;
-    [SerializeField] private GameObject _leftVotingText = null;
-    [SerializeField] private GameObject _rightVotingText = null;
     [SerializeField] private GameObject _confirmText = null;
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private LittleGuy _guy = null;
@@ -93,8 +91,6 @@ public class VotingController : MonoBehaviour
 
         _titlePanel.SetActive(true);
         _votingAmountPanel.SetActive(true);
-        _leftVotingText.SetActive(true);
-        _rightVotingText.SetActive(true);
         _confirmText.SetActive(false);
 
         VotesPlayer1 = 0;
@@ -115,8 +111,6 @@ public class VotingController : MonoBehaviour
 
         _titlePanel.SetActive(false);
         _votingAmountPanel.SetActive(false);
-        _leftVotingText.SetActive(false);
-        _rightVotingText.SetActive(false);
         _confirmText.SetActive(false);
 
         HasBegun = false;
