@@ -280,6 +280,7 @@ public class GameSceneView : SokobanView
             _confirmSFX.Play();
         }
 
+        player.ShowFrame();
         player.GameDone();
     }
 
@@ -348,11 +349,19 @@ public class GameSceneView : SokobanView
 
         if (_player1 != null)
         {
+            if (!_player1.IsDone)
+            {
+                _player1.ShowFrame();
+            }
             _player1.GameDone();
         }
 
         if (_player2 != null)
         {
+            if (!_player2.IsDone)
+            {
+                _player2.ShowFrame();
+            }
             _player2.GameDone();
         }
 

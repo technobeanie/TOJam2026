@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private GameObject _pendingReadyText = null;
     [SerializeField] private LittleGuy _guyStress = null;
+    [SerializeField] private GameObject _frame = null;
 
     [Header("Audio")]
     [SerializeField] private AudioHook _pickUpSFX = null;
@@ -129,6 +130,11 @@ public class PlayerController : MonoBehaviour
             _guyStress.Initialize();
         }
 
+        if (_frame != null)
+        {
+            _frame.SetActive(false);
+        }
+
         _onReady = onReady;
         IsDone = false;
 
@@ -140,6 +146,14 @@ public class PlayerController : MonoBehaviour
         if (_guyStress != null)
         {
             _guyStress.Show();
+        }
+    }
+
+    public void ShowFrame()
+    {
+        if (_frame != null)
+        {
+            _frame.SetActive(true);
         }
     }
 
@@ -168,6 +182,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        ReleaseSticker();
 
         IsDone = true;
 
