@@ -10,7 +10,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameSceneView : SokobanView
 {
