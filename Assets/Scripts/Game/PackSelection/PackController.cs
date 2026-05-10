@@ -21,7 +21,6 @@ public class PackController : MonoBehaviour
     [SerializeField] private GameObject _packNormal = null;
     [SerializeField] private GameObject _packOpened = null;
     [SerializeField] private TextMeshPro _packName = null;
-    [SerializeField] private AudioHook _voChoosePack = null;
 
     [Header("Images")]
     [SerializeField] private SpriteRenderer _packNormalRenderer = null;
@@ -30,6 +29,9 @@ public class PackController : MonoBehaviour
 
     [Header("Sticker")]
     [SerializeField] private List<SpriteRenderer> _stickers = new List<SpriteRenderer>();
+
+    [Header("Audio")]
+    [SerializeField] private AudioHook _voChoosePack = null;
 
     // properties
     public StickerPack Pack

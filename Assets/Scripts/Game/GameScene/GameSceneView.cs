@@ -56,6 +56,7 @@ public class GameSceneView : SokobanView
     [SerializeField] private AudioHook _countdownLoopingSFX = null;
     [SerializeField] private AudioHook _countdownDoneSFX = null;
     [SerializeField] private AudioHook _playAgain = null;
+    [SerializeField] private AudioHook _confirmSFX = null;
 
     [Header("Sequence")]
     [SerializeField] private GameIntroSequence _introSequence = null;
@@ -272,6 +273,11 @@ public class GameSceneView : SokobanView
         else if (_playerReadyCount > 1)
         {
             OnReadyPhaseCompleted(null);
+        }
+
+        if (_confirmSFX != null)
+        {
+            _confirmSFX.Play();
         }
 
         player.GameDone();

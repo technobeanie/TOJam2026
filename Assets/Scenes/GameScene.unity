@@ -120,6 +120,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14195971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14195972}
+  - component: {fileID: 14195973}
+  m_Layer: 0
+  m_Name: WinningSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14195972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14195971}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 350729148}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14195973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14195971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Common.Audio.AudioHook
+  _sfx: {fileID: 8300000, guid: 0880591944046e14c840c1c7c34c5315, type: 3}
+  _loopingSfx: {fileID: 0}
+  _randomSfx: []
+  _jingle: {fileID: 0}
+  _music: {fileID: 0}
+  _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
+  _canPlayMultipleSFX: 1
 --- !u!1 &15691541
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +974,7 @@ Transform:
   - {fileID: 483178135}
   - {fileID: 1280438948}
   - {fileID: 1492607770}
+  - {fileID: 1351473315}
   m_Father: {fileID: 1748958268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350462394
@@ -1011,6 +1065,7 @@ RectTransform:
   - {fileID: 1591582727}
   - {fileID: 1261384004}
   - {fileID: 979849085}
+  - {fileID: 14195972}
   m_Father: {fileID: 2039333602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1043,6 +1098,7 @@ MonoBehaviour:
   _packPunchDuration: 0.5
   _winningDelay: 3
   _winningVO: {fileID: 979849086}
+  _winningSFX: {fileID: 14195973}
 --- !u!1 &370275657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,6 +4307,59 @@ Transform:
   - {fileID: 235752355}
   m_Father: {fileID: 1748958268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1351473313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1351473315}
+  - component: {fileID: 1351473314}
+  m_Layer: 0
+  m_Name: ConfirmSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1351473314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351473313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae953bc3ae76634284b6b044dc1825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Common.Audio.AudioHook
+  _sfx: {fileID: 8300000, guid: 0fdf0879cdcef684a96bd6f897817898, type: 3}
+  _loopingSfx: {fileID: 0}
+  _randomSfx: []
+  _jingle: {fileID: 0}
+  _music: {fileID: 0}
+  _volume: 1
+  _panStereo: 0
+  _randomPitchEffect: 0
+  _canPlayMultipleSFX: 1
+--- !u!4 &1351473315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351473313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 307943379}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358104997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,6 +5475,7 @@ MonoBehaviour:
   _countdownLoopingSFX: {fileID: 483178136}
   _countdownDoneSFX: {fileID: 1280438947}
   _playAgain: {fileID: 1492607769}
+  _confirmSFX: {fileID: 1351473314}
   _introSequence: {fileID: 1683290572}
 --- !u!4 &1748958268
 Transform:
