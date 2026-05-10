@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private GameObject _pendingReadyText = null;
+    [SerializeField] private LittleGuy _guyStress = null;
 
     [Header("Audio")]
     [SerializeField] private AudioHook _pickUpSFX = null;
@@ -123,10 +124,23 @@ public class PlayerController : MonoBehaviour
             _radial.Initialize();
         }
 
+        if (_guyStress != null)
+        {
+            _guyStress.Initialize();
+        }
+
         _onReady = onReady;
         IsDone = false;
 
         DisplayHoldWhenReady(false);
+    }
+
+    public void ShowStressGuy()
+    {
+        if (_guyStress != null)
+        {
+            _guyStress.Show();
+        }
     }
 
     public virtual void AssignInputDevice(InputDevice inputDevice, int keyboardPlayerId)
