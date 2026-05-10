@@ -94,6 +94,8 @@ public class PackSelectionView : SokobanView
     {
         base.OnViewLoaded();
 
+        PersistanceDataManager.Instance.Initialize(_theme);
+
         if (_parameters != null)
         {
             if (_player1 != null)
@@ -143,14 +145,9 @@ public class PackSelectionView : SokobanView
             }
         }
 
-        if (_theme != null)
+        if (_themeText != null)
         {
-            // CHEAT
-            if (_theme._themes.Count > 0)
-            {
-                var theme = _theme._themes[UnityEngine.Random.Range(0, _theme._themes.Count)];
-                _themeText.text = theme;
-            }
+            _themeText.text = PersistanceDataManager.Instance.FindTheme();
         }
 
         if (_player1 != null)
