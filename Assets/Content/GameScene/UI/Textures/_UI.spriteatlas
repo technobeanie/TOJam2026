@@ -50,30 +50,33 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - 7ac919231e4733e459aaba02ec9a2a5a: 21300000
-    - d704be3341b72b54cb981f7431eb9922: 21300000
-    - 1ad36f53bf836f14cbe7d7387c98b59b: 21300000
+    - 23ba0a82110201d40b33f561ab7dfe1d: 21300000
     - 29573149b917804438eaa4e0edd3a8da: 21300000
     - 60db5e595376d7d4697b630d337bae5a: 21300000
-    - f6d49dd9f48fdca44b984d5b5bc1ae1c: 21300000
+    - 2908d9f9070bb584787dd3d88e3c3d16: 21300000
+    - 51d5eddb6ae2a6c4f9f9c9a89d5726b0: 21300000
+    - 9650938c17241834c82b6e6ad5b50e31: 21300000
     - 651ea9cdbe7b30145b06758011416e66: 21300000
+    - 5e223bde325045541b486a88a12ead34: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 7ac919231e4733e459aaba02ec9a2a5a, type: 3}
-  - {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
-  - {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
+  - {fileID: 21300000, guid: 23ba0a82110201d40b33f561ab7dfe1d, type: 3}
   - {fileID: 21300000, guid: 29573149b917804438eaa4e0edd3a8da, type: 3}
   - {fileID: 21300000, guid: 60db5e595376d7d4697b630d337bae5a, type: 3}
-  - {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
+  - {fileID: 21300000, guid: 2908d9f9070bb584787dd3d88e3c3d16, type: 3}
+  - {fileID: 21300000, guid: 51d5eddb6ae2a6c4f9f9c9a89d5726b0, type: 3}
+  - {fileID: 21300000, guid: 9650938c17241834c82b6e6ad5b50e31, type: 3}
   - {fileID: 21300000, guid: 651ea9cdbe7b30145b06758011416e66, type: 3}
+  - {fileID: 21300000, guid: 5e223bde325045541b486a88a12ead34, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Pack_Opened
-  - Pack_Opened1
-  - Pack_Normal
+  - guy_point
   - medal
   - prompt_bar
-  - Pack_Opened2
+  - trophy
+  - guy_action
+  - guy_win
   - title_artmethat
+  - guy_attention
   m_RenderDataMap: {}
   m_Tag: _UI
   m_IsVariant: 0

@@ -41,7 +41,15 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b9c5fe1022755c74b9d50a56a2d951a7, type: 3}
   - {fileID: 2800000, guid: b9e773bd023a46445ba0cbbb0a23300e, type: 3}
   - {fileID: 2800000, guid: edf94db7bb5dd914b82237372f91c493, type: 3}
+  - {fileID: 2800000, guid: ee35116360d57204e8e4b3709ad664e3, type: 3}
+  - {fileID: 2800000, guid: 3d0f899f1cc486a4ca87419235a368b6, type: 3}
+  - {fileID: 2800000, guid: 1ff54c0b776ccd04dad94a89267ae763, type: 3}
+  - {fileID: 2800000, guid: cac24690cc7d4c147b1a3a07324032aa, type: 3}
+  - {fileID: 2800000, guid: b759af5ca4beadf43a7d7cf4570723fa, type: 3}
+  - {fileID: 2800000, guid: 6dde8f9f69938f846b91ef2096afadb0, type: 3}
+  - {fileID: 2800000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
+  - {fileID: 2800000, guid: 4c81100c2f4486c4abd3827ac553a475, type: 3}
+  - {fileID: 2800000, guid: 408f41fa1c5b7eb43860636037e090bb, type: 3}
+  - {fileID: 2800000, guid: c78c14e383d0eb748aad00c6897064df, type: 3}
   _packNormal: {fileID: 21300000, guid: fdefc6ec10e26e444bb9e989f10157b2, type: 3}
-  _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
-  _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Epic

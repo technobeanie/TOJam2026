@@ -65,7 +65,13 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 80e6ed1a17e1da14899cb93f071c5997, type: 3}
   - {fileID: 2800000, guid: 335f338f270b85f4d8dbbf83465228d8, type: 3}
   - {fileID: 2800000, guid: 1d248bb5756132644a54bddc72f98fa5, type: 3}
+  - {fileID: 2800000, guid: 62805b445a340e24282249e5d10edb9a, type: 3}
+  - {fileID: 2800000, guid: 91901b111cf737d4883e2ef84a7f125a, type: 3}
+  - {fileID: 2800000, guid: 2fb79c38130b057458ba593ad83e60a2, type: 3}
+  - {fileID: 2800000, guid: c91aee47ea2bc9043ba43be950c59697, type: 3}
+  - {fileID: 2800000, guid: 912a19b1a66293748becf7c4a9544c61, type: 3}
+  - {fileID: 2800000, guid: ff46818706aea234ba6636cafce4e326, type: 3}
+  - {fileID: 2800000, guid: 4d8b5236d93595b46990603ccfb800e1, type: 3}
+  - {fileID: 2800000, guid: 5997a343cb901514a88a05ce3091ed96, type: 3}
   _packNormal: {fileID: 21300000, guid: 873258f04093e4e44baa415918fea332, type: 3}
-  _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
-  _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Wild

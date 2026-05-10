@@ -49,7 +49,11 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1ff1dc954fbc21040aa4b4a54e7bbd34, type: 3}
   - {fileID: 2800000, guid: 5d7f1e1fc4c0bae44b140b59123db146, type: 3}
   - {fileID: 2800000, guid: f0e7487bc1e0ad347882c31387fd2e92, type: 3}
+  - {fileID: 2800000, guid: a580922874605f84f9a149a316358bab, type: 3}
+  - {fileID: 2800000, guid: f6b1df15893abf64d89202eb67368bfd, type: 3}
+  - {fileID: 2800000, guid: f566c8995937fb8488cab0bc60344aa4, type: 3}
+  - {fileID: 2800000, guid: f72fa0e04c96fb34c9b5cda7dd9017a8, type: 3}
+  - {fileID: 2800000, guid: f3d9d1e093210ef4fa7f5363b1efc20d, type: 3}
+  - {fileID: 2800000, guid: 48ff1905ee07b4b4abd842f6c422a79d, type: 3}
   _packNormal: {fileID: 21300000, guid: 9aa050c3ebb34694f927bdd03cc101b4, type: 3}
-  _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
-  _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Weird
