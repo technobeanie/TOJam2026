@@ -957,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &350729148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2276,7 +2276,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049824774
+      value: 0.050174147
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2286,7 +2286,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90035045
+      value: 0.8996517
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2301,7 +2301,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049824774
+      value: 0.050174147
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2311,7 +2311,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90035045
+      value: 0.8996517
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -4868,7 +4868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1683290571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5091,7 +5091,13 @@ MonoBehaviour:
   _winningController: {fileID: 350729149}
   _themeText: {fileID: 2025905840}
   _guy: {fileID: 1826768211}
-  _debugPacks: []
+  _debugPacks:
+  - {fileID: 11400000, guid: ae0f8ebd57aea45439d4577fb47aadbe, type: 2}
+  - {fileID: 11400000, guid: 2f3e5c982c23d0c49895f51486d09b72, type: 2}
+  - {fileID: 11400000, guid: ae1e8ff3870d63443bf44d8a59d423f3, type: 2}
+  - {fileID: 11400000, guid: d0e5b0228c4460c4da7c0362fd234c13, type: 2}
+  - {fileID: 11400000, guid: fe5fc840233d36a4ba9b3719da32c1ba, type: 2}
+  - {fileID: 11400000, guid: c3b34e59c259b6c4b81b47afc0b1651e, type: 2}
   _debugTheme: {fileID: 11400000, guid: 79c7d3b444dcef745aad603254d26246, type: 2}
   _countdownLoopingSFX: {fileID: 483178136}
   _countdownDoneSFX: {fileID: 1280438947}

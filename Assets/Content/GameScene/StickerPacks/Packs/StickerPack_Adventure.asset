@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: aa90c76a0bca1724082e4838c1222465, type: 3}
   - {fileID: 2800000, guid: 4414ea89033f3514e911e52de9fba988, type: 3}
   - {fileID: 2800000, guid: 300fd1b1fb55de145bf93261c769dc04, type: 3}
+  - {fileID: 2800000, guid: 300fd1b1fb55de145bf93261c769dc04, type: 3}
   - {fileID: 2800000, guid: ba4159a57b2fefc4eb3c296f93cd8033, type: 3}
   - {fileID: 2800000, guid: 63b484ffed11ea44ea1fee84f6a7bc7c, type: 3}
   - {fileID: 2800000, guid: 893a0685ebb943541bf17d2cb641c8e3, type: 3}
@@ -24,8 +25,11 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 086a6ebdb917f6f449bd554515e6105d, type: 3}
   - {fileID: 2800000, guid: 8f5482a67a9503e4a80e29f866fe9bfe, type: 3}
   - {fileID: 2800000, guid: d98930f1688e82940a599b94ba96f4f7, type: 3}
+  - {fileID: 2800000, guid: d98930f1688e82940a599b94ba96f4f7, type: 3}
+  - {fileID: 2800000, guid: d98930f1688e82940a599b94ba96f4f7, type: 3}
   - {fileID: 2800000, guid: d06e2532690c9c9489475b3bfabd1eaa, type: 3}
   - {fileID: 2800000, guid: 0d92eed780d5c074580fc3f7770fec37, type: 3}
+  - {fileID: 2800000, guid: 5aee00488576b4c44a9c8d48b509d650, type: 3}
   - {fileID: 2800000, guid: 5aee00488576b4c44a9c8d48b509d650, type: 3}
   - {fileID: 2800000, guid: 63388618354c8a3438dd2fb91de1d417, type: 3}
   - {fileID: 2800000, guid: 9df61c20321f7b0498f0d57d1231f18a, type: 3}
@@ -48,14 +52,21 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b759af5ca4beadf43a7d7cf4570723fa, type: 3}
   - {fileID: 2800000, guid: 6dde8f9f69938f846b91ef2096afadb0, type: 3}
   - {fileID: 2800000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
+  - {fileID: 2800000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
+  - {fileID: 2800000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
+  - {fileID: 2800000, guid: baa456c230c3e4542a80317ee86bf8af, type: 3}
   - {fileID: 2800000, guid: 4c81100c2f4486c4abd3827ac553a475, type: 3}
   - {fileID: 2800000, guid: 408f41fa1c5b7eb43860636037e090bb, type: 3}
   - {fileID: 2800000, guid: c78c14e383d0eb748aad00c6897064df, type: 3}
   - {fileID: 2800000, guid: 4ef496206a95ee14fa73e40f0645d280, type: 3}
   - {fileID: 2800000, guid: 2f99bb102cd38b3409ba4dcac3c1ea7f, type: 3}
+  - {fileID: 2800000, guid: 2f99bb102cd38b3409ba4dcac3c1ea7f, type: 3}
   - {fileID: 2800000, guid: 4d7c37fad610f184d93efd6278581b5d, type: 3}
   - {fileID: 2800000, guid: 8074b7c2a59648340be4e824b938412c, type: 3}
   - {fileID: 2800000, guid: 82507579849d28a44ac826363398b99d, type: 3}
   - {fileID: 2800000, guid: 4557d6f15ada28747939dd240907cf43, type: 3}
+  - {fileID: 2800000, guid: 970bd161920fdc9439c3723e7b67c242, type: 3}
+  - {fileID: 2800000, guid: 15eb31e9daf30f44d9fc03dce9878a29, type: 3}
+  - {fileID: 2800000, guid: 175a67be86ba9f64c8f8053d020867e8, type: 3}
   _packNormal: {fileID: 21300000, guid: fdefc6ec10e26e444bb9e989f10157b2, type: 3}
   _name: Epic

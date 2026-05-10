@@ -80,6 +80,7 @@ SpriteAtlas:
     - 08980dfaad9f53c46a3f53515b91be69: 21300000
     - 6941c64b779b5dc4689b8d46bab7762d: 21300000
     - d234a74b61921f441b16e59fcb3ba73a: 21300000
+    - 382738bbd26b9a042997483811407406: 21300000
     - 73fc164ce7682084b9fc499cdfad8c89: 21300000
     - b6bc925c85d469744be3aa940da44c73: 21300000
     - 129534ac9fa131a4280b24a71a9e5a90: 21300000
@@ -124,6 +125,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 08980dfaad9f53c46a3f53515b91be69, type: 3}
   - {fileID: 21300000, guid: 6941c64b779b5dc4689b8d46bab7762d, type: 3}
   - {fileID: 21300000, guid: d234a74b61921f441b16e59fcb3ba73a, type: 3}
+  - {fileID: 21300000, guid: 382738bbd26b9a042997483811407406, type: 3}
   - {fileID: 21300000, guid: 73fc164ce7682084b9fc499cdfad8c89, type: 3}
   - {fileID: 21300000, guid: b6bc925c85d469744be3aa940da44c73, type: 3}
   - {fileID: 21300000, guid: 129534ac9fa131a4280b24a71a9e5a90, type: 3}
@@ -167,6 +169,7 @@ SpriteAtlas:
   - sticker_fancy_022
   - sticker_fancy_017
   - sticker_fancy_004
+  - sticker_fancy_043
   - sticker_fancy_035
   - sticker_fancy_036
   - sticker_fancy_002
