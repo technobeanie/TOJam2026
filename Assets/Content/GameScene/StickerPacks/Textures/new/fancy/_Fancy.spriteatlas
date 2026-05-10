@@ -84,12 +84,14 @@ SpriteAtlas:
     - b6bc925c85d469744be3aa940da44c73: 21300000
     - 129534ac9fa131a4280b24a71a9e5a90: 21300000
     - 3387a0bc3dacc504ea71277c0aa4f9f8: 21300000
+    - b38fbbec58815b9418c1f42b4ca71830: 21300000
     - 3626eb4d6f464e74bb32f51643bee6b4: 21300000
     - d5d4a39dd396fae45a364d06eebe7369: 21300000
     - 4bb52c0e5de54704a961b8cd8f6c7f05: 21300000
     - bbc0db1ec0f18264abef71a397a2789b: 21300000
     - 0f8ca22eca15514458123544fb6da74b: 21300000
     - d81b6dbfb2d7bab40bdfe0ea5127ac79: 21300000
+    - 9989f7df065935e49bc01b29b97babf5: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 7e1365c1ca928ca458f06a138dd64377, type: 3}
@@ -126,12 +128,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b6bc925c85d469744be3aa940da44c73, type: 3}
   - {fileID: 21300000, guid: 129534ac9fa131a4280b24a71a9e5a90, type: 3}
   - {fileID: 21300000, guid: 3387a0bc3dacc504ea71277c0aa4f9f8, type: 3}
+  - {fileID: 21300000, guid: b38fbbec58815b9418c1f42b4ca71830, type: 3}
   - {fileID: 21300000, guid: 3626eb4d6f464e74bb32f51643bee6b4, type: 3}
   - {fileID: 21300000, guid: d5d4a39dd396fae45a364d06eebe7369, type: 3}
   - {fileID: 21300000, guid: 4bb52c0e5de54704a961b8cd8f6c7f05, type: 3}
   - {fileID: 21300000, guid: bbc0db1ec0f18264abef71a397a2789b, type: 3}
   - {fileID: 21300000, guid: 0f8ca22eca15514458123544fb6da74b, type: 3}
   - {fileID: 21300000, guid: d81b6dbfb2d7bab40bdfe0ea5127ac79, type: 3}
+  - {fileID: 21300000, guid: 9989f7df065935e49bc01b29b97babf5, type: 3}
   m_PackedSpriteNamesToIndex:
   - sticker_fancy_040
   - sticker_fancy_006
@@ -167,12 +171,14 @@ SpriteAtlas:
   - sticker_fancy_036
   - sticker_fancy_002
   - sticker_fancy_029
+  - sticker_fancy_042
   - sticker_fancy_032
   - sticker_fancy_037
   - sticker_fancy_025
   - sticker_fancy_033
   - sticker_fancy_009
   - sticker_fancy_034
+  - sticker_fancy_041
   m_RenderDataMap: {}
   m_Tag: _Fancy
   m_IsVariant: 0

@@ -186,11 +186,13 @@ public class GameSceneView : SokobanView
         if (_player1 != null)
         {
             _player1.Initialize(OnReady);
+            _player1.GameDone();
         }
 
         if (_player2 != null)
         {
             _player2.Initialize(OnReady);
+            _player2.GameDone();
         }
 
         if (_votingController != null)
@@ -283,6 +285,8 @@ public class GameSceneView : SokobanView
 
     private void BeginReadyTimer()
     {
+        AudioManager.Instance.StopMusic();
+
         if (_countdownLoopingSFX != null)
         {
             _countdownLoopingSFX.Play();
@@ -321,6 +325,8 @@ public class GameSceneView : SokobanView
 
     private void OnReadyPhaseCompleted(Timer timer)
     {
+        _audioTriggerOnStart.Play();
+
         if (_countdownLoopingSFX != null)
         {
             _countdownLoopingSFX.StopLoopingSfx();

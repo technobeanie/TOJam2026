@@ -1121,7 +1121,6 @@ MonoBehaviour:
   _sfx: {fileID: 0}
   _loopingSfx: {fileID: 0}
   _randomSfx:
-  - {fileID: 8300000, guid: 6cddd2aa2703dfd4ca77a43041043900, type: 3}
   - {fileID: 8300000, guid: 37e86b33cd7e6e14db44ee1c2ace35fc, type: 3}
   - {fileID: 8300000, guid: 7c54718e61432834a8599022e6f4b11a, type: 3}
   - {fileID: 8300000, guid: 6d24145ac6ce1b74da69dcf183dc006f, type: 3}
@@ -1714,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 536461131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -758, y: -188, z: -90}
+  m_LocalPosition: {x: -758, y: -244, z: -90}
   m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2317,7 +2316,7 @@ Transform:
   m_GameObject: {fileID: 830941142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 758, y: -188, z: -90}
+  m_LocalPosition: {x: 758, y: -244, z: -90}
   m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5253,7 +5252,6 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 626450537}
   _pendingReadyText: {fileID: 1256999750}
-  _isReadyText: {fileID: 0}
   _pickUpSFX: {fileID: 1471276615}
   _dropSFX: {fileID: 350462396}
   _animator: {fileID: 649768719}
@@ -6508,7 +6506,6 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 1780359031}
   _pendingReadyText: {fileID: 472700767}
-  _isReadyText: {fileID: 0}
   _pickUpSFX: {fileID: 1520493144}
   _dropSFX: {fileID: 1229002666}
   _animator: {fileID: 1443930742}

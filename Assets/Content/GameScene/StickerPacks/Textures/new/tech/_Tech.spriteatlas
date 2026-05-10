@@ -51,6 +51,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 2cb4e62086a716f47b664a5a57a1b565: 21300000
+    - 74a21230d3bbbc8488835cbb2de57c04: 21300000
     - e02757e0760c28448894fc3b58c1fb45: 21300000
     - 2e56154166a6052468769ce286e811ed: 21300000
     - 277294224a554af41879e72d9d66c8c7: 21300000
@@ -61,6 +62,7 @@ SpriteAtlas:
     - 658adca5a8edd98408987f748ef87413: 21300000
     - 2e13b816622ecf24b9932f87c50a1c9b: 21300000
     - 0e504046850c9344d948303b1f71ee56: 21300000
+    - febcbf961c2a83548bd54349cea5f3dc: 21300000
     - 33e6a0072deb94547a0824d0a1cff378: 21300000
     - 4660f6373ef1faa4e8b59965b1569259: 21300000
     - bcac6c5782f04a442b57f8147a930e1b: 21300000
@@ -80,11 +82,13 @@ SpriteAtlas:
     - 51891cecfea0da948a85451f5f2b021a: 21300000
     - 4aa0c91d94f3c6f4ea57705b55bd68eb: 21300000
     - 51fbbe1ef0bd24448a488018bf6cbaba: 21300000
+    - 4060f27e3ec7e084b93b2836d2b18360: 21300000
     - d183578ee083fa34dbeaf0c69120a700: 21300000
     - 45f18d4fa699ae14cbd72eb127b17b7d: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 2cb4e62086a716f47b664a5a57a1b565, type: 3}
+  - {fileID: 21300000, guid: 74a21230d3bbbc8488835cbb2de57c04, type: 3}
   - {fileID: 21300000, guid: e02757e0760c28448894fc3b58c1fb45, type: 3}
   - {fileID: 21300000, guid: 2e56154166a6052468769ce286e811ed, type: 3}
   - {fileID: 21300000, guid: 277294224a554af41879e72d9d66c8c7, type: 3}
@@ -95,6 +99,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 658adca5a8edd98408987f748ef87413, type: 3}
   - {fileID: 21300000, guid: 2e13b816622ecf24b9932f87c50a1c9b, type: 3}
   - {fileID: 21300000, guid: 0e504046850c9344d948303b1f71ee56, type: 3}
+  - {fileID: 21300000, guid: febcbf961c2a83548bd54349cea5f3dc, type: 3}
   - {fileID: 21300000, guid: 33e6a0072deb94547a0824d0a1cff378, type: 3}
   - {fileID: 21300000, guid: 4660f6373ef1faa4e8b59965b1569259, type: 3}
   - {fileID: 21300000, guid: bcac6c5782f04a442b57f8147a930e1b, type: 3}
@@ -114,10 +119,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 51891cecfea0da948a85451f5f2b021a, type: 3}
   - {fileID: 21300000, guid: 4aa0c91d94f3c6f4ea57705b55bd68eb, type: 3}
   - {fileID: 21300000, guid: 51fbbe1ef0bd24448a488018bf6cbaba, type: 3}
+  - {fileID: 21300000, guid: 4060f27e3ec7e084b93b2836d2b18360, type: 3}
   - {fileID: 21300000, guid: d183578ee083fa34dbeaf0c69120a700, type: 3}
   - {fileID: 21300000, guid: 45f18d4fa699ae14cbd72eb127b17b7d, type: 3}
   m_PackedSpriteNamesToIndex:
   - sticker_tech_007
+  - sticker_tech_035
   - sticker_tech_031
   - sticker_tech_017
   - sticker_tech_009
@@ -128,6 +135,7 @@ SpriteAtlas:
   - sticker_tech_012
   - sticker_tech_024
   - sticker_tech_027
+  - sticker_tech_034
   - sticker_tech_030
   - sticker_tech_006
   - sticker_tech_025
@@ -147,6 +155,7 @@ SpriteAtlas:
   - sticker_tech_013
   - sticker_tech_004
   - sticker_tech_026
+  - sticker_tech_033
   - sticker_tech_032
   - sticker_tech_016
   m_RenderDataMap: {}
