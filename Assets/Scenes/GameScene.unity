@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 32394590}
   - component: {fileID: 32394592}
   - component: {fileID: 32394591}
+  - component: {fileID: 32394593}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -323,6 +324,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32394589}
   m_CullTransparentMesh: 1
+--- !u!114 &32394593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32394589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a885f5abb15f943852a7328dcff4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hover
+  _movement: {x: 0, y: 10, z: 0}
+  _durationMin: 1
+  _durationMax: 1
 --- !u!1 &53735361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,7 +2518,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050174147
+      value: 0.049848318
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2512,7 +2528,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996517
+      value: 0.90030336
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2527,7 +2543,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050174147
+      value: 0.049848318
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2537,7 +2553,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996517
+      value: 0.90030336
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -3083,7 +3099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1075840115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5335,7 +5351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1683290571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5665,6 +5681,9 @@ MonoBehaviour:
   _radial: {fileID: 626450537}
   _pendingReadyText: {fileID: 1256999750}
   _guyStress: {fileID: 1826768211}
+  _frame: {fileID: 2093614246}
+  _punchTitleScale: 1.5
+  _punchTitleDuration: 0.75
   _pickUpSFX: {fileID: 1471276615}
   _dropSFX: {fileID: 350462396}
   _animator: {fileID: 649768719}
@@ -5870,7 +5889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1774182548
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6778,6 +6797,9 @@ MonoBehaviour:
   _radial: {fileID: 1780359031}
   _pendingReadyText: {fileID: 472700767}
   _guyStress: {fileID: 1539346710}
+  _frame: {fileID: 1305211631}
+  _punchTitleScale: 1.5
+  _punchTitleDuration: 0.75
   _pickUpSFX: {fileID: 1520493144}
   _dropSFX: {fileID: 1229002666}
   _animator: {fileID: 1443930742}

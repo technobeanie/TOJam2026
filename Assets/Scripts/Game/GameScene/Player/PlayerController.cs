@@ -1,5 +1,6 @@
 using Common.Audio;
 using Common.Joystick;
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,7 +36,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private GameObject _pendingReadyText = null;
     [SerializeField] private LittleGuy _guyStress = null;
+
+    [Header("Frame")]
     [SerializeField] private GameObject _frame = null;
+    [SerializeField] private float _punchTitleScale = 1.2f;
+    [SerializeField] private float _punchTitleDuration = 0.2f;
 
     [Header("Audio")]
     [SerializeField] private AudioHook _pickUpSFX = null;
@@ -154,6 +159,10 @@ public class PlayerController : MonoBehaviour
         if (_frame != null)
         {
             _frame.SetActive(true);
+
+            var previousScale = _frame.transform.localScale;
+            _frame.transform.localScale = previousScale * _punchTitleScale;
+            _frame.transform.DOScale(previousScale, _punchTitleDuration).SetEase(Ease.InQuad);
         }
     }
 
