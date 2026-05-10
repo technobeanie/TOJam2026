@@ -40,7 +40,31 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 36627ac1d62d9fc428d82431842183e9, type: 3}
   - {fileID: 2800000, guid: c22a950b38715d5498126d048c621c7e, type: 3}
   - {fileID: 2800000, guid: 5d258e3e112b2ed4ab3e0be2e4a72d6c, type: 3}
+  - {fileID: 2800000, guid: db0912fb1ea380b408af36a742f7de2c, type: 3}
+  - {fileID: 2800000, guid: 88fc560e2ec15754cb02f16187c954f6, type: 3}
+  - {fileID: 2800000, guid: d188984f40e94754d93a1aff1b07f47c, type: 3}
+  - {fileID: 2800000, guid: 12f2475be43ad5041a706995d3cc2464, type: 3}
+  - {fileID: 2800000, guid: 49a75a694cdb6694ebfb36fbbf48c9e6, type: 3}
+  - {fileID: 2800000, guid: 0a5c9310ee7686a4e99b0cbc33cf4f20, type: 3}
+  - {fileID: 2800000, guid: 9b2b10a520f224744a966cec07a02212, type: 3}
+  - {fileID: 2800000, guid: 5fc31c493cfd13749802f7a353a64119, type: 3}
+  - {fileID: 2800000, guid: 3b65c64570205984999ed3d05c17a322, type: 3}
+  - {fileID: 2800000, guid: d991c79cdd6136847b4264c755f772ed, type: 3}
+  - {fileID: 2800000, guid: 70cc20434ecb62140b3f4006d50da7dd, type: 3}
+  - {fileID: 2800000, guid: b5899a8f9b469d541adcfe404a2fb91a, type: 3}
+  - {fileID: 2800000, guid: 8253c5c8095a222479731abdc1fc18ba, type: 3}
+  - {fileID: 2800000, guid: 7b9f18bf83481f444ac0a37ba523d42d, type: 3}
+  - {fileID: 2800000, guid: adcf72e01c84cb740b1964c1cfbf832d, type: 3}
+  - {fileID: 2800000, guid: e1bf85c8a2a9f0143bb65e9597832848, type: 3}
+  - {fileID: 2800000, guid: aa4c194a827424144803e86d2441d8cd, type: 3}
+  - {fileID: 2800000, guid: b9ecb569bd776134a919744cf40aca3b, type: 3}
+  - {fileID: 2800000, guid: bcf108059f7f7554ba9681778f708bcd, type: 3}
+  - {fileID: 2800000, guid: 1f1743b046185ed439e690d9188b3700, type: 3}
+  - {fileID: 2800000, guid: b71f1b5f1195b4c46b9b6ac8c7e36dd3, type: 3}
+  - {fileID: 2800000, guid: 1a4071dd4d1367941a285baa3a2b0836, type: 3}
+  - {fileID: 2800000, guid: 34e2506890900454faf20868c9b4bed8, type: 3}
+  - {fileID: 2800000, guid: 00d3fb101cf6f7548be2ce01b3d06f79, type: 3}
+  - {fileID: 2800000, guid: ff26eb00e3b772c4a8fa1c173f155cb2, type: 3}
+  - {fileID: 2800000, guid: 98c8e1d2ca7f7034b8f2eba7d66a9c0c, type: 3}
   _packNormal: {fileID: 21300000, guid: 1ad36f53bf836f14cbe7d7387c98b59b, type: 3}
-  _packOpenedLeft: {fileID: 21300000, guid: d704be3341b72b54cb981f7431eb9922, type: 3}
-  _packOpenedRight: {fileID: 21300000, guid: f6d49dd9f48fdca44b984d5b5bc1ae1c, type: 3}
   _name: Basic

@@ -19,6 +19,7 @@ public class GameIntroSequence : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private GameObject _title = null;
+    [SerializeField] private LittleGuy _guy = null;
 
     [Header("Timing")]
     [SerializeField] private float _beforeDelay = 5.0f;
@@ -41,6 +42,7 @@ public class GameIntroSequence : MonoBehaviour
     public void Initialize()
     {
         _title.SetActive(false);
+        _guy.Initialize();
     }
 
     public void Begin(Action onDone)
@@ -52,6 +54,8 @@ public class GameIntroSequence : MonoBehaviour
         var previousScale = _title.transform.localScale;
         _title.transform.localScale = previousScale * _punchTitleScale;
         _title.transform.DOScale(previousScale, _punchTitleDuration).SetEase(Ease.InQuad);
+
+        _guy.Show();
 
         // First delay.
         _timer = new Timer(_beforeDelay, OnEndFirstDelay);
@@ -66,6 +70,8 @@ public class GameIntroSequence : MonoBehaviour
     private void OnEndFirstDelay(Timer timer)
     {
         _title.SetActive(false);
+
+        _guy.Hide();
 
         _onDone?.Invoke();
         _onDone = null;
