@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioHook _pickUpSFX = null;
     [SerializeField] private AudioHook _dropSFX = null;
 
+    [Header("Anim")]
+    [SerializeField] private Animator _animator = null;
+    [SerializeField] private string _grabBool = "Grab";
+
     // properties
     public InputDevice InputDevice
     {
@@ -75,6 +79,11 @@ public class PlayerController : MonoBehaviour
         {
             if (JoystickManager.Instance.IsButtonDown(JoystickManager.Button.Xbox_A, InputDevice, KeyboardPlayerId))
             {
+                if (_animator != null)
+                {
+                    _animator.SetBool(_grabBool, true);
+                }
+
                 if (_sticker == null)
                 {
                     GrabSticker();
@@ -84,9 +93,17 @@ public class PlayerController : MonoBehaviour
                     TryRotate(Time.fixedDeltaTime);
                 }
             }
-            else if (_sticker != null)
+            else
             {
-                ReleaseSticker();
+                if (_animator != null)
+                {
+                    _animator.SetBool(_grabBool, false);
+                }
+
+                if (_sticker != null)
+                {
+                    ReleaseSticker();
+                }
             }
 
             TryReady();
@@ -122,6 +139,11 @@ public class PlayerController : MonoBehaviour
         }
 
         _isDone = true;
+
+        if (_animator != null)
+        {
+            _animator.SetBool(_grabBool, false);
+        }
 
         if (_pendingReadyText != null)
         {

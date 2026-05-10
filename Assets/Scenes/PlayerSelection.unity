@@ -181,6 +181,8 @@ MonoBehaviour:
   _isReadyText: {fileID: 0}
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
+  _animator: {fileID: 1086612155}
+  _grabBool: Grab
   _joinText: {fileID: 1993952798}
   _leaveText: {fileID: 713194145}
 --- !u!1 &162317797
@@ -860,6 +862,8 @@ MonoBehaviour:
   _isReadyText: {fileID: 0}
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
+  _animator: {fileID: 1293236501}
+  _grabBool: Grab
   _joinText: {fileID: 1274278064}
   _leaveText: {fileID: 1614087494}
 --- !u!1001 &865716316
@@ -878,7 +882,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049740285
+      value: 0.050179303
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -888,7 +892,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90051943
+      value: 0.8996414
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -903,7 +907,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049740285
+      value: 0.050179303
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -913,7 +917,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90051943
+      value: 0.8996414
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1188,6 +1192,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1086612153}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1086612155 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 113254483811209781, guid: 4d024c84618dd5841a31a558236f0b96,
+    type: 3}
+  m_PrefabInstance: {fileID: 1086612153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1274278063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1407,12 @@ PrefabInstance:
 --- !u!4 &1293236500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3907296127656548854, guid: 39fed98d0c1022545a9b002e6f2832c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1293236499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1293236501 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1289697001834927181, guid: 39fed98d0c1022545a9b002e6f2832c1,
     type: 3}
   m_PrefabInstance: {fileID: 1293236499}
   m_PrefabAsset: {fileID: 0}

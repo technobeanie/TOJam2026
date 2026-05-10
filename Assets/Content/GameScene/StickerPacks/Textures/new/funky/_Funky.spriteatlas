@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _Funky
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5e3882fec6a218349838573545f3ca5e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 5bfb9140597f4fa4e93d75ee50e36c53: 21300000
+    - ed86d6916dfb1fe438c1bd272c84d8b6: 21300000
+    - 8555b0f1452afaf4a92ff6a4c18b8695: 21300000
+    - 4963a552e7978cb46a04fbf78f951a7f: 21300000
+    - 208bd7b3128005a41b116acd9ab79585: 21300000
+    - a6d456d3aec492a49bd7236a28366d7c: 21300000
+    - 4d3cc234fc1cc0e419eb678bce14f0f9: 21300000
+    - c941f5c4e13d79042b91429be7b5fd68: 21300000
+    - b0ff211575d34244691dd16ea0f81720: 21300000
+    - 54d716957bb3ca7449f47179e40873d3: 21300000
+    - 1ff1dc954fbc21040aa4b4a54e7bbd34: 21300000
+    - bed8f6a50b413e54c8c58b909c6871c8: 21300000
+    - 07a953c6388069f4292f606a90041104: 21300000
+    - 519573d632df0c342bf975dc7ee49f38: 21300000
+    - 13cab3d6ca6e14d458bcd35336b9442f: 21300000
+    - a8717dd63149aad43b8ab06576b82bff: 21300000
+    - bb8bc8474df73c644bf0ba5db02bb6f4: 21300000
+    - 808c88c7a75dc064fb94f7538f45adbf: 21300000
+    - 5e1bebd790e1c5a43a0635e09567daf2: 21300000
+    - 3c71ce18972b6b24bb181457c1616b06: 21300000
+    - 6bf40a688bba33f4ead2292e73de7948: 21300000
+    - 04001e3944994a84e906e758af2c3832: 21300000
+    - 8a3edd5933ae6ff49a8b9de61bd25cdf: 21300000
+    - ef6f85894d17fad4ba39e1b56aaf8b21: 21300000
+    - 205088f99a7397f43abec29566784369: 21300000
+    - f277472be8a4f0c44ad98a95ba777c67: 21300000
+    - f0e7487bc1e0ad347882c31387fd2e92: 21300000
+    - 9e3f1d3c54c1b1d489c93d3dd55bf2ed: 21300000
+    - 553080bc27171d141ac0add0ed44d158: 21300000
+    - f35b413d37b881b4cb8cd307938291f2: 21300000
+    - 9b248fbd5d3e37749897b94563a15a37: 21300000
+    - a9296fddc080a8747b1b7a9113f6f7af: 21300000
+    - 74e08d4ebe3d0bc4ba9403c6bab6ea5a: 21300000
+    - 84cbd46e17032624ca27fe9bf5a3c065: 21300000
+    - 77759cded6f8d39488d09318b159227b: 21300000
+    - 5d7f1e1fc4c0bae44b140b59123db146: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5bfb9140597f4fa4e93d75ee50e36c53, type: 3}
+  - {fileID: 21300000, guid: ed86d6916dfb1fe438c1bd272c84d8b6, type: 3}
+  - {fileID: 21300000, guid: 8555b0f1452afaf4a92ff6a4c18b8695, type: 3}
+  - {fileID: 21300000, guid: 4963a552e7978cb46a04fbf78f951a7f, type: 3}
+  - {fileID: 21300000, guid: 208bd7b3128005a41b116acd9ab79585, type: 3}
+  - {fileID: 21300000, guid: a6d456d3aec492a49bd7236a28366d7c, type: 3}
+  - {fileID: 21300000, guid: 4d3cc234fc1cc0e419eb678bce14f0f9, type: 3}
+  - {fileID: 21300000, guid: c941f5c4e13d79042b91429be7b5fd68, type: 3}
+  - {fileID: 21300000, guid: b0ff211575d34244691dd16ea0f81720, type: 3}
+  - {fileID: 21300000, guid: 54d716957bb3ca7449f47179e40873d3, type: 3}
+  - {fileID: 21300000, guid: 1ff1dc954fbc21040aa4b4a54e7bbd34, type: 3}
+  - {fileID: 21300000, guid: bed8f6a50b413e54c8c58b909c6871c8, type: 3}
+  - {fileID: 21300000, guid: 07a953c6388069f4292f606a90041104, type: 3}
+  - {fileID: 21300000, guid: 519573d632df0c342bf975dc7ee49f38, type: 3}
+  - {fileID: 21300000, guid: 13cab3d6ca6e14d458bcd35336b9442f, type: 3}
+  - {fileID: 21300000, guid: a8717dd63149aad43b8ab06576b82bff, type: 3}
+  - {fileID: 21300000, guid: bb8bc8474df73c644bf0ba5db02bb6f4, type: 3}
+  - {fileID: 21300000, guid: 808c88c7a75dc064fb94f7538f45adbf, type: 3}
+  - {fileID: 21300000, guid: 5e1bebd790e1c5a43a0635e09567daf2, type: 3}
+  - {fileID: 21300000, guid: 3c71ce18972b6b24bb181457c1616b06, type: 3}
+  - {fileID: 21300000, guid: 6bf40a688bba33f4ead2292e73de7948, type: 3}
+  - {fileID: 21300000, guid: 04001e3944994a84e906e758af2c3832, type: 3}
+  - {fileID: 21300000, guid: 8a3edd5933ae6ff49a8b9de61bd25cdf, type: 3}
+  - {fileID: 21300000, guid: ef6f85894d17fad4ba39e1b56aaf8b21, type: 3}
+  - {fileID: 21300000, guid: 205088f99a7397f43abec29566784369, type: 3}
+  - {fileID: 21300000, guid: f277472be8a4f0c44ad98a95ba777c67, type: 3}
+  - {fileID: 21300000, guid: f0e7487bc1e0ad347882c31387fd2e92, type: 3}
+  - {fileID: 21300000, guid: 9e3f1d3c54c1b1d489c93d3dd55bf2ed, type: 3}
+  - {fileID: 21300000, guid: 553080bc27171d141ac0add0ed44d158, type: 3}
+  - {fileID: 21300000, guid: f35b413d37b881b4cb8cd307938291f2, type: 3}
+  - {fileID: 21300000, guid: 9b248fbd5d3e37749897b94563a15a37, type: 3}
+  - {fileID: 21300000, guid: a9296fddc080a8747b1b7a9113f6f7af, type: 3}
+  - {fileID: 21300000, guid: 74e08d4ebe3d0bc4ba9403c6bab6ea5a, type: 3}
+  - {fileID: 21300000, guid: 84cbd46e17032624ca27fe9bf5a3c065, type: 3}
+  - {fileID: 21300000, guid: 77759cded6f8d39488d09318b159227b, type: 3}
+  - {fileID: 21300000, guid: 5d7f1e1fc4c0bae44b140b59123db146, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - sticker_funky_027
+  - sticker_funky_030
+  - sticker_funky_020
+  - sticker_funky_023
+  - sticker_funky_011
+  - sticker_funky_024
+  - sticker_funky_029
+  - sticker_funky_013
+  - sticker_funky_017
+  - sticker_funky_009
+  - sticker_funky_034
+  - sticker_funky_019
+  - sticker_funky_001
+  - sticker_funky_016
+  - sticker_funky_010
+  - sticker_funky_007
+  - sticker_funky_031
+  - sticker_funky_032
+  - sticker_funky_025
+  - sticker_funky_006
+  - sticker_funky_015
+  - sticker_funky_003
+  - sticker_funky_026
+  - sticker_funky_005
+  - sticker_funky_018
+  - sticker_funky_033
+  - sticker_funky_036
+  - sticker_funky_008
+  - sticker_funky_002
+  - sticker_funky_022
+  - sticker_funky_004
+  - sticker_funky_028
+  - sticker_funky_021
+  - sticker_funky_014
+  - sticker_funky_012
+  - sticker_funky_035
+  m_RenderDataMap: {}
+  m_Tag: _Funky
+  m_IsVariant: 0

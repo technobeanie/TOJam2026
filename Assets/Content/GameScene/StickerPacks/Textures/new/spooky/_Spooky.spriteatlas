@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _Spooky
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c1821618ab66af9489d4b533df54b330, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 440c9e201fd911a41b748b5d21312106: 21300000
+    - 1ca57cd0583e6604c8bc887e539954b1: 21300000
+    - 544aa8f0e6a0bb64387e7eac8bea6787: 21300000
+    - b3b3de51bfd80fd48833339cb8cf0d30: 21300000
+    - 666d716166bbad5499dcbc25a550f464: 21300000
+    - cbe9b59173d81c040b2648b8e4986860: 21300000
+    - c42e0d92c9f14bd44a4a929f55c327ca: 21300000
+    - f46349637fa8a7d459facdcfb719dcbf: 21300000
+    - 33d8d1c326d4dd04cbeb25fd5b55cf99: 21300000
+    - 611d17643cb3571469dc56908980e5fa: 21300000
+    - 8f6c40b4fff550646b6b57be8ca2bca5: 21300000
+    - abce45f48c182de489f05f4586acf32c: 21300000
+    - de2ceb05efc99284992a3e8a9abc529f: 21300000
+    - 8fba4e45f5ac9b646925cbc7ef24ee73: 21300000
+    - 884e7995574b03142b53a78917ef358d: 21300000
+    - b83840e50fbf11e4585ebc5f18889ede: 21300000
+    - 52aec056136d1ec4c939ef44824832ca: 21300000
+    - 3575b556a0093554ea494ed58fed55f6: 21300000
+    - 983f577692ce30a49b98aab3a218b5a2: 21300000
+    - cb79de768f1b3d24aa73d7279b80aa01: 21300000
+    - efd3a5f67faca9340967aa64cde006ff: 21300000
+    - 62856707e1f5af24aa07a15c8ff48f5c: 21300000
+    - f8a84837ffd04c84c85071636776768f: 21300000
+    - 95ab0457062942240a60b7b8f7282838: 21300000
+    - 403a8977e1d61154ab9edee4c1a2b377: 21300000
+    - 9d863f8730d3f9f42b185c33f9d0c9f2: 21300000
+    - 62277ea7641507f4ebb6e94e92b61326: 21300000
+    - b571e4d7db9962d46926c68fb4592739: 21300000
+    - 593ba33859d558744971b557459e99d2: 21300000
+    - be9e612aa07d28d4c94c9fa19bb069f9: 21300000
+    - bf283caa192e2b342ac4ff5dc1cc496c: 21300000
+    - 26c5d1bacbaf02d499b8da5210690cae: 21300000
+    - c3738b0bba0cefa44802fd26a84e35e4: 21300000
+    - ecd6da7b03e325745926f7e5c89f17f6: 21300000
+    - efbbe3abd46f8ce4685e3d7fa4bc220f: 21300000
+    - de501ceb57d75a849b34c338c0ca176d: 21300000
+    - d226213c63a4c2c4c8a0b040cca0850a: 21300000
+    - 3647dd8cd2842144894304a16f077546: 21300000
+    - 869f85ac574ab4a42a28af9679c32f5e: 21300000
+    - bb3d41ad68ab41c468d5a3a0b7bc2b80: 21300000
+    - 25f2617ef169dfd4e9f0c0f50632bf79: 21300000
+    - c137089e2e7866d4f9088f58459e051c: 21300000
+    - 2cb4ed9e1707c004f95527b398eb3a20: 21300000
+    - 769580aed06334245ac21229f729984a: 21300000
+    - 0492d7ee1f3f3714f9ba903d631c66f3: 21300000
+    - 792261fe2772cda4c9e3c1634ece925b: 21300000
+    - 39bdd6fe4728c5441924fd2f65817c00: 21300000
+    - 887b5fdfdcd2de34d8e986f0974e7849: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 440c9e201fd911a41b748b5d21312106, type: 3}
+  - {fileID: 21300000, guid: 1ca57cd0583e6604c8bc887e539954b1, type: 3}
+  - {fileID: 21300000, guid: 544aa8f0e6a0bb64387e7eac8bea6787, type: 3}
+  - {fileID: 21300000, guid: b3b3de51bfd80fd48833339cb8cf0d30, type: 3}
+  - {fileID: 21300000, guid: 666d716166bbad5499dcbc25a550f464, type: 3}
+  - {fileID: 21300000, guid: cbe9b59173d81c040b2648b8e4986860, type: 3}
+  - {fileID: 21300000, guid: c42e0d92c9f14bd44a4a929f55c327ca, type: 3}
+  - {fileID: 21300000, guid: f46349637fa8a7d459facdcfb719dcbf, type: 3}
+  - {fileID: 21300000, guid: 33d8d1c326d4dd04cbeb25fd5b55cf99, type: 3}
+  - {fileID: 21300000, guid: 611d17643cb3571469dc56908980e5fa, type: 3}
+  - {fileID: 21300000, guid: 8f6c40b4fff550646b6b57be8ca2bca5, type: 3}
+  - {fileID: 21300000, guid: abce45f48c182de489f05f4586acf32c, type: 3}
+  - {fileID: 21300000, guid: de2ceb05efc99284992a3e8a9abc529f, type: 3}
+  - {fileID: 21300000, guid: 8fba4e45f5ac9b646925cbc7ef24ee73, type: 3}
+  - {fileID: 21300000, guid: 884e7995574b03142b53a78917ef358d, type: 3}
+  - {fileID: 21300000, guid: b83840e50fbf11e4585ebc5f18889ede, type: 3}
+  - {fileID: 21300000, guid: 52aec056136d1ec4c939ef44824832ca, type: 3}
+  - {fileID: 21300000, guid: 3575b556a0093554ea494ed58fed55f6, type: 3}
+  - {fileID: 21300000, guid: 983f577692ce30a49b98aab3a218b5a2, type: 3}
+  - {fileID: 21300000, guid: cb79de768f1b3d24aa73d7279b80aa01, type: 3}
+  - {fileID: 21300000, guid: efd3a5f67faca9340967aa64cde006ff, type: 3}
+  - {fileID: 21300000, guid: 62856707e1f5af24aa07a15c8ff48f5c, type: 3}
+  - {fileID: 21300000, guid: f8a84837ffd04c84c85071636776768f, type: 3}
+  - {fileID: 21300000, guid: 95ab0457062942240a60b7b8f7282838, type: 3}
+  - {fileID: 21300000, guid: 403a8977e1d61154ab9edee4c1a2b377, type: 3}
+  - {fileID: 21300000, guid: 9d863f8730d3f9f42b185c33f9d0c9f2, type: 3}
+  - {fileID: 21300000, guid: 62277ea7641507f4ebb6e94e92b61326, type: 3}
+  - {fileID: 21300000, guid: b571e4d7db9962d46926c68fb4592739, type: 3}
+  - {fileID: 21300000, guid: 593ba33859d558744971b557459e99d2, type: 3}
+  - {fileID: 21300000, guid: be9e612aa07d28d4c94c9fa19bb069f9, type: 3}
+  - {fileID: 21300000, guid: bf283caa192e2b342ac4ff5dc1cc496c, type: 3}
+  - {fileID: 21300000, guid: 26c5d1bacbaf02d499b8da5210690cae, type: 3}
+  - {fileID: 21300000, guid: c3738b0bba0cefa44802fd26a84e35e4, type: 3}
+  - {fileID: 21300000, guid: ecd6da7b03e325745926f7e5c89f17f6, type: 3}
+  - {fileID: 21300000, guid: efbbe3abd46f8ce4685e3d7fa4bc220f, type: 3}
+  - {fileID: 21300000, guid: de501ceb57d75a849b34c338c0ca176d, type: 3}
+  - {fileID: 21300000, guid: d226213c63a4c2c4c8a0b040cca0850a, type: 3}
+  - {fileID: 21300000, guid: 3647dd8cd2842144894304a16f077546, type: 3}
+  - {fileID: 21300000, guid: 869f85ac574ab4a42a28af9679c32f5e, type: 3}
+  - {fileID: 21300000, guid: bb3d41ad68ab41c468d5a3a0b7bc2b80, type: 3}
+  - {fileID: 21300000, guid: 25f2617ef169dfd4e9f0c0f50632bf79, type: 3}
+  - {fileID: 21300000, guid: c137089e2e7866d4f9088f58459e051c, type: 3}
+  - {fileID: 21300000, guid: 2cb4ed9e1707c004f95527b398eb3a20, type: 3}
+  - {fileID: 21300000, guid: 769580aed06334245ac21229f729984a, type: 3}
+  - {fileID: 21300000, guid: 0492d7ee1f3f3714f9ba903d631c66f3, type: 3}
+  - {fileID: 21300000, guid: 792261fe2772cda4c9e3c1634ece925b, type: 3}
+  - {fileID: 21300000, guid: 39bdd6fe4728c5441924fd2f65817c00, type: 3}
+  - {fileID: 21300000, guid: 887b5fdfdcd2de34d8e986f0974e7849, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - sticker_spooky_026
+  - sticker_spooky_017
+  - sticker_spooky_020
+  - sticker_spooky_048
+  - sticker_spooky_038
+  - sticker_spooky_011
+  - sticker_spooky_014
+  - sticker_spooky_046
+  - sticker_spooky_030
+  - sticker_spooky_045
+  - sticker_spooky_019
+  - sticker_spooky_044
+  - sticker_spooky_031
+  - sticker_spooky_024
+  - sticker_spooky_018
+  - sticker_spooky_009
+  - sticker_spooky_001
+  - sticker_spooky_040
+  - sticker_spooky_042
+  - sticker_spooky_008
+  - sticker_spooky_027
+  - sticker_spooky_012
+  - sticker_spooky_041
+  - sticker_spooky_022
+  - sticker_spooky_047
+  - sticker_spooky_029
+  - sticker_spooky_003
+  - sticker_spooky_021
+  - sticker_spooky_013
+  - sticker_spooky_004
+  - sticker_spooky_043
+  - sticker_spooky_036
+  - sticker_spooky_015
+  - sticker_spooky_005
+  - sticker_spooky_034
+  - sticker_spooky_002
+  - sticker_spooky_035
+  - sticker_spooky_016
+  - sticker_spooky_007
+  - sticker_spooky_025
+  - sticker_spooky_010
+  - sticker_spooky_028
+  - sticker_spooky_033
+  - sticker_spooky_023
+  - sticker_spooky_039
+  - sticker_spooky_037
+  - sticker_spooky_006
+  - sticker_spooky_032
+  m_RenderDataMap: {}
+  m_Tag: _Spooky
+  m_IsVariant: 0

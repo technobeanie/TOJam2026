@@ -1817,6 +1817,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 649768716}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &649768719 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 113254483811209781, guid: 4d024c84618dd5841a31a558236f0b96,
+    type: 3}
+  m_PrefabInstance: {fileID: 649768716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &670107581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049740285
+      value: 0.050179303
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2072,7 +2078,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90051943
+      value: 0.8996414
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2087,7 +2093,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049740285
+      value: 0.050179303
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2097,7 +2103,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90051943
+      value: 0.8996414
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -3624,6 +3630,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1443930739}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1443930742 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1289697001834927181, guid: 39fed98d0c1022545a9b002e6f2832c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443930739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443998321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,13 +4284,7 @@ MonoBehaviour:
   _votingController: {fileID: 1774182549}
   _winningController: {fileID: 350729149}
   _themeText: {fileID: 2025905840}
-  _debugPacks:
-  - {fileID: 11400000, guid: ae0f8ebd57aea45439d4577fb47aadbe, type: 2}
-  - {fileID: 11400000, guid: 2f3e5c982c23d0c49895f51486d09b72, type: 2}
-  - {fileID: 11400000, guid: ae1e8ff3870d63443bf44d8a59d423f3, type: 2}
-  - {fileID: 11400000, guid: d0e5b0228c4460c4da7c0362fd234c13, type: 2}
-  - {fileID: 11400000, guid: fe5fc840233d36a4ba9b3719da32c1ba, type: 2}
-  - {fileID: 11400000, guid: c3b34e59c259b6c4b81b47afc0b1651e, type: 2}
+  _debugPacks: []
   _debugTheme: {fileID: 11400000, guid: 79c7d3b444dcef745aad603254d26246, type: 2}
   _countdownLoopingSFX: {fileID: 483178136}
   _countdownDoneSFX: {fileID: 1280438947}
@@ -4379,6 +4385,8 @@ MonoBehaviour:
   _isReadyText: {fileID: 602788123}
   _pickUpSFX: {fileID: 1471276615}
   _dropSFX: {fileID: 350462396}
+  _animator: {fileID: 649768719}
+  _grabBool: Grab
 --- !u!61 &1771372438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5445,6 +5453,8 @@ MonoBehaviour:
   _isReadyText: {fileID: 1473735974}
   _pickUpSFX: {fileID: 1520493144}
   _dropSFX: {fileID: 1229002666}
+  _animator: {fileID: 1443930742}
+  _grabBool: Grab
 --- !u!61 &2058099284
 BoxCollider2D:
   m_ObjectHideFlags: 0
