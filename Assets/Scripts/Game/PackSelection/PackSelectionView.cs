@@ -18,6 +18,7 @@ public class PackSelectionView : SokobanView
 
     // private
     private List<StickerPack> _selectedStickerPacks = new List<StickerPack>();
+    private Timer _timer = null;
 
     [Header("Players")]
     [SerializeField] private PlayerPackController _player1 = null;
@@ -33,12 +34,10 @@ public class PackSelectionView : SokobanView
     [SerializeField] private Theme _theme = null;
     [SerializeField] private TextMeshProUGUI _themeText = null;
 
-    [Header("UI")]
-    [SerializeField] private GameObject _beginText = null;
-
     [Header("Sequences")]
     [SerializeField] private ThemeSequence _themeSequence = null;
     [SerializeField] private PackSequence _packSequence = null;
+    [SerializeField] private float _goToGameDelay = 2.0f;
 
     // properties
     private bool IsReady
@@ -68,24 +67,7 @@ public class PackSelectionView : SokobanView
             FlowManager.Instance.OpenView("PlayerSelection", parameters, false, "Loading");
         }
 
-        if (IsReady)
-        {
-            if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu))
-            {
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-
-                parameters.Add(GameSceneView.FlowParameter_Player1, _player1.InputDevice);
-                parameters.Add(GameSceneView.FlowParameter_Player1KeyboardId, _player1.KeyboardPlayerId);
-
-                parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
-                parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
-
-                parameters.Add(GameSceneView.FlowParameter_Theme, _themeText.text);
-                parameters.Add(GameSceneView.FlowParameter_Packs, _selectedStickerPacks);
-
-                FlowManager.Instance.OpenView("GameScene", parameters, false, "Loading");
-            }
-        }
+        _timer?.Step(Time.fixedDeltaTime);
     }
     #endregion
 
@@ -166,11 +148,6 @@ public class PackSelectionView : SokobanView
 
         IsReady = false;
 
-        if (_beginText != null)
-        {
-            _beginText.SetActive(false);
-        }
-
         SelectPacks();
 
         if (_themeSequence != null)
@@ -243,11 +220,26 @@ public class PackSelectionView : SokobanView
                 _player2.GameDone();
             }
 
-            if (_beginText != null)
-            {
-                _beginText.SetActive(true);
-            }
+            // Go automatically to the next screen.
+            _timer = new Timer(_goToGameDelay, GoToGame);
+            _timer.Begin();
         }
+    }
+
+    private void GoToGame(Timer timer)
+    {
+        Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+        parameters.Add(GameSceneView.FlowParameter_Player1, _player1.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player1KeyboardId, _player1.KeyboardPlayerId);
+
+        parameters.Add(GameSceneView.FlowParameter_Player2, _player2.InputDevice);
+        parameters.Add(GameSceneView.FlowParameter_Player2KeyboardId, _player2.KeyboardPlayerId);
+
+        parameters.Add(GameSceneView.FlowParameter_Theme, _themeText.text);
+        parameters.Add(GameSceneView.FlowParameter_Packs, _selectedStickerPacks);
+
+        FlowManager.Instance.OpenView("GameScene", parameters, false, "Loading");
     }
 
     private void OnThemeSequenceDone()
