@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using static Common.Joystick.JoystickManager;
 
 namespace Common.Joystick
 {
@@ -114,12 +115,15 @@ namespace Common.Joystick
 
         public Vector2 GetAnyMovement(Joystick joystick, int keyboardPlayerId = 0)
         {
-            // TODO: Do not use ".current". Go through all, and find first.
-
             var movement = Vector2.zero;
 
             movement += GetKeyboardMovement(joystick, Keyboard.current, keyboardPlayerId);
-            movement += GetGamepadMovement(joystick, Gamepad.current);
+
+            var gamepads = Gamepad.all;
+            foreach (var gamepad in gamepads)
+            {
+                movement += GetGamepadMovement(joystick, gamepad);
+            }
 
             return movement;
         }
@@ -149,15 +153,23 @@ namespace Common.Joystick
 
         public bool IsButtonDown(Button button)
         {
-            // TODO: Do not use ".current". Go through all, and find first.
-
             var keyboardPlayerId = GetKeyboardButtonDown(button, Keyboard.current);
             if (keyboardPlayerId != null)
             {
                 return true;
             }
 
-            return GetGamepadButtonDown(button, Gamepad.current);
+            var gamepads = Gamepad.all;
+            foreach (var gamepad in gamepads)
+            {
+                var down = GetGamepadButtonDown(button, gamepad);
+                if (down)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool IsButtonDown(Button button, InputDevice inputDevice, int keyboardPlayerId = 0)
@@ -185,14 +197,22 @@ namespace Common.Joystick
 
         public bool IsButtonDownThisFrame(Button button)
         {
-            // TODO: Do not use ".current". Go through all, and find first.
-
             if (GetKeyboardButtonDownThisFrame(button, Keyboard.current, 0))
             {
                 return true;
             }
 
-            return GetGamepadButtonDownThisFrame(button, Gamepad.current);
+            var gamepads = Gamepad.all;
+            foreach (var gamepad in gamepads)
+            {
+                var down = GetGamepadButtonDownThisFrame(button, gamepad);
+                if (down)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool IsButtonDownThisFrame(Button button, InputDevice inputDevice, int keyboardPlayerId = 0)
@@ -220,14 +240,20 @@ namespace Common.Joystick
 
         public float IsTriggerDown(Trigger trigger)
         {
-            // TODO: Do not use ".current". Go through all, and find first.
-
             var triggerValue = 0.0f;
 
             triggerValue = GetKeyboardTrigger(trigger, Keyboard.current, 0);
             if (triggerValue <= 0.0f)
             {
-                triggerValue = GetGamepadTrigger(trigger, Gamepad.current);
+                var gamepads = Gamepad.all;
+                foreach (var gamepad in gamepads)
+                {
+                    triggerValue = GetGamepadTrigger(trigger, gamepad);
+                    if (triggerValue > 0.0f)
+                    {
+                        return triggerValue;
+                    }
+                }
             }
 
             return triggerValue;
