@@ -34,6 +34,7 @@ public class VotingController : MonoBehaviour
     [SerializeField] private GameObject _confirmText = null;
     [SerializeField] private ReadyRadial _radial = null;
     [SerializeField] private LittleGuy _guy = null;
+    [SerializeField] private VotedPrompt _votedPrompt = null;
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _votingAmountText = null;
@@ -56,6 +57,7 @@ public class VotingController : MonoBehaviour
         if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_LB, out inputDevice) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Left_Trigger, out inputDevice))
         {
             JoystickManager.Instance.Vibrate(inputDevice);
+            _votedPrompt.OnVoted();
 
             ++VotesPlayer1;
             UpdateVotes();
@@ -64,6 +66,7 @@ public class VotingController : MonoBehaviour
         if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_RB, out inputDevice) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Right_Trigger, out inputDevice))
         {
             JoystickManager.Instance.Vibrate(inputDevice);
+            _votedPrompt.OnVoted();
 
             ++VotesPlayer2;
             UpdateVotes();
