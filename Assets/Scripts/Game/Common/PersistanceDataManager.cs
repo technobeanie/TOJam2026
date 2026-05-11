@@ -40,6 +40,7 @@ public class PersistanceDataManager : Singleton<PersistanceDataManager>
                 _takenThemes.Clear();
 
                 _availableThemes.AddRange(_theme._themes);
+                _availableThemes.Shuffle();
             }
         }
         else
