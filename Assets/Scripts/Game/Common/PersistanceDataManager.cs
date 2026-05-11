@@ -2,17 +2,21 @@ using Common.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class PersistanceDataManager : Singleton<PersistanceDataManager>
 {
     // const
+    private const float MinAvailablePercentage = 0.1f;
 
     // public
 
     // protected
 
     // private
-    private List<string> _allThemes = new List<string>();
+    private Theme _theme = null;
+    private List<string> _availableThemes = new List<string>();
+    private List<string> _takenThemes = new List<string>();
 
     // properties
 
@@ -28,16 +32,43 @@ public class PersistanceDataManager : Singleton<PersistanceDataManager>
     {
         if (theme != null)
         {
-            _allThemes.AddRange(theme._themes);
+            if (_theme != theme)
+            {
+                _theme = theme;
+
+                _availableThemes.Clear();
+                _takenThemes.Clear();
+
+                _availableThemes.AddRange(_theme._themes);
+            }
+        }
+        else
+        {
+            // Nothing to do?
         }
     }
 
     public string FindTheme()
     {
-        var theme = "";
-        if (_allThemes.Count > 0)
+        if (_theme == null)
         {
-            theme = _allThemes[UnityEngine.Random.Range(0, _allThemes.Count)];
+            return "Do anything you like!";
+        }
+
+        var percentage = (float)_availableThemes.Count / (float)_theme._themes.Count;
+        if (percentage <= MinAvailablePercentage)
+        {
+            _takenThemes.Shuffle();
+            _availableThemes.AddRange(_takenThemes);
+            _takenThemes.Clear();
+        }
+
+        var theme = "";
+        if (_availableThemes.Count > 0)
+        {
+            theme = _availableThemes[0];
+            _availableThemes.RemoveAt(0);
+            _takenThemes.Add(theme);
         }
 
         return theme;
