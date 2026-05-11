@@ -1250,7 +1250,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05027944
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1260,7 +1260,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8994411
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1275,7 +1275,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05027944
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1285,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8994411
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -2465,7 +2465,6 @@ MonoBehaviour:
   _openedByPlayer: 1
   _theme: {fileID: 11400000, guid: 79c7d3b444dcef745aad603254d26246, type: 2}
   _themeText: {fileID: 197661681}
-  _beginText: {fileID: 0}
   _themeSequence: {fileID: 369324993}
   _packSequence: {fileID: 314406723}
   _goToGameDelay: 2
@@ -2503,7 +2502,7 @@ MonoBehaviour:
   _randomSfx: []
   _jingle: {fileID: 0}
   _music: {fileID: 8300000, guid: 365d3d072d5da584182c0eb0ed456c22, type: 3}
-  _volume: 1
+  _volume: 0.6
   _panStereo: 0
   _randomPitchEffect: 0
   _canPlayMultipleSFX: 1

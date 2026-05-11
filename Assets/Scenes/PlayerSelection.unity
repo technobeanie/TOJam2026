@@ -178,7 +178,10 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
-  _isReadyText: {fileID: 0}
+  _guyStress: {fileID: 0}
+  _frame: {fileID: 0}
+  _punchTitleScale: 1.2
+  _punchTitleDuration: 0.2
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1086612155}
@@ -878,7 +881,10 @@ MonoBehaviour:
   _stickerRotationSpeed: 180
   _radial: {fileID: 0}
   _pendingReadyText: {fileID: 0}
-  _isReadyText: {fileID: 0}
+  _guyStress: {fileID: 0}
+  _frame: {fileID: 0}
+  _punchTitleScale: 1.2
+  _punchTitleDuration: 0.2
   _pickUpSFX: {fileID: 0}
   _dropSFX: {fileID: 0}
   _animator: {fileID: 1293236501}
@@ -902,7 +908,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050179303
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -912,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996414
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -927,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050179303
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -937,7 +943,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996414
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1809,7 +1815,7 @@ MonoBehaviour:
   _randomSfx: []
   _jingle: {fileID: 0}
   _music: {fileID: 8300000, guid: 365d3d072d5da584182c0eb0ed456c22, type: 3}
-  _volume: 1
+  _volume: 0.6
   _panStereo: 0
   _randomPitchEffect: 0
   _canPlayMultipleSFX: 1

@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050153702
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 912156496449848103, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996926
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 2731789555553315529, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.050153702
+      value: 0.00025072694
       objectReference: {fileID: 0}
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 3736727028514728352, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8996926
+      value: 0.99949855
       objectReference: {fileID: 0}
     - target: {fileID: 8632218078267984334, guid: 59bc3f48a99ef704e814b1a5368eda72,
         type: 3}
@@ -1065,7 +1065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338, y: -452}
+  m_AnchoredPosition: {x: 330.13, y: -416}
   m_SizeDelta: {x: 550.6, y: 166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808948766
@@ -1088,9 +1088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'dom2d
-
-    technobeanie'
+  m_text: "dom2d\ntechnobeanie\n& Liam Sauv\xE9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cac6cbff3085eac44a4e23043a57e096, type: 2}
   m_sharedMaterial: {fileID: 3066253027538353580, guid: cac6cbff3085eac44a4e23043a57e096,
@@ -1126,7 +1124,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1237,7 +1235,7 @@ MonoBehaviour:
   _randomSfx: []
   _jingle: {fileID: 0}
   _music: {fileID: 8300000, guid: 365d3d072d5da584182c0eb0ed456c22, type: 3}
-  _volume: 1
+  _volume: 0.6
   _panStereo: 0
   _randomPitchEffect: 0
   _canPlayMultipleSFX: 1
