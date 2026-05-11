@@ -11,9 +11,9 @@ namespace Common.Joystick
     public class JoystickManager : Singleton<JoystickManager>
     {
         // const
-        private const float QuickVibrateLowFrequencyDefault = 0.123f;
-        private const float QuickVibrateHighFrequencyDefault = 0.234f;
-        private const float QuickVibrateDurationDefault = 0.1f;
+        private const float QuickVibrateLowFrequencyDefault = 1.0f;
+        private const float QuickVibrateHighFrequencyDefault = 1.0f;
+        private const float QuickVibrateDurationDefault = 0.15f;
 
         public enum Button
         {
