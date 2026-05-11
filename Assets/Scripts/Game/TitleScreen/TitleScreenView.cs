@@ -27,7 +27,8 @@ public class TitleScreenView : SokobanView
             Application.Quit();
         }
 
-        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu))
+        InputDevice inputDevice = null;
+        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, out inputDevice) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu, out inputDevice))
         {
             UI_Play();
         }

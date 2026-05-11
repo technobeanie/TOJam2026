@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -10,6 +11,10 @@ namespace Common.Joystick
     public class JoystickManager : Singleton<JoystickManager>
     {
         // const
+        private const float QuickVibrateLowFrequencyDefault = 0.123f;
+        private const float QuickVibrateHighFrequencyDefault = 0.234f;
+        private const float QuickVibrateDurationDefault = 0.1f;
+
         public enum Button
         {
             None = 0,
@@ -77,12 +82,25 @@ namespace Common.Joystick
             }
         }
 
+        public class VibratingDevice
+        {
+            public InputDevice Device = null;
+            public float Duration = 0.0f;
+
+            public VibratingDevice(InputDevice device,  float duration)
+            {
+                Device = device;
+                Duration = duration;
+            }
+        }
+
         // public
 
         // protected
 
         // private
         private Dictionary<int, KeyboardDefinition> _keyboardDefinition = new Dictionary<int, KeyboardDefinition>();
+        private List<VibratingDevice> _vibratingDevices = new List<VibratingDevice>();
 
         // properties
 
@@ -90,6 +108,16 @@ namespace Common.Joystick
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
+        }
+
+        private void FixedUpdate()
+        {
+            HandleVibrationDevices(Time.fixedDeltaTime);
+        }
+
+        private void OnDestroy()
+        {
+            StopAllVibrations();
         }
         #endregion
 
@@ -195,10 +223,12 @@ namespace Common.Joystick
             return GetKeyboardButtonDown(button, keyboard);
         }
 
-        public bool IsButtonDownThisFrame(Button button)
+        public bool IsButtonDownThisFrame(Button button, out InputDevice inputDevice)
         {
+            inputDevice = null;
             if (GetKeyboardButtonDownThisFrame(button, Keyboard.current, 0))
             {
+                inputDevice = Keyboard.current;
                 return true;
             }
 
@@ -208,6 +238,7 @@ namespace Common.Joystick
                 var down = GetGamepadButtonDownThisFrame(button, gamepad);
                 if (down)
                 {
+                    inputDevice = gamepad;
                     return true;
                 }
             }
@@ -280,6 +311,11 @@ namespace Common.Joystick
         {
             // Returns Keyboard Player Id.
             return GetKeyboardTrigger(trigger, keyboard);
+        }
+
+        public void Vibrate(InputDevice inputDevice, float lowFrequencey = QuickVibrateLowFrequencyDefault, float highFrequency = QuickVibrateHighFrequencyDefault, float duration = QuickVibrateDurationDefault)
+        {
+            BeginVibration(inputDevice, lowFrequencey, highFrequency, duration);
         }
         #endregion
 
@@ -573,6 +609,58 @@ namespace Common.Joystick
                     return 0.0f;
             }
         }
-#endregion
+
+        private void BeginVibration(InputDevice inputDevice, float lowFrequencey, float highFrequency, float duration)
+        {
+            // Only support gamepads for now.
+            if (inputDevice is Gamepad gamepad)
+            {
+                _vibratingDevices.Add(new VibratingDevice(inputDevice, duration));
+                gamepad.SetMotorSpeeds(QuickVibrateLowFrequencyDefault, QuickVibrateHighFrequencyDefault);
+            }
+        }
+
+        private void HandleVibrationDevices(float deltaTime)
+        {
+            if (_vibratingDevices.Count > 0)
+            {
+                for (int i = _vibratingDevices.Count - 1; i >= 0; --i)
+                {
+                    var device = _vibratingDevices[i];
+                    device.Duration -= deltaTime;
+
+                    if (device.Duration <= 0.0f)
+                    {
+                        _vibratingDevices.Remove(device);
+                        StopVibration(device.Device);
+                    }
+                }
+            }
+        }
+
+        private void StopAllVibrations()
+        {
+            for (int i = _vibratingDevices.Count - 1; i >= 0; --i)
+            {
+                var device = _vibratingDevices[i];
+
+                StopVibration(device.Device);
+            }
+
+            _vibratingDevices.Clear();
+
+            // And let's do this just in case.
+            InputSystem.ResetHaptics();
+        }
+
+        private void StopVibration(InputDevice inputDevice)
+        {
+            // Only support gamepads for now.
+            if (inputDevice is Gamepad gamepad)
+            {
+                gamepad.SetMotorSpeeds(0.0f, 0.0f);
+            }
+        }
+        #endregion
     }
 }

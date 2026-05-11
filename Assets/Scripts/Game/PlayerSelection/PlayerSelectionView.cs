@@ -51,7 +51,8 @@ public class PlayerSelectionView : SokobanView
 
         if (IsReady)
         {
-            if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu))
+            InputDevice inputDevice = null;
+            if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Menu, out inputDevice))
             {
                 UI_BeginGame();
             }

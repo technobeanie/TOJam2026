@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class VotingController : MonoBehaviour
 {
@@ -51,14 +52,19 @@ public class VotingController : MonoBehaviour
             return;
         }
 
-        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_LB) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Left_Trigger))
+        InputDevice inputDevice = null;
+        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_LB, out inputDevice) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Left_Trigger, out inputDevice))
         {
+            JoystickManager.Instance.Vibrate(inputDevice);
+
             ++VotesPlayer1;
             UpdateVotes();
         }
 
-        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_RB) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Right_Trigger))
+        if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_RB, out inputDevice) || JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_Right_Trigger, out inputDevice))
         {
+            JoystickManager.Instance.Vibrate(inputDevice);
+
             ++VotesPlayer2;
             UpdateVotes();
         }
