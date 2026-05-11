@@ -312,6 +312,8 @@ public class PlayerController : MonoBehaviour
     {
         DisplayHoldWhenReady(false);
 
+        JoystickManager.Instance.Vibrate(InputDevice);
+
         _onReady?.Invoke(this);
     }
 
