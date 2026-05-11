@@ -105,19 +105,19 @@ public class SokobanView : View
                     {
                         Button.Xbox_B, new List<Key>()
                         {
-                            Key.Q
+                            Key.R
                         }
                     },
                     {
                         Button.Xbox_LB, new List<Key>()
                         {
-                            Key.N
+                            Key.Q
                         }
                     },
                     {
                         Button.Xbox_RB, new List<Key>()
                         {
-                            Key.M
+                            Key.E
                         }
                     },
                     {
@@ -129,7 +129,7 @@ public class SokobanView : View
                     {
                         Button.Xbox_Y, new List<Key>()
                         {
-                            Key.C
+                            Key.Y
                         }
                     }
                 },
@@ -152,25 +152,25 @@ public class SokobanView : View
                     {
                         Button.Xbox_A, new List<Key>()
                         {
-                            Key.I
+                            Key.O
                         }
                     },
                     {
                         Button.Xbox_B, new List<Key>()
                         {
-                            Key.U
+                            Key.P
                         }
                     },
                     {
                         Button.Xbox_LB, new List<Key>()
                         {
-                            Key.O
+                            Key.K
                         }
                     },
                     {
                         Button.Xbox_RB, new List<Key>()
                         {
-                            Key.P
+                            Key.L
                         }
                     },
                     {
@@ -182,7 +182,7 @@ public class SokobanView : View
                     {
                         Button.Xbox_Y, new List<Key>()
                         {
-                            Key.L
+                            Key.I
                         }
                     }
                 },
