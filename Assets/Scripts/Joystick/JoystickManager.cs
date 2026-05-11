@@ -505,17 +505,21 @@ namespace Common.Joystick
                     {
                         return psGamepad.touchpadButton;
                     }
+#if !UNITY_WEBGL
                     else if (gamepad is UnityEngine.InputSystem.Switch.SwitchProControllerHID switchGamepad1)
                     {
                         return switchGamepad1.homeButton;
                     }
+#endif
                     return null;
+#if !UNITY_WEBGL
                 case Button.Switch_Capture:
                     if (gamepad is UnityEngine.InputSystem.Switch.SwitchProControllerHID switchGamepad2)
                     {
                         return switchGamepad2.captureButton;
                     }
                     return null;
+#endif
                 default:
                     return null;
             }
@@ -569,6 +573,6 @@ namespace Common.Joystick
                     return 0.0f;
             }
         }
-        #endregion
+#endregion
     }
 }
