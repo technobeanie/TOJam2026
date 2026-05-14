@@ -2,6 +2,7 @@
 using Common.Flow;
 using Common.Joystick;
 using Common.Rendering;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,6 +52,8 @@ public class SokobanView : View
             CameraManager.Instance.ResolveInstance();
             FlowManager.Instance.ResolveInstance();
             JoystickManager.Instance.ResolveInstance();
+            PersistanceDataManager.Instance.ResolveInstance();
+            DOTween.Init();
 
             SetupKeyboardInputs();
         }

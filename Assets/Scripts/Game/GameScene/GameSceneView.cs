@@ -265,7 +265,6 @@ public class GameSceneView : SokobanView
     #region Private Methods
     private void OnReady(PlayerController player)
     {
-
         ++_playerReadyCount;
         if (_playerReadyCount == 1)
         {
