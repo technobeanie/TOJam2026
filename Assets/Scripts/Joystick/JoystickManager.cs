@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.DualShock;
 using static Common.Joystick.JoystickManager;
 
 namespace Common.Joystick
@@ -118,6 +119,7 @@ namespace Common.Joystick
         private void OnDestroy()
         {
             StopAllVibrations();
+            ResetAllColors();
         }
         #endregion
 
@@ -173,16 +175,15 @@ namespace Common.Joystick
             return Vector2.zero;
         }
 
-        public int? GetMovement(Joystick joystick, Keyboard keyboard)
+        public bool GetMovement(Joystick joystick, Keyboard keyboard, out int keyboardPlayerId)
         {
             // Returns Keyboard Player Id.
-            return GetKeyboardMovement(joystick, keyboard);
+            return GetKeyboardMovement(joystick, keyboard, out keyboardPlayerId);
         }
 
         public bool IsButtonDown(Button button)
         {
-            var keyboardPlayerId = GetKeyboardButtonDown(button, Keyboard.current);
-            if (keyboardPlayerId != null)
+            if (GetKeyboardButtonDown(button, Keyboard.current, out int keyboardPlayerId))
             {
                 return true;
             }
@@ -217,10 +218,10 @@ namespace Common.Joystick
             return false;
         }
 
-        public int? IsButtonDown(Button button, Keyboard keyboard)
+        public bool IsButtonDown(Button button, Keyboard keyboard, out int keyboardPlayerId)
         {
             // Returns Keyboard Player Id.
-            return GetKeyboardButtonDown(button, keyboard);
+            return GetKeyboardButtonDown(button, keyboard, out keyboardPlayerId);
         }
 
         public bool IsButtonDownThisFrame(Button button, out InputDevice inputDevice)
@@ -263,10 +264,10 @@ namespace Common.Joystick
             return false;
         }
 
-        public int? IsButtonDownThisFrame(Button button, Keyboard keyboard)
+        public bool IsButtonDownThisFrame(Button button, Keyboard keyboard, out int keyboardPlayerId)
         {
             // Returns Keyboard Player Id.
-            return GetKeyboardButtonDownThisFrame(button, keyboard);
+            return GetKeyboardButtonDownThisFrame(button, keyboard, out keyboardPlayerId);
         }
 
         public float IsTriggerDown(Trigger trigger)
@@ -307,15 +308,31 @@ namespace Common.Joystick
             return 0.0f;
         }
 
-        public int? IsTriggerDown(Trigger trigger, Keyboard keyboard)
+        public bool IsTriggerDown(Trigger trigger, Keyboard keyboard, out int keyboardPlayerId)
         {
             // Returns Keyboard Player Id.
-            return GetKeyboardTrigger(trigger, keyboard);
+            return GetKeyboardTrigger(trigger, keyboard, out keyboardPlayerId);
         }
 
         public void Vibrate(InputDevice inputDevice, float lowFrequencey = QuickVibrateLowFrequencyDefault, float highFrequency = QuickVibrateHighFrequencyDefault, float duration = QuickVibrateDurationDefault)
         {
             BeginVibration(inputDevice, lowFrequencey, highFrequency, duration);
+        }
+
+        public void SetColor(InputDevice inputDevice, Color color)
+        {
+            if (inputDevice is DualShockGamepad gamepad)
+            {
+                gamepad.SetLightBarColor(color);
+            }
+        }
+
+        public void ResetColor(InputDevice inputDevice)
+        {
+            if (inputDevice is DualShockGamepad gamepad)
+            {
+                gamepad.SetLightBarColor(Color.black);
+            }
         }
         #endregion
 
@@ -323,17 +340,19 @@ namespace Common.Joystick
         #endregion
 
         #region Private Methods
-        private int? GetKeyboardMovement(Joystick joystick, Keyboard keyboard)
+        private bool GetKeyboardMovement(Joystick joystick, Keyboard keyboard, out int keyboardPlayerId)
         {
+            keyboardPlayerId = 0;
             foreach (int id in _keyboardDefinition.Keys)
             {
                 if (GetKeyboardMovement(joystick, keyboard, id) != Vector2.zero)
                 {
-                    return id;
+                    keyboardPlayerId = id;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         private Vector2 GetKeyboardMovement(Joystick joystick, Keyboard keyboard, int keyboardPlayerId)
@@ -400,17 +419,19 @@ namespace Common.Joystick
             }
         }
 
-        private int? GetKeyboardButtonDown(Button button, Keyboard keyboard)
+        private bool GetKeyboardButtonDown(Button button, Keyboard keyboard, out int keyboardPlayerId)
         {
+            keyboardPlayerId = 0;
             foreach (int id in _keyboardDefinition.Keys)
             {
                 if (GetKeyboardButtonDown(button, keyboard, id))
                 {
-                    return id;
+                    keyboardPlayerId = id;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         private bool GetKeyboardButtonDown(Button button, Keyboard keyboard, int keyboardPlayerId)
@@ -447,17 +468,19 @@ namespace Common.Joystick
             return false;
         }
 
-        private int? GetKeyboardButtonDownThisFrame(Button button, Keyboard keyboard)
+        private bool GetKeyboardButtonDownThisFrame(Button button, Keyboard keyboard, out int keyboardPlayerId)
         {
+            keyboardPlayerId = 0;
             foreach (int id in _keyboardDefinition.Keys)
             {
                 if (GetKeyboardButtonDownThisFrame(button, keyboard, id))
                 {
-                    return id;
+                    keyboardPlayerId = id;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         private IList<Key> GetKeyboardButtonControl(Button button, Keyboard keyboard, int keyboardPlayerId)
@@ -579,17 +602,20 @@ namespace Common.Joystick
             }
         }
 
-        private int? GetKeyboardTrigger(Trigger trigger, Keyboard keyboard)
+        private bool GetKeyboardTrigger(Trigger trigger, Keyboard keyboard, out int keyboardPlayerId)
         {
+            keyboardPlayerId = 0;
+
             foreach (int id in _keyboardDefinition.Keys)
             {
                 if (GetKeyboardTrigger(trigger, keyboard, id) != 0.0f)
                 {
-                    return id;
+                    keyboardPlayerId = id;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         private float GetGamepadTrigger(Trigger trigger, Gamepad gamepad)
@@ -659,6 +685,15 @@ namespace Common.Joystick
             if (inputDevice is Gamepad gamepad)
             {
                 gamepad.SetMotorSpeeds(0.0f, 0.0f);
+            }
+        }
+
+        private void ResetAllColors()
+        {
+            var gamepads = Gamepad.all;
+            foreach (var gamepad in gamepads)
+            {
+                ResetColor(gamepad);
             }
         }
         #endregion

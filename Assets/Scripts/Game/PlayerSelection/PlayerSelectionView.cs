@@ -19,6 +19,10 @@ public class PlayerSelectionView : SokobanView
     [SerializeField] private PlayerSelectionController _player1 = null;
     [SerializeField] private PlayerSelectionController _player2 = null;
 
+    [Header("")]
+    [SerializeField] private Color _player1Color = Color.white;
+    [SerializeField] private Color _player2Color = Color.white;
+
     [Header("Ready")]
     [SerializeField] private Transform _readyText = null;
 
@@ -143,10 +147,12 @@ public class PlayerSelectionView : SokobanView
             if (!_player1.HasJoined)
             {
                 _player1.AssignInputDevice(inputDevice, keyboardPlayerId);
+                JoystickManager.Instance.SetColor(inputDevice, _player1Color);
             }
             else if (!_player2.HasJoined)
             {
                 _player2.AssignInputDevice(inputDevice, keyboardPlayerId);
+                JoystickManager.Instance.SetColor(inputDevice, _player2Color);
             }
         }
 
@@ -163,10 +169,12 @@ public class PlayerSelectionView : SokobanView
         if (_player1.InputDevice == inputDevice)
         {
             _player1.AssignInputDevice(null, keyboardPlayerId);
+            JoystickManager.Instance.ResetColor(inputDevice);
         }
         else if (_player2.InputDevice == inputDevice)
         {
             _player2.AssignInputDevice(null, keyboardPlayerId);
+            JoystickManager.Instance.ResetColor(inputDevice);
         }
 
         SetIsReady();

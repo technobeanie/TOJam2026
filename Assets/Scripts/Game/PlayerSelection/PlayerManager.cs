@@ -69,13 +69,12 @@ public class PlayerManager : MonoBehaviour
             // Max 2 players!
             if (_gamepads.Count + _keyboards.Count < 2)
             {
-                var keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, keyboard);
-                if (keyboardId != null)
+                if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_A, keyboard, out int keyboardId))
                 {
-                    if (!_keyboards.ContainsKey(keyboardId.Value))
+                    if (!_keyboards.ContainsKey(keyboardId))
                     {
-                        OnJoin(keyboard, keyboardId.Value);
-                        _onJoin?.Invoke(keyboard, keyboardId.Value);
+                        OnJoin(keyboard, keyboardId);
+                        _onJoin?.Invoke(keyboard, keyboardId);
                     }
 
                     return;
@@ -83,13 +82,12 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                var keyboardId = JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_B, keyboard);
-                if (keyboardId != null)
+                if (JoystickManager.Instance.IsButtonDownThisFrame(JoystickManager.Button.Xbox_B, keyboard, out int keyboardId))
                 {
-                    if (_keyboards.ContainsKey(keyboardId.Value))
+                    if (_keyboards.ContainsKey(keyboardId))
                     {
-                        OnLeave(keyboard, keyboardId.Value);
-                        _onLeave?.Invoke(keyboard, keyboardId.Value);
+                        OnLeave(keyboard, keyboardId);
+                        _onLeave?.Invoke(keyboard, keyboardId);
                     }
 
                     return;
